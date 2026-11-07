@@ -38,14 +38,21 @@ def detected_intents(message: str, clarification: str | None) -> set[str]:
     result = set()
     if re.search(r'\b(viajar|viaje|viajes|intercambio|intercambios|estancia|estancias|movilidad academica|internacionalizacion|movilidad saliente)\b', full):
         result.add('movilidad_academica')
-    if re.search(r'\b(beca|becas|subvencion|financiamiento|apoyo economico)\b', full):
+    if re.search(r'\b(beca|becas|subvencion|financiamiento)\b', full):
         result.add('becas')
     if re.search(r'\b(convocatoria|convocatorias|convenio|convenios|oportunidad|oportunidades|proyecto|proyectos|investigacion|talleres|actividades academicas|vrap|vrip|ogcri)\b', full):
         result.add('oportunidades_academicas')
     if re.search(r'\b(transporte|bus|buses|autobus|rutas|ruta de transporte|paradero|cono norte|cono sur)\b', full):
         result.add('transporte_externo')
-    if re.search(r'\b(orientacion|adaptarme|adaptacion|bienestar|alimentacion|comedor)\b', full):
+    if re.search(r'\b(orientacion|adaptarme|adaptacion|bienestar|alimentacion|comedor|'
+                 r'problemas? economicos?|dificultades? economicas?|situacion economica|'
+                 r'condicion economica|escasos recursos|pocos recursos|sin recursos|'
+                 r'necesidad economica|economia familiar|vulnerabilidad economica|apoyo economico)\b', full):
         result.add('bienestar')
+    # Vivir lejos puede justificar INFORMACIÓN de transporte, pero no demuestra
+    # una ruta, parada o cobertura en el distrito descrito.
+    if re.search(r'\b(vivo lejos|vivo muy lejos|me queda lejos|vivo distante|traslado largo)\b', full):
+        result.add('transporte_externo')
     if re.search(r'\b(clinica|consulta medica|medicina general|atencion general|odontologia)\b', full):
         result.add('clinica_general')
     if re.search(r'\b(psicologia|salud mental|estres|ansiedad|apoyo emocional)\b', full):
@@ -58,7 +65,7 @@ def audience_codes(service) -> set[str]:
 
 
 def shortlist(services, *, profile: str | None, intents: set[str],
-              faculty_code: str, limit: int = MAX_GEMINI_CANDIDATES):
+              faculty_code: str, limit: int = MAX_GEMINI_CANDIDATES, message: str = ""):
     # audience en el catálogo histórico puede ser texto humano: solo los códigos
     # controlados de esta demo activan una restricción automática.
     pool = [s for s in services if not audience_codes(s)
@@ -75,7 +82,17 @@ def shortlist(services, *, profile: str | None, intents: set[str],
     # un convenio general es una beca para cada estudiante.
     # Datos precisos de la facultad elegida antes de opciones centrales.
     # No mover los originales si el orden importa en la demo anterior.
-    pool.sort(key=lambda s: (0 if s.faculty_code == faculty_code else 1,
+    focus = normalized(message)
+    def research_priority(service):
+        tags = set(service.needs_tags)
+        if 'vrap' in focus:
+            return 0 if 'vrap' in tags else 2
+        if 'investigac' in focus or 'investigar' in focus:
+            return 0 if 'investigacion_formativa' in tags else (1 if 'investigacion' in tags else 2)
+        if 'ogcri' in focus:
+            return 0 if 'ogcri' in tags or 'CENTRAL-OGCRI' in service.id else 2
+        return 1
+    pool.sort(key=lambda s: (research_priority(s), 0 if s.faculty_code == faculty_code else 1,
                              0 if profile in audience_codes(s) else 1,
                              s.id.startswith('DEMO-MF-') is False,
                              s.id))
@@ -89,3 +106,20 @@ def shortlist(services, *, profile: str | None, intents: set[str],
                     break
         pool = picked + [s for s in pool if s.id not in {x.id for x in picked}]
     return pool[:limit]
+
+
+# Solo destinos reconocidos explícitamente; no se infieren países a partir de
+# similitudes léxicas. En Supabase deben etiquetarse `pais_francia`, etc.
+COUNTRIES = {
+    'francia': 'Francia', 'alemania': 'Alemania', 'espana': 'España',
+    'mexico': 'México', 'china': 'China', 'japon': 'Japón',
+    'corea del sur': 'Corea del Sur', 'colombia': 'Colombia',
+    'brasil': 'Brasil', 'argentina': 'Argentina', 'canada': 'Canadá',
+}
+
+def detected_country(message: str, clarification: str | None = None) -> tuple[str, str] | None:
+    text = normalized(message + ' ' + (clarification or ''))
+    for code, label in sorted(COUNTRIES.items(), key=lambda item: -len(item[0])):
+        if re.search(r'(?<![a-z])' + re.escape(code) + r'(?![a-z])', text):
+            return code.replace(' ', '_'), label
+    return None

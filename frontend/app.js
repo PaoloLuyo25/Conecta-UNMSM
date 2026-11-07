@@ -5,7 +5,7 @@ const form = $('consult-form');
 const result = $('result');
 const messageInput = $('message');
 const state = {
-  message: '', facultyCode: 'FISI', applicantType: 'sin_especificar', previousIds: [], clarificationUsed: false,
+  message: '', facultyCode: 'FISI', previousIds: [], clarificationUsed: false,
   busy: false, controller: null, sequence: 0, authenticated: false,
   historyEnabled: false, routeTicket: null, routeRequestId: null, routeSaved: false,
   entered: false, pendingSaveAfterAuth: false
@@ -18,10 +18,61 @@ function node(tag, text, className) {
   return element;
 }
 function hide(element, hidden) { element.classList.toggle('hidden', hidden); }
+// Iconos: referencian el sprite SVG de index.html (#i-nombre). Se crean solo con la API del DOM.
+const SVG_NS = 'http://www.w3.org/2000/svg';
+function icon(name, className = '') {
+  const svg = document.createElementNS(SVG_NS, 'svg');
+  svg.setAttribute('class', `icon ${className}`.trim());
+  svg.setAttribute('aria-hidden', 'true');
+  const use = document.createElementNS(SVG_NS, 'use');
+  use.setAttribute('href', `#i-${name}`);
+  svg.append(use);
+  return svg;
+}
+function categoryIcon(code) {
+  const value = String(code || '').toLowerCase();
+  if (/bienestar|salud|clinic|psico|nutri|aliment|medic/.test(value)) return 'heart';
+  if (/transporte|ruta|bus|movilidad/.test(value)) return 'pin';
+  if (/tramite|document|admin/.test(value)) return 'file';
+  if (/acad|beca|biblio/.test(value)) return 'book';
+  return 'compass';
+}
+function emptyArt(name) {
+  const art = node('div', null, 'empty-art');
+  art.setAttribute('aria-hidden', 'true');
+  art.append(icon(name));
+  return art;
+}
+// Aviso emergente (textContent): confirma acciones que antes quedaban ocultas al cerrarse el modal.
+let toastTimer = null;
+function toast(text) {
+  const region = $('toast-region');
+  region.replaceChildren(node('div', text, 'toast'));
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => region.replaceChildren(), 3600);
+}
+// Única fuente de verdad de la facultad: mantiene sincronizados el estado y los dos selectores
+// (bienvenida y formulario). Un valor desconocido vuelve a FISI.
+function setFaculty(code) {
+  const known = Array.from($('faculty').options).some(option => option.value === code);
+  const value = known ? code : 'FISI';
+  state.facultyCode = value;
+  $('faculty').value = value;
+  $('welcome-faculty').value = value;
+}
+// Invalida la consulta en curso: aborta la petición, libera la interfaz y hace que
+// cualquier respuesta tardía se ignore (ver `seq !== state.sequence` en ask()).
+function cancelPendingRequest() {
+  state.sequence += 1;
+  if (state.controller) state.controller.abort();
+  state.controller = null;
+  setBusy(false);
+}
 function enterWorkspace() {
   state.entered = true;
   hide($('welcome-screen'), true);
   hide($('app-main'), false);
+  $('brand-home').disabled = false;
 }
 function openAuth(message = '') {
   const overlay = $('auth-overlay');
@@ -37,6 +88,7 @@ function closeAuth() {
   $('header-auth-button').focus();
 }
 $('welcome-guest').addEventListener('click', enterWorkspace);
+$('brand-home').addEventListener('click', () => { if (state.entered) newQuery(); });
 $('welcome-login').addEventListener('click', () => openAuth());
 $('header-auth-button').addEventListener('click', () => openAuth());
 $('close-auth-button').addEventListener('click', closeAuth);
@@ -56,8 +108,11 @@ function warnings(items) {
 function setBusy(active) {
   state.busy = active;
   $('submit').disabled = active;
+  hide($('cancel-search-button'), !active);
+  hide($('search-progress'), !active);
   $('refine-button').disabled = active;
-  $('submit-label').textContent = active ? 'Buscando tu ruta…' : 'Encontrar mi ruta ↗';
+  $('submit-label').textContent = active ? 'Buscando tu ruta…' : 'Encontrar mi ruta';
+  hide($('submit-icon'), active);
   hide($('loading-spinner'), !active);
   result.setAttribute('aria-busy', String(active));
   $('sr-status').textContent = active ? 'Buscando opciones' : '';
@@ -71,8 +126,13 @@ function fact(parent, label, value) {
 }
 function serviceCard(service, index) {
   const card = node('article', null, 'service-card');
-  card.append(node('div', `OPCIÓN ${index + 1}`, 'service-number'));
-  card.append(node('h3', service.name));
+  const head = node('div', null, 'service-head');
+  const chip = node('span', null, 'service-icon');
+  chip.append(icon(categoryIcon(service.category_code)));
+  const titles = node('div');
+  titles.append(node('span', `OPCIÓN ${index + 1}`, 'service-number'), node('h3', service.name));
+  head.append(chip, titles);
+  card.append(head);
   const tags = node('div', null, 'tags');
   tags.append(node('span', service.category_code?.replaceAll('_', ' ') || 'Servicio', 'tag'));
   tags.append(node('span', service.faculty_code === 'CENTRAL' ? 'Servicio central' : `Ámbito ${service.faculty_code}`, 'tag'));
@@ -80,7 +140,6 @@ function serviceCard(service, index) {
   card.append(node('p', service.description));
   if (service.why_text) card.append(node('div', service.why_text, 'reason'));
   const facts = node('div', null, 'facts');
-  fact(facts, 'Dirigido a', service.audience);
   fact(facts, 'Modalidad', service.modality);
   fact(facts, 'Pasos', service.official_steps);
   fact(facts, 'Requisitos', service.requirements);
@@ -105,24 +164,22 @@ function serviceCard(service, index) {
   return card;
 }
 function initialResult() {
-  const art = node('div', '✳', 'empty-art');
-  art.setAttribute('aria-hidden', 'true');
-  result.replaceChildren(art, node('h3', 'Tu camino empieza aquí'),
+  result.replaceChildren(emptyArt('compass'), node('h3', 'Tu camino empieza aquí'),
     node('p', 'Escribe una necesidad para explorar opciones respaldadas por el catálogo.'));
   result.className = 'empty-state';
 }
 function newQuery() {
-  state.sequence += 1;
-  if (state.controller) state.controller.abort();
-  state.controller = null;
-  setBusy(false);
+  cancelPendingRequest();
+  const faculty = state.facultyCode; // la facultad no forma parte de la consulta: se conserva
   form.reset();
-  state.message = ''; state.facultyCode = 'FISI'; state.applicantType = 'sin_especificar';
+  setFaculty(faculty);
+  state.message = '';
   state.previousIds = []; state.clarificationUsed = false;
   $('clarification-form').reset();
   $('refine-value').value = '';
   state.routeTicket = null; state.routeRequestId = null; state.routeSaved = false;
   $('save-route-status').textContent = '';
+  $('save-route-button').textContent = 'Guardar esta ruta';
   $('counter').textContent = '0 / 800';
   $('meta').textContent = '';
   warnings([]);
@@ -144,6 +201,7 @@ function render(data) {
   state.routeSaved = Boolean(data.history_saved);
   $('save-route-status').textContent = data.history_saved ? 'Ruta guardada.' : '';
   updateSaveRoute();
+  if (data.country_context) result.append(node('p', data.country_context, 'notice'));
   if (data.mode === 'question') {
     status('Una pregunta más');
     $('clarification-question').textContent = data.question || '¿Puedes precisar tu consulta?';
@@ -159,13 +217,24 @@ function render(data) {
     data.services.forEach((service, i) => cards.append(serviceCard(service, i)));
     result.append(cards);
     if (data.history_saved) $('sr-status').textContent = 'Tu ruta se guardó correctamente.';
+  } else if (data.historical_services?.length) {
+    status('Antecedentes encontrados');
   } else {
     status('Sin coincidencias');
+    result.append(emptyArt('search'));
     result.append(node('h3', 'No hay una ruta confirmada'));
     result.append(node('p', 'No se encontraron servicios verificables para esta consulta.'));
   }
-  result.className = data.services?.length ? '' : 'empty-state';
-  $('meta').textContent = `Catálogo: ${data.catalog_source || 'desconocido'} · Revisión: ${data.catalog_verified_at || 'por confirmar'} · ${data.ai_used ? 'Selección con IA' : 'Sin personalización de IA'}`;
+  if (data.historical_services?.length) {
+    result.append(node('h3', 'Convocatorias anteriores: referencias para prepararte'));
+    result.append(node('p', 'Los plazos de estos antecedentes ya vencieron. No son postulaciones abiertas.', 'subtle'));
+    const oldCards = node('div', null, 'cards');
+    data.historical_services.forEach((item, i) => oldCards.append(serviceCard(item, i)));
+    result.append(oldCards);
+  }
+  result.className = (data.services?.length || data.historical_services?.length) ? '' : 'empty-state';
+  const catalogueName = {primary:'Catálogo en línea',local_snapshot:'Información de respaldo',unavailable:'Sin datos disponibles'}[data.catalog_source] || 'Fuente por confirmar';
+  $('meta').textContent = `${catalogueName} · Fecha de revisión: ${data.catalog_verified_at || 'por confirmar'} · ${data.ai_used ? 'Selección asistida por IA' : 'Orientación basada en fuentes'}`;
 }
 async function ask(payload) {
   if (state.busy) return;
@@ -192,7 +261,7 @@ async function ask(payload) {
     if (seq !== state.sequence) return;
     warnings([error.name === 'AbortError' ? 'La búsqueda tardó demasiado. Inténtalo de nuevo.' : error.message]);
     status('Intenta de nuevo');
-    result.replaceChildren(node('p', 'No pudimos recuperar opciones. Puedes volver a intentarlo.'));
+    result.replaceChildren(emptyArt('wifi'), node('p', 'No pudimos recuperar opciones. Puedes volver a intentarlo.'));
     result.className = 'empty-state';
     hide($('refine'), false);
   } finally {
@@ -203,7 +272,7 @@ async function ask(payload) {
 function requestPayload(answer = null, used = false) {
   const wantsSave = false; // Guardado explícito POST /api/history/save después de generar la ruta.
   const payload = {
-    faculty_code: state.facultyCode, applicant_type: state.applicantType, message: state.message,
+    faculty_code: state.facultyCode, message: state.message,
     clarification_answer: answer, clarification_used: used,
     previous_service_ids: state.previousIds,
     save_to_history: wantsSave
@@ -217,7 +286,7 @@ form.addEventListener('submit', (event) => {
   event.preventDefault();
   if (state.busy) return;
   state.message = messageInput.value.trim();
-  state.facultyCode = $('faculty').value; state.applicantType = $('applicant-type').value;
+  state.facultyCode = $('faculty').value;
   state.clarificationUsed = false;
   state.previousIds = [];
   state.routeTicket = null; state.routeSaved = false; state.routeRequestId = null;
@@ -255,6 +324,7 @@ for (const button of document.querySelectorAll('[data-example]')) {
 function updateSaveRoute() {
   hide($('history-choice'), !(state.historyEnabled && state.routeTicket));
   $('save-route-button').disabled = state.routeSaved;
+  $('save-route-button').textContent = state.routeSaved ? 'Ruta guardada' : 'Guardar esta ruta';
   if (state.routeTicket && state.historyEnabled && !state.authenticated) {
     $('save-route-status').textContent = 'Para guardar, inicia sesión o crea una cuenta.';
   } else if (state.routeTicket && !state.routeSaved) {
@@ -276,7 +346,8 @@ async function saveExistingRoute() {
   const sequence = state.sequence;
   if (!state.routeRequestId) state.routeRequestId = crypto.randomUUID();
   $('save-route-button').disabled = true;
-  $('save-route-status').textContent = 'Guardando…';
+  $('save-route-button').textContent = 'Guardando ruta…';
+  $('save-route-status').textContent = 'Guardando ruta…';
   try {
     await api('/api/history/save', {method: 'POST', body: JSON.stringify({
       route_ticket: ticket, client_request_id: state.routeRequestId
@@ -284,6 +355,7 @@ async function saveExistingRoute() {
     if (sequence !== state.sequence || ticket !== state.routeTicket) return;
     state.routeSaved = true;
     $('save-route-status').textContent = 'Ruta guardada correctamente.';
+    toast('Ruta guardada en tu historial.');
     await showHistory();
   } catch (error) {
     if (sequence !== state.sequence || ticket !== state.routeTicket) return;
@@ -291,30 +363,24 @@ async function saveExistingRoute() {
   } finally {
     if (sequence === state.sequence && ticket === state.routeTicket) {
       $('save-route-button').disabled = state.routeSaved;
+      $('save-route-button').textContent = state.routeSaved ? 'Ruta guardada' : 'Guardar esta ruta';
     }
   }
 }
+$('welcome-faculty').addEventListener('change', () => setFaculty($('welcome-faculty').value));
 $('faculty').addEventListener('change', () => {
-  state.facultyCode = $('faculty').value; state.applicantType = $('applicant-type').value;
+  setFaculty($('faculty').value);
+  cancelPendingRequest(); // RF2-05/07: una respuesta de la facultad anterior no debe pintarse
   state.previousIds = [];
   state.routeTicket = null; state.routeRequestId = null; state.routeSaved = false;
   hide($('history-choice'), true);
-  result.replaceChildren(node('p', 'Cambiaste el ámbito: consulta de nuevo para ver servicios elegibles.'));
+  result.replaceChildren(emptyArt('compass'), node('p', 'Cambiaste el ámbito: consulta de nuevo para ver servicios elegibles.'));
+  result.className = 'empty-state';
+  warnings([]);
+  $('meta').textContent = '';
   status('Ámbito actualizado');
   hide($('clarification'), true);
   hide($('refine'), true);
-});
-
-
-$('applicant-type').addEventListener('change', () => {
-  state.applicantType = $('applicant-type').value;
-  state.previousIds = [];
-  state.routeTicket = null; state.routeRequestId = null; state.routeSaved = false;
-  hide($('history-choice'), true);
-  hide($('clarification'), true);
-  hide($('refine'), true);
-  result.replaceChildren(node('p', 'Cambiaste el público: consulta de nuevo para recalcular la ruta.'));
-  status('Público actualizado');
 });
 
 async function api(path, options = {}) {
@@ -369,9 +435,15 @@ async function passwordAccess(mode) {
   const buttons = $('login-form').querySelectorAll('button');
   buttons.forEach(button => { button.disabled = true; });
   try {
-    await api(mode === 'signup' ? '/api/auth/signup' : '/api/auth/login', {
+    const authResult = await api(mode === 'signup' ? '/api/auth/signup' : '/api/auth/login', {
       method: 'POST', body: payload
     });
+    if (mode === 'signup' && authResult.confirmation_required) {
+      passwordInput.value = '';
+      accountMessage('Si la dirección puede registrarse, recibirás un mensaje de confirmación. Si ya tienes una cuenta, utiliza «Iniciar sesión» con tu contraseña. Por privacidad, no podemos confirmar aquí si el correo ya estaba registrado.');
+      return;
+    }
+    if (!authResult.authenticated) throw new Error('Supabase no confirmó la sesión. Intenta iniciar sesión tras verificar tu correo.');
     state.authenticated = true;
     passwordInput.value = '';
     authView();
@@ -385,7 +457,7 @@ async function passwordAccess(mode) {
     if (shouldSave) await saveExistingRoute();
     else await showHistory();
   } catch (error) {
-    accountMessage(error.message);
+    accountMessage(mode === 'signup' ? error.message + ' Si ya tienes cuenta, utiliza «Iniciar sesión».' : error.message);
   } finally {
     buttons.forEach(button => { button.disabled = false; });
   }
@@ -405,6 +477,7 @@ $('logout').addEventListener('click', async () => {
   $('login-password').value = '';
   authView(); accountMessage('Sesión cerrada. Puedes seguir consultando como visitante.');
   closeAuth();
+  toast('Sesión cerrada. Puedes seguir como visitante.');
 });
 async function showHistory() {
   try {
@@ -419,11 +492,11 @@ async function showHistory() {
       const cards = node('div', null, 'cards');
       entry.services.forEach((service, i) => cards.append(serviceCard(service, i)));
       container.append(cards);
-      const button = node('button', 'Eliminar esta ruta', 'secondary danger');
+      const button = node('button', 'Eliminar esta ruta', 'btn btn-danger');
       button.type = 'button';
       button.addEventListener('click', async () => {
         if (!confirm('¿Eliminar esta ruta de tu historial?')) return;
-        try { await api('/api/history/' + encodeURIComponent(entry.id), {method: 'DELETE'}); await showHistory(); }
+        try { await api('/api/history/' + encodeURIComponent(entry.id), {method: 'DELETE'}); await showHistory(); toast('Ruta eliminada de tu historial.'); }
         catch (error) { accountMessage(error.message); }
       });
       container.append(button);
@@ -434,7 +507,15 @@ async function showHistory() {
 $('show-history').addEventListener('click', showHistory);
 $('delete-history').addEventListener('click', async () => {
   if (!confirm('¿Borrar permanentemente todas tus rutas guardadas?')) return;
-  try { await api('/api/history', {method: 'DELETE'}); await showHistory(); accountMessage('Historial eliminado.'); }
+  try { await api('/api/history', {method: 'DELETE'}); await showHistory(); accountMessage('Historial eliminado.'); toast('Historial eliminado.'); }
   catch (error) { accountMessage(error.message); }
 });
 initAccount();
+$('cancel-search-button').addEventListener('click', () => {
+  cancelPendingRequest();
+  hide($('refine'), true);
+  result.replaceChildren(emptyArt('compass'), node('p', 'Búsqueda cancelada. Puedes iniciar otra consulta.'));
+  result.className = 'empty-state';
+  status('Búsqueda cancelada');
+  $('sr-status').textContent = 'Búsqueda cancelada';
+});

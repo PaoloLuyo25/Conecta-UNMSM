@@ -65,6 +65,8 @@ class RouteResponse(BaseModel):
     constraints: list[str]
     question: str | None
     services: list[dict]
+    historical_services: list[dict] = Field(default_factory=list)
+    country_context: str | None = None
     warnings: list[str]
     ai_used: bool
     catalog_source: Literal['primary', 'local_snapshot', 'unavailable']

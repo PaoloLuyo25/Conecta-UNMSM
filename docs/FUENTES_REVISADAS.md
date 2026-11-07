@@ -21,3 +21,17 @@ Las rutas complementarias de Bienestar FISI, Clínica (carteles noviembre 2026) 
 - Si un enlace redirige fuera de la lista segura, o bloquea acceso, suspender extracción sin saltar restricciones.
 - Si el dato es incierto: `vigencia_por_confirmar` o `datos_insuficientes`; **nunca** `confirmado_documentalmente` sin evidencia clara.
 - La fecha `verified_at` significa día de revisión de la página, **no** apertura o actualización del programa.
+
+
+## Antecedentes incorporados en la actualización (07/11/2026)
+| Fuente | Evidencia revisada | Estado que debe mostrarse |
+|---|---|---|
+| https://cooperacion-unmsm.blogspot.com/2026/09/intercambio-francia-2027-i.html | Bordeaux 2027-I, cierre 01/10/2026; otras sedes: «próximamente» en el anuncio | Antecedente cerrado para Bordeaux; **otras sedes sin apertura demostrada** |
+| https://cooperacion-unmsm.blogspot.com/2024/09/intercambio-francia-2025-i.html | Bordeaux 2025-I, B1 francés, promedio mínimo 13,5, fin octubre 2024 | Antecedente cerrado |
+| https://cooperacion-unmsm.blogspot.com/2023/09/intercambio-francia-2024-i.html | La Rochelle, Paris-Saclay, Bordeaux y Bordeaux Montaigne, cierre 12/10/2023 | Antecedente cerrado |
+| https://cooperacion-unmsm.blogspot.com/2026/09/intercambio-corea-del-sur-2027-i.html | Keimyung con cierre 09/10/2026; otras sedes «próximamente» | Antecedente cerrado Keimyung, demás sin apertura probada |
+| https://cooperacion-unmsm.blogspot.com/2026/09/intercambio-mexico-2027-i.html | UACJ con cierre 30/10/2026; otras sedes «próximamente» | Antecedente cerrado UACJ, demás sin apertura probada |
+| https://viceacademico.unmsm.edu.pe/?news=guia-para-la-investigacion-formativa-en-el-pregrado-unmsm | Guía VRAP sobre investigación formativa | Documento orientativo, no convocatoria |
+| https://vrip.unmsm.edu.pe/ampliacion-concurso-pconfigi-2026/ | Ampliación 2026 del PCONFIGI a 18/02/2026 | Convocatoria de proyectos cerrada |
+
+Todos los datos de publicación se revisan en el origen. `verified_at` indica revisión por el proyecto, nunca vigencia garantizada.

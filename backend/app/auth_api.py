@@ -1,5 +1,7 @@
 """Acceso opcional por correo/contraseña e historial privado. Sesión HttpOnly."""
 from uuid import UUID
+
+import httpx
 from backend.app.route_ticket import InvalidRouteTicket
 from fastapi import APIRouter, HTTPException, Request, Response
 from pydantic import BaseModel, Field, SecretStr, field_validator
@@ -61,8 +63,24 @@ def auth_signup(body: CredentialsRequest, request: Request, response: Response):
     try:
         session = request.app.state.identity.sign_up(
             body.email, body.password.get_secret_value())
-    except UpstreamFailure:
-        raise HTTPException(400, 'No se pudo crear la cuenta. Revisa los datos o la configuración de Supabase.') from None
+    except UpstreamFailure as error:
+        # Solo afirmar duplicado si GoTrue lo devuelve explícitamente.
+        # Con confirmación activa Supabase puede ocultarlo deliberadamente.
+        cause = error.__cause__
+        if isinstance(cause, httpx.HTTPStatusError):
+            try:
+                detail = cause.response.json()
+            except ValueError:
+                detail = {}
+            if isinstance(detail, dict) and (
+                detail.get('code') in {'user_already_exists', 'user_already_registered'}
+                or str(detail.get('msg') or detail.get('message') or '').lower().strip()
+                == 'user already registered'
+            ):
+                raise HTTPException(409, 'Este correo ya tiene una cuenta. Inicia sesión.') from None
+        raise HTTPException(400, 'No se pudo completar el registro. Vuelve a intentarlo o inicia sesión si ya tienes cuenta.') from None
+    if session.get('confirmation_required'):
+        return {'authenticated': False, 'confirmation_required': True}
     return _authenticate(session, request, response)
 
 

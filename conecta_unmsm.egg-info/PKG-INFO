@@ -1,0 +1,94 @@
+Metadata-Version: 2.4
+Name: conecta-unmsm
+Version: 1.0.0
+Summary: Orientación académica y bienestar UNMSM: FastAPI, Supabase y Gemini
+Requires-Python: >=3.11
+Description-Content-Type: text/markdown
+Requires-Dist: fastapi<1,>=0.115
+Requires-Dist: uvicorn<1,>=0.30
+Requires-Dist: pydantic<3,>=2.9
+Requires-Dist: httpx<1,>=0.28
+Requires-Dist: python-dotenv<2,>=1
+Requires-Dist: google-genai<3,>=1
+Requires-Dist: supabase<4,>=2
+Provides-Extra: dev
+Requires-Dist: pytest<10,>=8; extra == "dev"
+
+# Conecta UNMSM — entrega integrada
+
+Aplicación informativa independiente para orientación académica y bienestar.
+Interfaz basada en la entrega `CONECTA_paso2.zip`; backend FastAPI, Gemini
+Flash-Lite, consulta a `public.services` de Supabase e historial opcional con
+Supabase Auth. La información de convocatorias no es disponibilidad en vivo.
+
+## Instalación Windows CMD
+
+En `C:\Users\josem\Downloads\ad`, extraer el ZIP **con su contenido en la raíz**
+(`pyproject.toml`, `backend`, `frontend` y `supabase` deben estar juntos).
+No reemplazar `.env` ni copiar un virtualenv de otro ordenador/carpeta.
+
+```bat
+cd /d "C:\Users\josem\Downloads\ad"
+py -3.11 -m venv .venv
+.venv\Scripts\python.exe -m pip install -e ".[dev]"
+.venv\Scripts\python.exe -m pytest -q
+```
+
+También existe `INSTALAR_Y_PROBAR.bat`, que instala y verifica cuando el
+entorno está en buen estado. Para iniciar con historial y catálogo Supabase:
+
+```bat
+if not exist .env copy .env.example .env
+notepad .env
+INICIAR_CONECTA_FINAL.bat
+```
+
+Abrir `http://127.0.0.1:8001/`. No subir `.env` a Git.
+
+## Supabase
+
+Si `public.services` ya existe y la categoría académica fue ampliada mediante
+`006_categorias_academicas.sql`, ejecutar **solo**
+`supabase/010_VERSION_FINAL.sql` en SQL Editor con cuenta administradora.
+El SQL actualiza 18 fichas FISI/UNMSM, retira la VRAP genérica y dos fichas
+exclusivas de Medicina. No recrea las tablas ni modifica RLS/Auth/historial.
+Conserva una ficha VRAP de investigación formativa con fuente.
+
+El historial requiere `003_route_history.sql`, RLS y Supabase Auth configurados.
+El registro puede requerir confirmación del correo institucional. No revelar
+por una respuesta genérica de signup si ya existe una cuenta: Supabase protege
+esa información cuando la confirmación está activada.
+
+## Datos y exploración
+
+`data/catalog.academico.json` es una copia local de respaldo. Las fichas
+históricas de movilidad están marcadas como cerradas; deben revisarse según
+el país y las condiciones de la universidad específica.
+
+```bat
+.venv\Scripts\python.exe -m tools.explorar_fuentes --historical-pages 2
+```
+
+Se genera `data/discovered.pending.json`. El scraper respeta robots.txt y
+si los feeds no devuelven datos intenta el archivo HTML de OGCRI. No inserta
+resultados automáticamente en Supabase. Revisar cada publicación antes de
+cambiar `data/catalog.academico.json` o generar el SQL revisable:
+
+```bat
+.venv\Scripts\python.exe -m tools.generar_sql_catalogo
+```
+
+La salida adicional estará en `supabase/011_REVISAR_ANTES_DE_EJECUTAR.sql`.
+**Nunca** importar directamente el archivo pendiente ni ejecutar seeds ficticios.
+
+## Seguridad y pruebas
+
+- La interfaz evita insertar HTML procedente de terceros: utiliza textContent.
+- El almacenamiento de sesión utiliza cookies HttpOnly en el mismo origen.
+- Las rutas de transporte se filtran por zona antes de invocar el modelo.
+- El registro y los datos históricos indican límites de verificación.
+- Tests automatizados `pytest -q`; pruebas de interfaz con Chromium en
+  `tests/browser_smoke.py` (Playwright opcional en desarrollo).
+- Para despliegue fuera de localhost configurar HTTPS, cookies seguras, dominio
+  de confianza, límites de uso, controles RLS y auditoría de fuentes. No
+  desplegar el BAT local como servidor público.

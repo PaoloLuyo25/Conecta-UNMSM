@@ -63,7 +63,17 @@ class SupabaseIdentity:
     def sign_up(self, email: str, password: str) -> dict:
         data = self._call('POST', '/auth/v1/signup',
                           payload={'email': email, 'password': password})
-        return self._checked_session(data)
+        if not isinstance(data, dict):
+            raise UpstreamFailure('Supabase no devolvió una respuesta válida.')
+        # Con Confirm Email activo, GoTrue acepta la solicitud pero no emite
+        # una sesión hasta que el titular confirme su correo. No se debe
+        # confundir esta respuesta con un error, ni crear cookies artificiales.
+        if 'access_token' in data or 'refresh_token' in data:
+            return self._checked_session(data)
+        user = data.get('user', data)
+        if isinstance(user, dict) and user.get('id'):
+            return {'confirmation_required': True}
+        raise UpstreamFailure('No se pudo comprobar el resultado del registro.')
 
     def sign_in(self, email: str, password: str) -> dict:
         data = self._call('POST', '/auth/v1/token',
@@ -158,7 +168,7 @@ def assert_origin(request: Request):
 def get_identity(request: Request, *, required=True) -> Identity | None:
     if not request.app.state.settings.enable_history:
         if required:
-            raise HTTPException(503, 'El historial no está habilitado en este laboratorio.')
+            raise HTTPException(503, 'El historial no está habilitado.')
         return None
     token = request.cookies.get(ACCESS_COOKIE)
     if not token:

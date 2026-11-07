@@ -1,86 +1,78 @@
-# Conecta UNMSM
+# Conecta UNMSM — entrega integrada
 
-**Orientación universitaria contextual, con oportunidades académicas documentadas.** Proyecto independiente: **no** es un sitio ni un servicio oficial de la UNMSM.
+Aplicación informativa independiente para orientación académica y bienestar.
+Interfaz basada en la entrega `CONECTA_paso2.zip`; backend FastAPI, Gemini
+Flash-Lite, consulta a `public.services` de Supabase e historial opcional con
+Supabase Auth. La información de convocatorias no es disponibilidad en vivo.
 
-Desde un mismo campo de texto, una persona plantea su situación (por ejemplo: *«Soy un estudiante de posgrado y quiero viajar para hacer investigación»*). El servidor elige hasta seis candidatos del catálogo mediante reglas de facultad, público e intención; Gemini selecciona como máximo tres IDs. **Ningún dato institucional es generado por Gemini:** nombres, requisitos, plazos, contacto y fuentes proceden de registros revisados. El sistema no verifica inscripción abierta en tiempo real.
+## Instalación Windows CMD
 
-## Qué incluye
-
-- Las 20 facultades en un selector. Servicios académicos centrales publicados por OGCRI, VRAP y VRIP; programas propios de facultades solo para sus destinatarios.
-- Rutas de Bienestar FISI, Clínica Universitaria y transporte externo conservadas **con advertencias de alcance y vigencia**.
-- Acceso opcional con Supabase Auth (correo `@unmsm.edu.pe` y contraseña); consulta como invitado. Historial separado, opcional y desactivado por defecto.
-- `tools/explorar_fuentes.py`: consulta feeds públicos de OGCRI Blog, OGCRI, VRAP y VRIP respetando `robots.txt`. Genera `data/discovered.pending.json`: **no publica anuncios ni atribuye elegibilidad automáticamente**.
-- `data/catalog.academico.json`: catálogo inicial de 15 registros revisados manualmente a partir de páginas externas accesibles y documentos aportados por el equipo, con trazabilidad y advertencias. Nueve registros corresponden a publicaciones web académicas; los demás son apoyos con cobertura por verificar.
-- `supabase/EJECUTAR_CATALOGO_ACADEMICO.sql`: migración aditiva + registros para aplicar desde SQL Editor **con cuenta administradora**. No cambia políticas RLS ni autenticación.
-- Docs SDD `specs/004-oportunidades-academicas/` y `docs/`; pruebas `tests/`.
-
-## Preparación en Windows (CMD)
-
-La carpeta puede ser `C:\Users\josem\Downloads\conecta-unmsm` (o extraer los contenidos sobre tu carpeta existente, tras respaldar tu `.env`).
+En `C:\Users\josem\Downloads\ad`, extraer el ZIP **con su contenido en la raíz**
+(`pyproject.toml`, `backend`, `frontend` y `supabase` deben estar juntos).
+No reemplazar `.env` ni copiar un virtualenv de otro ordenador/carpeta.
 
 ```bat
-cd /d "C:\Users\josem\Downloads\conecta-unmsm"
-py -3.12 -m venv .venv
-.venv\Scripts\python.exe -m pip install --upgrade pip
-.venv\Scripts\python.exe -m pip install -r requirements-supabase.txt
+cd /d "C:\Users\josem\Downloads\ad"
+py -3.11 -m venv .venv
+.venv\Scripts\python.exe -m pip install -e ".[dev]"
+.venv\Scripts\python.exe -m pytest -q
+```
+
+También existe `INSTALAR_Y_PROBAR.bat`, que instala y verifica cuando el
+entorno está en buen estado. Para iniciar con historial y catálogo Supabase:
+
+```bat
 if not exist .env copy .env.example .env
 notepad .env
-.venv\Scripts\python.exe -m pytest -q -W error
-INICIAR_CONECTA.bat
+INICIAR_CONECTA_FINAL.bat
 ```
 
-Configura `.env` con `SUPABASE_URL`, `SUPABASE_PUBLISHABLE_KEY`, `GEMINI_API_KEY` y `GEMINI_MODEL=gemini-3.5-flash-lite`. Mantén `.env` fuera de Git. Abre http://127.0.0.1:8001/ . Si falla Supabase, la app usa `data/catalog.academico.json` con advertencia de copia local; si falta Gemini, responde con modo degradado explícito. No colocar ninguna clave en JS.
+Abrir `http://127.0.0.1:8001/`. No subir `.env` a Git.
 
-### Supabase
+## Supabase
 
-Ya tienes `public.services` con RLS y lectura pública. **No repitas el SQL de creación 001 ni el seed ficticio 005.** Ejecuta únicamente `supabase/EJECUTAR_CATALOGO_ACADEMICO.sql` (primero amplía categorías sin borrar datos; después inserta/actualiza IDs `CENTRAL-*`, `MEDICINA-*` y `FISI-*`). En la tabla, los datos de `prueba_ficticia` previos pueden permanecer para tests pero la app normal los excluye con `ALLOW_DEMO_RECORDS=false`.
+Si `public.services` ya existe y la categoría académica fue ampliada mediante
+`006_categorias_academicas.sql`, ejecutar **solo**
+`supabase/010_VERSION_FINAL.sql` en SQL Editor con cuenta administradora.
+El SQL actualiza 18 fichas FISI/UNMSM, retira la VRAP genérica y dos fichas
+exclusivas de Medicina. No recrea las tablas ni modifica RLS/Auth/historial.
+Conserva una ficha VRAP de investigación formativa con fuente.
 
-Verifica en Supabase SQL Editor:
+El historial requiere `003_route_history.sql`, RLS y Supabase Auth configurados.
+El registro puede requerir confirmación del correo institucional. No revelar
+por una respuesta genérica de signup si ya existe una cuenta: Supabase protege
+esa información cuando la confirmación está activada.
 
-```sql
-select evidence_type, category_code, count(*) from public.services
-where is_public = true group by evidence_type, category_code order by 1,2;
-```
+## Datos y exploración
 
-Para leer mediante la clave publicable, prueba SELECT; los roles `anon`/`authenticated` **no** deben poder escribir. Ejecutar el SQL desde el Editor no significa que ya se haya comprobado el acceso real ni la fecha de cada convocatoria.
-
-### Actualizar hallazgos de web scraping
+`data/catalog.academico.json` es una copia local de respaldo. Las fichas
+históricas de movilidad están marcadas como cerradas; deben revisarse según
+el país y las condiciones de la universidad específica.
 
 ```bat
-.venv\Scripts\python.exe -m tools.explorar_fuentes
+.venv\Scripts\python.exe -m tools.explorar_fuentes --historical-pages 2
 ```
 
-Solo genera `data/discovered.pending.json`. Ante robots bloqueado, error de red o cambios de HTML, informa y no inventa resultados. Revisa individualmente cada candidato: titular, fuente original, destinatarios (pregrado / posgrado / docentes), plazos, requisitos, facultad, vigencia y si es beca **o únicamente convenio**. Tras revisar, modifica `data/catalog.academico.json`, actualiza la fecha de revisión y ejecuta:
+Se genera `data/discovered.pending.json`. El scraper respeta robots.txt y
+si los feeds no devuelven datos intenta el archivo HTML de OGCRI. No inserta
+resultados automáticamente en Supabase. Revisar cada publicación antes de
+cambiar `data/catalog.academico.json` o generar el SQL revisable:
 
 ```bat
 .venv\Scripts\python.exe -m tools.generar_sql_catalogo
 ```
 
-Ejecuta el SQL generado manualmente desde Supabase SQL Editor. **Nunca** copies directamente `discovered.pending.json` a la base. Si cambias el catálogo con nuevas categorías, haz una migración aprobada.
+La salida adicional estará en `supabase/011_REVISAR_ANTES_DE_EJECUTAR.sql`.
+**Nunca** importar directamente el archivo pendiente ni ejecutar seeds ficticios.
 
-### Historial y login
+## Seguridad y pruebas
 
-El login existente se conserva. `INICIAR_CONECTA.bat` deja `ENABLE_HISTORY=false` para no recopilar datos; habilítalo en laboratorio **solo** después de configurar Auth, correo, HTTPS para cualquier despliegue y probar RLS con dos cuentas autorizadas. `INICIAR_CONECTA_HISTORIAL_LAB.bat` es **exclusivo para localhost y pruebas**. Desactivar confirmación por correo **no verifica titularidad ni matrícula**.
-
-### Publicar en GitHub (repositorio remoto vacío)
-
-Crea o elige tu repositorio y copia su URL HTTPS. En esta carpeta:
-
-```bat
-git init
-git branch -M main
-git add .
-git status --short
-git commit -m "Base integradora Conecta UNMSM"
-git remote add origin https://github.com/TU_USUARIO/TU_REPOSITORIO.git
-git push -u origin main
-```
-
-Si ya existe `origin`, usa `git remote -v` y no repitas `git remote add origin`. **No enviar `.env`, claves, `.venv` ni `discovered.pending.json`.** No es posible subir a tu repositorio desde esta entrega sin su URL y acceso autorizado.
-
-## Seguridad y procedencia
-
-- Las publicaciones universitarias son **fuentes**; no equivalen a aceptación, financiación o inscripción vigente. Los sitios pueden cambiar entre escaneos.
-- Los convenios normalmente exoneran costos académicos bajo condiciones, pero no necesariamente cubren pasajes o manutención.
-- Los datos de Clínica de noviembre 2026 no garantizan citas o atención actual. No se realizan diagnósticos ni trámites.
-- Leer `AGENTS.md`, `docs/constitution.md`, la spec activa y los tests antes de modificar código. Respetar las bases de la hackathon sobre código preexistente.
+- La interfaz evita insertar HTML procedente de terceros: utiliza textContent.
+- El almacenamiento de sesión utiliza cookies HttpOnly en el mismo origen.
+- Las rutas de transporte se filtran por zona antes de invocar el modelo.
+- El registro y los datos históricos indican límites de verificación.
+- Tests automatizados `pytest -q`; pruebas de interfaz con Chromium en
+  `tests/browser_smoke.py` (Playwright opcional en desarrollo).
+- Para despliegue fuera de localhost configurar HTTPS, cookies seguras, dominio
+  de confianza, límites de uso, controles RLS y auditoría de fuentes. No
+  desplegar el BAT local como servidor público.

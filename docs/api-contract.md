@@ -36,3 +36,9 @@ Son contratos conservados: correo y contraseña gestionados por Supabase Auth; s
 
 ## Contrato de Gemini
 Una llamada por turno, máximo seis candidatos compactos. Devuelve IDs existentes y códigos (`matches_need`, `matches_modality`, `matches_location`, `requires_confirmation`), sin redactar hechos, enlaces, requisitos ni disponibilidades. El servidor valida cantidad, IDs y alcance nuevamente antes de construir la tarjeta.
+
+
+## Campos de ampliación para antecedentes (RF6-02/03)
+En `POST /api/route` se añaden `historical_services: list[dict]` (máximo tres fichas cerradas con enlace verificable) y `country_context: string|null`. Las claves anteriores permanecen compatibles. Los servicios históricos no son parte de la lista `services` de opciones actuales ni pueden obtener tickets de historial por sí mismos. Consultas por país sin registro confirmado generan el mensaje «no encontramos una convocatoria abierta confirmada **en el catálogo revisado**».
+
+`faculty_code` visible solo `FISI` / `OTROS`. El backend retiene la validación de códigos legados en URLs/historial para compatibilidad, pero no los expone en el selector.

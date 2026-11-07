@@ -17,11 +17,19 @@
       ],
       "audience": "pregrado,posgrado",
       "modality": [],
-      "requirements": [],
+      "requirements": [
+        "Ser estudiante regular con al menos 12 créditos, según la orientación publicada por OGCRI.",
+        "Presentar récord académico o certificado de estudios y reporte de matrícula.",
+        "Adjuntar ficha de compromiso académico firmada por la Dirección de Escuela.",
+        "Preparar carta de motivación, CV no documentado y copia del pasaporte.",
+        "Verificar requisitos adicionales de idioma y universidad de destino en cada convocatoria."
+      ],
       "official_steps": [
-        "Consultar el Programa de Movilidad Saliente en la fuente institucional.",
-        "Revisar la convocatoria y los requisitos específicos de la universidad de destino.",
-        "Confirmar los procedimientos vigentes con la OGCRI."
+        "Elegir una universidad con convenio y comprobar compatibilidad de asignaturas.",
+        "Completar la solicitud de intercambio y reunir los documentos solicitados por OGCRI.",
+        "Una vez admitido, tramitar visa y seguro internacional si corresponde.",
+        "Coordinar con la facultad la reserva de matrícula y el reconocimiento de estudios.",
+        "Confirmar siempre las condiciones y fechas vigentes con OGCRI."
       ],
       "contact": {
         "email": "movilidad.ogcri@unmsm.edu.pe"
@@ -30,7 +38,7 @@
       "hours": null,
       "route_region": null,
       "stops": [],
-      "source_url": "https://www.unmsm.edu.pe/movilidad-y-cooperacion/movilidad-academica",
+      "source_url": "https://cooperacion-unmsm.blogspot.com/p/por-convenio.html",
       "evidence_type": "web_oficial",
       "source_published_at": null,
       "verified_at": "2026-11-07",
@@ -39,7 +47,8 @@
       "availability_status": "vigencia_por_confirmar",
       "warnings": [
         "Un convenio no implica beca ni cobertura de pasajes, alojamiento o manutención.",
-        "Las fechas y requisitos publicados en páginas generales pueden ser históricos; verificar la convocatoria concreta."
+        "Las fechas y requisitos publicados en páginas generales pueden ser históricos; verificar la convocatoria concreta.",
+        "Estos son requisitos generales publicados por OGCRI; cada universidad puede exigir documentos adicionales y condiciones nuevas."
       ]
     },
     {
@@ -57,10 +66,15 @@
       ],
       "audience": "pregrado,posgrado,docentes",
       "modality": [],
-      "requirements": [],
+      "requirements": [
+        "No hay requisitos únicos para todos los convenios: dependen de la convocatoria, destino y público destinatario.",
+        "Si buscas intercambio, revisa primero la sección Por convenio de OGCRI y luego los requisitos específicos del anuncio."
+      ],
       "official_steps": [
-        "Abrir el anuncio de la OGCRI sobre convenios.",
-        "Verificar en cada institución si existe convocatoria y condiciones vigentes."
+        "Consultar la categoría Pregrado en OGCRI si eres estudiante de pregrado.",
+        "Revisar Noticias y CONVENIOS para anuncios de movilidad y cooperación.",
+        "No presentar una publicación destinada a docentes, posgrado o investigadores como elegible para pregrado.",
+        "Confirmar si el anuncio sigue abierto y si ofrece apoyo económico."
       ],
       "contact": null,
       "location": null,
@@ -75,7 +89,8 @@
       "valid_until": null,
       "availability_status": "vigencia_por_confirmar",
       "warnings": [
-        "Publicación de carácter informativo: no garantiza admisión, financiamiento ni convocatoria abierta."
+        "Publicación de carácter informativo: no garantiza admisión, financiamiento ni convocatoria abierta.",
+        "Una publicación puede tener varias etiquetas de OGCRI; se referencia una sola vez por convocatoria."
       ]
     },
     {
@@ -160,62 +175,33 @@
       ]
     },
     {
-      "id": "CENTRAL-VRAP-PREGRADO",
-      "name": "Noticias y orientación académica de pregrado — VRAP",
-      "faculty_code": "CENTRAL",
-      "accessible_to_all_faculties": true,
-      "category_code": "oportunidades_academicas",
-      "description": "Portal del Vicerrectorado Académico de Pregrado con avisos, actividades y documentos para estudiantes de pregrado.",
-      "needs_tags": [
-        "orientacion_academica",
-        "oportunidades_academicas",
-        "convocatorias",
-        "actividades",
-        "pregrado"
-      ],
-      "audience": "pregrado",
-      "modality": [],
-      "requirements": [],
-      "official_steps": [
-        "Consultar avisos recientes del VRAP.",
-        "Abrir el anuncio específico para comprobar los plazos y destinatarios."
-      ],
-      "contact": null,
-      "location": null,
-      "hours": null,
-      "route_region": null,
-      "stops": [],
-      "source_url": "https://viceacademico.unmsm.edu.pe/",
-      "evidence_type": "web_oficial",
-      "source_published_at": null,
-      "verified_at": "2026-11-07",
-      "valid_from": null,
-      "valid_until": null,
-      "availability_status": "vigencia_por_confirmar",
-      "warnings": [
-        "No es una convocatoria única; la disponibilidad depende de cada publicación."
-      ]
-    },
-    {
       "id": "CENTRAL-OGCRI-FRANCIA",
-      "name": "Intercambio a Francia 2027-I — anuncio OGCRI",
+      "name": "Antecedente OGCRI: Francia 2027-I (Bordeaux)",
       "faculty_code": "CENTRAL",
       "accessible_to_all_faculties": true,
       "category_code": "movilidad_academica",
-      "description": "Anuncio de intercambio 2027-I para pregrado y posgrado con universidades francesas. Publica plazos distintos por institución.",
+      "description": "La OGCRI publicó el intercambio Francia 2027-I. El plazo indicado para Université de Bordeaux terminó el 1 de octubre de 2026. La Rochelle y Paris-Saclay aparecían como «próximamente»; esta ficha NO acredita que sus postulaciones hayan abierto.",
       "needs_tags": [
         "movilidad_academica",
         "intercambio",
+        "viajar",
+        "pais_francia",
         "francia",
-        "viajar"
+        "antecedente"
       ],
       "audience": "pregrado,posgrado",
-      "modality": [],
-      "requirements": [],
+      "modality": [
+        "presencial"
+      ],
+      "requirements": [
+        "En la publicación: promedio ponderado mínimo 13,5 (verificar condiciones por universidad).",
+        "Para pregrado: haber completado el 50 % del plan de estudios.",
+        "Según facultad: nivel B1–B2 de francés o inglés.",
+        "Cubrir personalmente traslado, alojamiento y manutención."
+      ],
       "official_steps": [
-        "Abrir el anuncio OGCRI.",
-        "Consultar la fecha y requisitos de la universidad de destino.",
-        "Contactar a Movilidad OGCRI antes de considerar abierta una postulación."
+        "Usar estos requisitos únicamente para prepararse; el plazo de Bordeaux venció.",
+        "Consultar con OGCRI el estado de La Rochelle y Paris-Saclay y nuevas convocatorias."
       ],
       "contact": {
         "email": "movilidad.ogcri@unmsm.edu.pe"
@@ -229,33 +215,39 @@
       "source_published_at": "2026-09-09",
       "verified_at": "2026-11-07",
       "valid_from": null,
-      "valid_until": null,
-      "availability_status": "vigencia_por_confirmar",
+      "valid_until": "2026-10-01",
+      "availability_status": "cerrado_documentado",
       "warnings": [
-        "El plazo publicado para Université de Bordeaux fue 1/10/2026 y ya venció.",
-        "Otras universidades aparecen como «próximamente» en la publicación; verificar si hubo actualizaciones.",
-        "Exoneración académica no equivale a una beca de viaje."
+        "ANTECEDENTE; el plazo Bordeaux terminó el 1/10/2026.",
+        "Los destinos señalados como «próximamente» no equivalen a inscripción abierta.",
+        "El convenio exonera gastos académicos, no transporte o estancia."
       ]
     },
     {
       "id": "CENTRAL-OGCRI-COREA",
-      "name": "Intercambio Corea del Sur 2027-I — anuncio OGCRI",
+      "name": "Antecedente OGCRI: Corea del Sur 2027-I (Keimyung)",
       "faculty_code": "CENTRAL",
       "accessible_to_all_faculties": true,
       "category_code": "movilidad_academica",
-      "description": "Publicación OGCRI para estudiantes de pregrado sobre opciones de intercambio en Corea del Sur en 2027-I.",
+      "description": "La OGCRI anunció el intercambio 2027-I. La fecha indicada para Keimyung fue 9 de octubre de 2026. Sungkyunkwan y Changwon figuraban como «próximamente», sin apertura confirmada en ese anuncio.",
       "needs_tags": [
         "movilidad_academica",
         "intercambio",
-        "corea",
-        "viajar"
+        "viajar",
+        "pais_corea_del_sur",
+        "corea_del_sur",
+        "antecedente"
       ],
       "audience": "pregrado",
       "modality": [],
-      "requirements": [],
+      "requirements": [
+        "Pregrado con matrícula vigente.",
+        "Promedio ponderado mínimo 13,5.",
+        "Haber completado el 50 % del plan de estudios.",
+        "Asumir gastos de estancia y viaje."
+      ],
       "official_steps": [
-        "Revisar el anuncio OGCRI y el destino de interés.",
-        "Verificar plazos y condiciones vigentes con Movilidad OGCRI."
+        "Preparar matrícula, notas y pasaporte; confirmar actualizaciones con OGCRI."
       ],
       "contact": {
         "email": "movilidad.ogcri@unmsm.edu.pe"
@@ -269,86 +261,11 @@
       "source_published_at": "2026-09-16",
       "verified_at": "2026-11-07",
       "valid_from": null,
-      "valid_until": null,
-      "availability_status": "vigencia_por_confirmar",
+      "valid_until": "2026-10-09",
+      "availability_status": "cerrado_documentado",
       "warnings": [
-        "La fecha publicada para Keimyung fue 9/10/2026 y ya venció.",
-        "SKKU y Changwon figuraban «próximamente»; no se ha confirmado apertura posterior.",
-        "Los costos de viaje y manutención no están cubiertos por el convenio."
-      ]
-    },
-    {
-      "id": "MEDICINA-ROCHESTER",
-      "name": "Programa de intercambio UNMSM–Rochester 2026 — Medicina",
-      "faculty_code": "MEDICINA",
-      "accessible_to_all_faculties": false,
-      "category_code": "movilidad_academica",
-      "description": "Programa de intercambio de la Escuela Profesional de Medicina Humana con la Universidad de Rochester; estancias anunciadas entre diciembre de 2026 y marzo de 2027.",
-      "needs_tags": [
-        "movilidad_academica",
-        "intercambio",
-        "medicina",
-        "rochester"
-      ],
-      "audience": "pregrado",
-      "modality": [],
-      "requirements": [],
-      "official_steps": [
-        "Revisar convocatoria y bases oficiales publicadas por Medicina.",
-        "Confirmar con la facultad si el plazo de postulación sigue vigente."
-      ],
-      "contact": null,
-      "location": null,
-      "hours": null,
-      "route_region": null,
-      "stops": [],
-      "source_url": "https://medicina.unmsm.edu.pe/programas-de-intercambio-estudiantil/universidad-de-rochester/",
-      "evidence_type": "web_oficial",
-      "source_published_at": null,
-      "verified_at": "2026-11-07",
-      "valid_from": null,
-      "valid_until": null,
-      "availability_status": "vigencia_por_confirmar",
-      "warnings": [
-        "Convocatoria específica para Medicina Humana; no extrapolar a otras facultades.",
-        "La fecha de estancia no confirma que la inscripción permanezca abierta."
-      ]
-    },
-    {
-      "id": "MEDICINA-WEILL-CORNELL",
-      "name": "Intercambio Weill Cornell Medicine 2026 — Medicina",
-      "faculty_code": "MEDICINA",
-      "accessible_to_all_faculties": false,
-      "category_code": "movilidad_academica",
-      "description": "Programa de intercambio académico de la Facultad de Medicina con Weill Cornell Medicine para estancias anunciadas entre diciembre de 2026 y marzo de 2027.",
-      "needs_tags": [
-        "movilidad_academica",
-        "intercambio",
-        "medicina",
-        "cornell"
-      ],
-      "audience": "pregrado",
-      "modality": [],
-      "requirements": [],
-      "official_steps": [
-        "Consultar las bases publicadas de la convocatoria de Medicina.",
-        "Confirmar fecha límite y elegibilidad con la facultad."
-      ],
-      "contact": null,
-      "location": null,
-      "hours": null,
-      "route_region": null,
-      "stops": [],
-      "source_url": "https://medicina.unmsm.edu.pe/programas-de-intercambio-estudiantil/weill-cornell-medicine/",
-      "evidence_type": "web_oficial",
-      "source_published_at": null,
-      "verified_at": "2026-11-07",
-      "valid_from": null,
-      "valid_until": null,
-      "availability_status": "vigencia_por_confirmar",
-      "warnings": [
-        "Es una convocatoria particular de Medicina Humana.",
-        "No se verificó disponibilidad actual de vacantes."
+        "Plazo Keimyung vencido: 9/10/2026.",
+        "Otros destinos aparecían «próximamente»; no afirmar apertura."
       ]
     },
     {
@@ -575,6 +492,273 @@
       "warnings": [
         "Enlace abreviado aportado por el equipo, destino no verificado independientemente.",
         "Cobertura para todas las facultades sin confirmar; no ofrecer como servicio universal."
+      ]
+    },
+    {
+      "id": "CENTRAL-OGCRI-FRANCIA-2025",
+      "name": "Antecedente OGCRI: Francia 2025-I — Bordeaux",
+      "faculty_code": "CENTRAL",
+      "accessible_to_all_faculties": true,
+      "category_code": "movilidad_academica",
+      "description": "Intercambio anunciado para el primer semestre de 2025; en la publicación se indicaron 10 plazas de pregrado para Université de Bordeaux. El periodo y plazo ya transcurrieron.",
+      "needs_tags": [
+        "movilidad_academica",
+        "intercambio",
+        "viajar",
+        "pais_francia",
+        "francia",
+        "antecedente"
+      ],
+      "audience": "pregrado",
+      "modality": [
+        "presencial"
+      ],
+      "requirements": [
+        "Matrícula vigente de pregrado.",
+        "Promedio mínimo 13,5; verificar requisitos especiales.",
+        "Haber completado el 50 % del plan de estudios.",
+        "Nivel de francés B1 mínimo.",
+        "Asumir traslado, manutención y demás costes."
+      ],
+      "official_steps": [
+        "Preparar reporte de matrícula, historial académico, carta de motivos, CV y pasaporte.",
+        "Consultar novedades directamente a OGCRI; no postular con los plazos pasados."
+      ],
+      "contact": {
+        "email": "movilidad.ogcri@unmsm.edu.pe"
+      },
+      "location": null,
+      "hours": null,
+      "route_region": null,
+      "stops": [],
+      "source_url": "https://cooperacion-unmsm.blogspot.com/2024/09/intercambio-francia-2025-i.html",
+      "evidence_type": "web_oficial",
+      "source_published_at": null,
+      "verified_at": "2026-11-07",
+      "valid_from": null,
+      "valid_until": "2024-10-15",
+      "availability_status": "cerrado_documentado",
+      "warnings": [
+        "Antecedente de 2024 para estancia en 2025; no está abierto.",
+        "La exoneración académica no incluye manutención ni pasajes."
+      ]
+    },
+    {
+      "id": "CENTRAL-OGCRI-FRANCIA-2024",
+      "name": "Antecedente OGCRI: Francia 2024-I — varias universidades",
+      "faculty_code": "CENTRAL",
+      "accessible_to_all_faculties": true,
+      "category_code": "movilidad_academica",
+      "description": "El anuncio OGCRI para Francia 2024-I incluyó La Rochelle, Paris-Saclay, Bordeaux y Bordeaux Montaigne; el cierre publicado fue el 12 de octubre de 2023.",
+      "needs_tags": [
+        "movilidad_academica",
+        "intercambio",
+        "viajar",
+        "pais_francia",
+        "francia",
+        "antecedente"
+      ],
+      "audience": "pregrado",
+      "modality": [
+        "presencial"
+      ],
+      "requirements": [],
+      "official_steps": [
+        "Comparar las bases históricas de las universidades y verificar las nuevas en OGCRI."
+      ],
+      "contact": {
+        "email": "movilidad.ogcri@unmsm.edu.pe"
+      },
+      "location": null,
+      "hours": null,
+      "route_region": null,
+      "stops": [],
+      "source_url": "https://cooperacion-unmsm.blogspot.com/2023/09/intercambio-francia-2024-i.html",
+      "evidence_type": "web_oficial",
+      "source_published_at": null,
+      "verified_at": "2026-11-07",
+      "valid_from": null,
+      "valid_until": "2023-10-12",
+      "availability_status": "cerrado_documentado",
+      "warnings": [
+        "Convocatoria cerrada en 2023.",
+        "Los requisitos exactos se deben consultar en la fuente de esa edición."
+      ]
+    },
+    {
+      "id": "CENTRAL-VRAP-GUIA-INVESTIGACION",
+      "name": "VRAP — Guía para la Investigación Formativa en el Pregrado",
+      "faculty_code": "CENTRAL",
+      "accessible_to_all_faculties": true,
+      "category_code": "oportunidades_academicas",
+      "description": "Documento de orientación del Vicerrectorado Académico de Pregrado sobre investigación formativa, metodologías activas y criterios para proyectos académicos. No es una convocatoria ni una beca.",
+      "needs_tags": [
+        "oportunidades_academicas",
+        "investigacion",
+        "investigacion_formativa",
+        "proyectos",
+        "vrap",
+        "guia"
+      ],
+      "audience": "pregrado",
+      "modality": [],
+      "requirements": [],
+      "official_steps": [
+        "Abrir la guía publicada por VRAP.",
+        "Consultar al docente o unidad de investigación de tu facultad cómo incorporarla a los cursos."
+      ],
+      "contact": null,
+      "location": null,
+      "hours": null,
+      "route_region": null,
+      "stops": [],
+      "source_url": "https://viceacademico.unmsm.edu.pe/?news=guia-para-la-investigacion-formativa-en-el-pregrado-unmsm",
+      "evidence_type": "web_oficial",
+      "source_published_at": null,
+      "verified_at": "2026-11-07",
+      "valid_from": null,
+      "valid_until": null,
+      "availability_status": "vigencia_por_confirmar",
+      "warnings": [
+        "Guía orientativa; no constituye una convocatoria ni garantiza financiamiento."
+      ]
+    },
+    {
+      "id": "CENTRAL-VRIP-PCONFIGI-2026-ANTECEDENTE",
+      "name": "VRIP — Antecedente del concurso PCONFIGI de investigación 2026",
+      "faculty_code": "CENTRAL",
+      "accessible_to_all_faculties": true,
+      "category_code": "oportunidades_academicas",
+      "description": "Cronograma documental 2026 del concurso de proyectos de investigación para grupos de investigación; el registro de propuestas en RAIS finalizó en febrero de 2026. Sirve como referencia, no para postular hoy.",
+      "needs_tags": [
+        "oportunidades_academicas",
+        "investigacion",
+        "proyectos",
+        "grupos_investigacion",
+        "vrip",
+        "antecedente"
+      ],
+      "audience": "docentes,posgrado",
+      "modality": [],
+      "requirements": [
+        "Participación según reglas del programa PCONFIGI y grupo de investigación; verificar bases de cada edición."
+      ],
+      "official_steps": [
+        "Consultar las bases del año correspondiente en el VRIP.",
+        "Preparar la información para RAIS solo cuando haya nueva convocatoria oficialmente publicada."
+      ],
+      "contact": null,
+      "location": null,
+      "hours": null,
+      "route_region": null,
+      "stops": [],
+      "source_url": "https://vrip.unmsm.edu.pe/ampliacion-concurso-pconfigi-2026/",
+      "evidence_type": "web_oficial",
+      "source_published_at": "2026-02-12",
+      "verified_at": "2026-11-07",
+      "valid_from": null,
+      "valid_until": "2026-02-18",
+      "availability_status": "cerrado_documentado",
+      "warnings": [
+        "Convocatoria 2026 cerrada; no anunciar como vigente."
+      ]
+    },
+    {
+      "id": "CENTRAL-OGCRI-MEXICO-2027I",
+      "name": "Antecedente OGCRI: México 2027-I (UACJ)",
+      "faculty_code": "CENTRAL",
+      "accessible_to_all_faculties": true,
+      "category_code": "movilidad_academica",
+      "description": "La OGCRI anunció intercambios con universidades mexicanas para 2027-I. El plazo documentado para Universidad Autónoma de Ciudad Juárez fue 30 de octubre de 2026; otras universidades figuraban «próximamente».",
+      "needs_tags": [
+        "movilidad_academica",
+        "intercambio",
+        "viajar",
+        "pais_mexico",
+        "mexico",
+        "antecedente"
+      ],
+      "audience": "pregrado",
+      "modality": [
+        "presencial"
+      ],
+      "requirements": [
+        "Pregrado con matrícula vigente.",
+        "Promedio ponderado mínimo 13,5.",
+        "Haber finalizado el 50 % del plan de estudios.",
+        "Asumir los costos asociados al viaje y la manutención."
+      ],
+      "official_steps": [
+        "Revisar el anuncio histórico para preparar documentos.",
+        "Verificar plazos nuevos con OGCRI antes de postular."
+      ],
+      "contact": {
+        "email": "movilidad.ogcri@unmsm.edu.pe"
+      },
+      "location": null,
+      "hours": null,
+      "route_region": null,
+      "stops": [],
+      "source_url": "https://cooperacion-unmsm.blogspot.com/2026/09/intercambio-mexico-2027-i.html",
+      "evidence_type": "web_oficial",
+      "source_published_at": "2026-09-07",
+      "verified_at": "2026-11-07",
+      "valid_from": null,
+      "valid_until": "2026-10-30",
+      "availability_status": "cerrado_documentado",
+      "warnings": [
+        "Plazo UACJ 30/10/2026 vencido.",
+        "Las sedes con indicación «próximamente» requieren nuevas fuentes."
+      ]
+    },
+    {
+      "id": "CENTRAL-OGCRI-ESPANA-2027I-JAEN",
+      "name": "Antecedente OGCRI: España 2027-I (Universidad de Jaén)",
+      "faculty_code": "CENTRAL",
+      "accessible_to_all_faculties": true,
+      "category_code": "movilidad_academica",
+      "description": "El anuncio OGCRI del intercambio España 2027-I incluyó a Universidad de Jaén, cuyo plazo documentado terminó el 17 de octubre de 2026. En el mismo anuncio figuran otras universidades con calendarios propios y algunas por confirmar.",
+      "needs_tags": [
+        "movilidad_academica",
+        "intercambio",
+        "viajar",
+        "pais_espana",
+        "espana",
+        "antecedente"
+      ],
+      "audience": "pregrado,posgrado",
+      "modality": [
+        "presencial"
+      ],
+      "requirements": [
+        "En el anuncio: matrícula vigente y promedio ponderado mínimo 13,5 (ver condiciones específicas).",
+        "Para pregrado: haber completado el 50 % del plan de estudios.",
+        "Capacidad para cubrir gastos de traslado y manutención.",
+        "Revisar idioma y condiciones de la universidad de destino."
+      ],
+      "official_steps": [
+        "Consultar la fuente OGCRI y los requisitos específicos de la universidad.",
+        "Preparar matrícula, historial, carta de motivos, CV y pasaporte para una convocatoria futura.",
+        "Verificar nuevas fechas directamente con OGCRI; el plazo de Jaén 2027-I ya venció."
+      ],
+      "contact": {
+        "email": "movilidad.ogcri@unmsm.edu.pe"
+      },
+      "location": null,
+      "hours": null,
+      "route_region": null,
+      "stops": [],
+      "source_url": "https://cooperacion-unmsm.blogspot.com/2026/08/intercambio-espana-2027-i.html",
+      "evidence_type": "web_oficial",
+      "source_published_at": "2026-08-26",
+      "verified_at": "2026-11-07",
+      "valid_from": null,
+      "valid_until": "2026-10-17",
+      "availability_status": "cerrado_documentado",
+      "warnings": [
+        "Antecedente cerrado: Jaén terminó el 17/10/2026.",
+        "La publicación incluye otras universidades con plazos distintos o sin confirmar; no inferir que estén abiertas.",
+        "La exoneración académica no incluye automáticamente pasajes ni alojamiento."
       ]
     }
   ]

@@ -26,11 +26,12 @@ def test_real_catalog_has_sources_and_no_fictitious_records():
     assert all(s.source_url for s in catalog.services if s.evidence_type.value=='web_oficial')
     assert all(s.availability_status.value!='confirmado_documentalmente' for s in catalog.services)
 
-def test_medical_specific_records_never_leak_to_other_faculties():
-    assert 'MEDICINA-ROCHESTER' in {s.id for s in eligible('MEDICINA')}
-    assert 'MEDICINA-ROCHESTER' not in {s.id for s in eligible('FISI')}
-    assert 'FISI-BIENESTAR' not in {s.id for s in eligible('MEDICINA')}
-    assert 'CENTRAL-OGCRI-MOVILIDAD-SALIENTE' in {s.id for s in eligible('DERECHO')}
+def test_final_catalog_only_contains_fisi_and_general_services():
+    catalog = LocalCatalogRepository(CATALOG).read()
+    assert {s.faculty_code for s in catalog.services} == {'FISI', 'CENTRAL'}
+    assert 'FISI-BIENESTAR' in {s.id for s in eligible('FISI')}
+    assert 'FISI-BIENESTAR' not in {s.id for s in eligible('OTRA')}
+    assert 'CENTRAL-OGCRI-MOVILIDAD-SALIENTE' in {s.id for s in eligible('OTRA')}
 
 def test_postgrad_trip_receives_real_mobility_candidates_not_transport():
     text='Soy un estudiante de posgrado y quiero viajar por intercambio'

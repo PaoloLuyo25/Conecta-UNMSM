@@ -38,7 +38,7 @@ def generate(document: dict) ->str:
 def main():
     file=BASE_DIR/'data/catalog.academico.json'
     doc=json.loads(file.read_text(encoding='utf8'))
-    dest=BASE_DIR/'supabase/007_catalogo_revisado.sql'
+    dest=BASE_DIR/'supabase/011_REVISAR_ANTES_DE_EJECUTAR.sql'
     dest.write_text(generate(doc),encoding='utf8')
     print(f'{len(doc["services"])} registros exportados a {dest}')
 if __name__=='__main__': main()

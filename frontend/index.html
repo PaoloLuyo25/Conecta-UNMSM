@@ -3,126 +3,231 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Orientación sobre oportunidades académicas, bienestar universitario, clínica y transporte, con fuentes revisables.">
+  <meta name="theme-color" content="#F8F0E7">
+  <meta name="description" content="Orientación académica y servicios de apoyo para estudiantes de la UNMSM.">
   <title>Conecta UNMSM</title>
+  <link rel="icon" type="image/png" href="/static/assets/img/favicon.png">
   <link rel="stylesheet" href="/static/styles.css">
   <script src="/static/app.js" defer></script>
 </head>
 <body>
-  <div class="lab-strip">PROYECTO INDEPENDIENTE · CONSULTA LAS FUENTES OFICIALES</div>
-  <header class="site-header shell">
-    <div class="brand"><span class="brand-symbol" aria-hidden="true">✳</span><span>Conecta UNMSM</span></div>
+  <!-- Sprite de iconos (SVG propio). Se usa con <svg class="icon"><use href="#i-nombre"/></svg>. -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <symbol id="i-compass" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m16.2 7.8-2.5 5.9-5.9 2.5 2.5-5.9 5.9-2.5Z"/></symbol>
+    <symbol id="i-institution" viewBox="0 0 24 24"><path d="m3 10 9-6 9 6H3Z"/><path d="M5 10v9M9 10v9M15 10v9M19 10v9M3 21h18M2 10h20"/></symbol>
+    <symbol id="i-down" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+    <symbol id="i-right" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></symbol>
+    <symbol id="i-user" viewBox="0 0 24 24"><path d="M20 21a8 8 0 0 0-16 0"/><circle cx="12" cy="8" r="4"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+    <symbol id="i-send" viewBox="0 0 24 24"><path d="m22 2-7 20-4-9-9-4 20-7Z"/><path d="M22 2 11 13"/></symbol>
+    <symbol id="i-sparkles" viewBox="0 0 24 24"><path d="m12 3-1.8 5.2L5 10l5.2 1.8L12 17l1.8-5.2L19 10l-5.2-1.8L12 3ZM19 19l-1 2-1-2-2-1 2-1 1-2 1 2 2 1-2 1Z"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></symbol>
+    <symbol id="i-bookmark" viewBox="0 0 24 24"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></symbol>
+    <symbol id="i-wifi" viewBox="0 0 24 24"><path d="M4 9c4.5-4 11.5-4 16 0M7 13c3-2.5 7-2.5 10 0m-5 5h.01"/></symbol>
+    <symbol id="i-heart" viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 1 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"/></symbol>
+    <symbol id="i-book" viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2Z"/></symbol>
+    <symbol id="i-file" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Zm0 0v6h6M8 13h8M8 17h8"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></symbol>
+  </svg>
+
+  
+
+  <header class="site-header">
+    <button type="button" id="brand-home" class="brand" aria-label="CONECTA: empezar una nueva consulta" disabled>
+      <img src="/static/assets/img/logo-horizontal.png" alt="CONECTA" width="255" height="67">
+    </button>
     <div class="header-right">
-      <div class="brand-caption">Oportunidades académicas <span>— bienestar y apoyo estudiantil</span></div>
-      <button type="button" id="header-auth-button" class="secondary header-auth">Iniciar sesión</button>
+      <div class="header-caption">Oportunidades académicas y bienestar</div>
+      <button type="button" id="header-auth-button" class="btn btn-outline header-auth">Iniciar sesión</button>
     </div>
   </header>
-  <main class="shell">
-    <section id="welcome-screen" class="welcome-screen" aria-labelledby="welcome-title">
-      <div class="welcome-decoration" aria-hidden="true">✳</div>
-      <span class="eyebrow">CONECTA UNMSM · ACCESO OPCIONAL</span>
-      <h1 id="welcome-title">Encuentra tu camino<br><em>en la universidad.</em></h1>
-      <p>Consulta las rutas de orientación disponibles. Puedes ingresar con tu cuenta UNMSM o explorar como visitante.</p>
-      <div class="welcome-actions">
-        <button type="button" class="primary" id="welcome-login">Iniciar sesión o crear cuenta <span aria-hidden="true">↗</span></button>
-        <button type="button" class="secondary" id="welcome-guest">Continuar como visitante</button>
-      </div>
-      <p class="welcome-privacy"><strong>Si continúas como visitante:</strong> puedes generar rutas, pero no se guardarán en tu historial. Podrás iniciar sesión más adelante desde la esquina superior derecha.</p>
-      <p class="small">Solo se admiten correos terminados en <strong>@unmsm.edu.pe</strong> para crear una cuenta o iniciar sesión. Esto no verifica por sí solo la identidad universitaria.</p>
-    </section>
-    <div id="app-main" class="hidden">
-    <section class="hero">
-      <span class="eyebrow">ORIENTACIÓN UNIVERSITARIA · PROTOTIPO</span>
-      <h1>Una necesidad.<br><em>Un camino más claro.</em></h1>
-      <p>Describe lo que buscas y explora una ruta contextual. Solo se mostrarán datos presentes en el catálogo y siempre con su estado de verificación.</p>
-      <div class="hero-badges"><span>01 · Cuéntanos</span><span>02 · Aclaremos</span><span>03 · Explora tus opciones</span></div>
-    </section>
-    <div class="workspace">
-      <section class="panel form-panel" aria-labelledby="form-title">
-        <div class="section-num">01 / TU CONSULTA</div>
-        <h2 id="form-title">¿Qué necesitas hoy?</h2>
-        <p class="subtle">Describe la necesidad en términos generales. No introduzcas datos clínicos ni información personal identificable.</p>
-        <form id="consult-form">
-          <label for="faculty">Selecciona tu facultad (20 facultades UNMSM)</label>
-          <select id="faculty" name="faculty"><option value="ADMINISTRATIVAS">Facultad de Ciencias Administrativas</option><option value="BIOLOGICAS">Facultad de Ciencias Biológicas</option><option value="CONTABLES">Facultad de Ciencias Contables</option><option value="ECONOMICAS">Facultad de Ciencias Económicas</option><option value="FISICAS">Facultad de Ciencias Físicas</option><option value="MATEMATICAS">Facultad de Ciencias Matemáticas</option><option value="SOCIALES">Facultad de Ciencias Sociales</option><option value="DERECHO">Facultad de Derecho y Ciencia Política</option><option value="EDUCACION">Facultad de Educación</option><option value="FARMACIA">Facultad de Farmacia y Bioquímica</option><option value="ELECTRONICA">Facultad de Ingeniería Electrónica y Eléctrica</option><option value="ING_GEOLOGICA">Facultad de Ingeniería Geológica, Minera, Metalúrgica y Geográfica</option><option value="INDUSTRIAL">Facultad de Ingeniería Industrial</option><option value="FISI" selected>Facultad de Ingeniería de Sistemas e Informática</option><option value="LETRAS">Facultad de Letras y Ciencias Humanas</option><option value="MEDICINA">Facultad de Medicina</option><option value="VETERINARIA">Facultad de Medicina Veterinaria</option><option value="ODONTOLOGIA">Facultad de Odontología</option><option value="PSICOLOGIA">Facultad de Psicología</option><option value="QUIMICA">Facultad de Química e Ingeniería Química</option></select>
-          <p class="small" id="faculty-hint">Las facultades son reales. Las oportunidades se muestran con su fuente, restricciones y vigencia por confirmar cuando corresponda.</p>
-          <label for="applicant-type">¿Para quién es la consulta?</label>
-          <select id="applicant-type" name="applicant-type"><option value="sin_especificar" selected>Sin especificar (puedes escribirlo en tu consulta)</option><option value="pregrado">Estudiante de pregrado</option><option value="posgrado">Estudiante de posgrado</option><option value="docentes">Docente</option></select>
-          <label for="message">Describe tu situación</label>
-          <textarea id="message" maxlength="800" rows="6" required placeholder="Soy un estudiante y quiero conocer convocatorias académicas, becas o intercambios que se ajusten a mi situación..."></textarea>
-          <div class="field-bottom"><span>Máximo 800 caracteres</span><output id="counter" for="message">0 / 800</output></div>
-          <div class="consult-actions">
-            <button class="primary" id="submit" type="submit"><span id="submit-label">Encontrar mi ruta ↗</span><span id="loading-spinner" class="loading-spinner hidden" aria-hidden="true"></span></button>
-            <button class="secondary" id="new-query-button" type="button">Nueva consulta</button>
+
+  <main>
+    <!-- BIENVENIDA -->
+    <section id="welcome-screen" class="welcome" aria-labelledby="welcome-title">
+      <svg class="welcome-bg" viewBox="0 0 1440 820" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
+        <path d="M-70 30 C200 240 310 230 580 98S970 -35 1260 72s300 43 340-45" fill="none" stroke="#BECBA8" stroke-width="1.4" opacity=".6"/>
+        <path d="M650 165 C845 70 1082 77 1260 106 S1400 155 1480 120 L1480 -20 L650 -20Z" fill="#DDE5CE" opacity=".5"/>
+        <path d="M1080 175c-55-70-168-18-135 37s111 7 84-20c-18-18-42 5-26 15" fill="none" stroke="#A8B993" stroke-width="1.6" opacity=".55"/>
+        <path d="M-70 790 C260 675 370 840 700 732 S1120 790 1510 660 V850H-70Z" fill="#CBD8B2" opacity=".42"/>
+        <path d="M1230 505c-85-33-155 57-103 106s122-10 71-42c-27-17-46 17-28 26" fill="none" stroke="#B0BF95" stroke-width="1.7" opacity=".45"/>
+      </svg>
+      <div class="welcome-stage">
+        <div class="welcome-info">
+          <span class="eyebrow">CONECTA UNMSM · ACCESO OPCIONAL</span>
+          <h1 id="welcome-title">Encuentra tu camino <em>en la universidad.</em></h1>
+          <p class="welcome-summary"><svg class="icon" aria-hidden="true"><use href="#i-compass"/></svg><span>Consulta las rutas de orientación disponibles. Puedes ingresar con tu cuenta UNMSM o explorar como visitante.</span></p>
+          <img class="welcome-art" src="/static/assets/img/ilustracion-bienvenida.png" width="575" height="319" alt="Ilustración de tres estudiantes universitarios mirando hacia adelante">
+        </div>
+        <div class="access-shell">
+          <div class="access-card">
+            <h2>Accede a <strong>CONECTA</strong></h2>
+            <div class="field">
+              <label for="welcome-faculty">¿Eres estudiante de FISI?</label>
+              <div class="input-icon-wrap">
+                <svg class="icon" aria-hidden="true"><use href="#i-institution"/></svg>
+                <select id="welcome-faculty" name="welcome-faculty" aria-describedby="welcome-faculty-hint">
+                  <option value="FISI">FISI</option>
+                  <option value="OTRA">Otros</option>
+                </select>
+                <svg class="icon select-arrow" aria-hidden="true"><use href="#i-down"/></svg>
+              </div>
+              <small id="welcome-faculty-hint">Fuera de FISI solo aparecerán servicios centrales con cobertura universal documentada. Podrás cambiarlo después.</small>
+            </div>
+            <div class="access-actions">
+              <button type="button" class="btn btn-sage" id="welcome-login"><svg class="icon" aria-hidden="true"><use href="#i-user"/></svg>Iniciar sesión o crear cuenta</button>
+              <button type="button" class="btn btn-outline" id="welcome-guest"><svg class="icon" aria-hidden="true"><use href="#i-users"/></svg>Continuar como visitante</button>
+            </div>
+            <p class="notice welcome-privacy"><strong>Si continúas como visitante:</strong> puedes generar rutas, pero no se guardarán en tu historial. Podrás iniciar sesión más adelante desde la esquina superior derecha.</p>
+            <p class="small">Solo se admiten correos terminados en <strong>@unmsm.edu.pe</strong> para crear una cuenta o iniciar sesión. Esto no verifica por sí solo la identidad universitaria.</p>
           </div>
-        </form>
-        <div class="quick-examples">
-          <div class="hint-heading">Ejemplos de consulta</div>
-          <button class="sample" data-example="Soy un estudiante de posgrado y quiero viajar para realizar investigación">Movilidad de posgrado <span>↗</span></button>
-          <button class="sample" data-example="Soy un estudiante de pregrado y quiero conocer convocatorias y oportunidades de intercambio">Convocatorias de pregrado <span>↗</span></button>
-          <button class="sample" data-example="Soy docente y busco becas o programas de investigación">Oportunidades para docentes <span>↗</span></button>
-          <button class="sample" data-example="Soy un estudiante y necesito orientación de bienestar universitario">Bienestar <span>↗</span></button>
-          <button class="sample" data-example="Soy un estudiante y necesito información de transporte hacia el norte">Transporte universitario <span>↗</span></button>
         </div>
-      </section>
-      <section class="panel results-panel" aria-labelledby="result-title">
-        <div class="results-head"><div><div class="section-num">02 / RESULTADOS</div><h2 id="result-title">Tu ruta de orientación</h2></div><span id="state-badge" class="state-pill">Listo</span></div>
-        <div id="alerts" role="status" aria-live="polite"></div>
-        <div id="sr-status" class="sr-only" role="status" aria-live="polite"></div>
-        <div id="result" aria-live="polite" class="empty-state" aria-busy="false">
-          <div class="empty-art" aria-hidden="true">✳</div>
-          <h3>Tu camino empieza aquí</h3>
-          <p>Escribe una necesidad para visualizar servicios disponibles, sus fuentes y posibles restricciones.</p>
+      </div>
+    </section>
+
+    <!-- ESPACIO DE TRABAJO -->
+    <div id="app-main" class="hidden">
+      <div class="app-main">
+        <div class="page-heading">
+          <span class="eyebrow">ORIENTACIÓN UNIVERSITARIA</span>
+          <h1>Una necesidad. <em>Un camino más claro.</em></h1>
+          <p>Describe lo que buscas y explora una ruta contextual. Solo se mostrarán datos presentes en el catálogo y siempre con su estado de verificación.</p>
         </div>
-        <div id="clarification" class="clarification hidden">
-          <h3 id="clarification-question"></h3>
-          <form id="clarification-form"><label for="clarification-answer">Tu respuesta</label><input id="clarification-answer" maxlength="400" placeholder="Ej.: Prefiero modalidad virtual" required><button class="primary" type="submit">Continuar mi ruta <span aria-hidden="true">↗</span></button></form>
+        <div class="workspace">
+          <aside class="side-panel" aria-label="Cómo funciona CONECTA">
+            <div class="emblem"><svg class="icon" aria-hidden="true"><use href="#i-compass"/></svg></div>
+            <h2>Tu siguiente paso, <span>más claro.</span></h2>
+            <p>Cuéntanos qué necesitas y te orientaremos hacia servicios universitarios documentados.</p>
+            <ol class="progress-steps">
+              <li><b>1</b> Cuéntanos tu necesidad</li>
+              <li><b>2</b> Aclaremos si hace falta</li>
+              <li><b>3</b> Explora tus opciones</li>
+            </ol>
+          </aside>
+          <div class="content-stack">
+            <section class="paper-card form-panel" aria-labelledby="form-title">
+              <div class="card-title">
+                <h2 id="form-title">¿Qué necesitas hoy?</h2>
+                <span class="card-tag"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-sparkles"/></svg>Consulta guiada</span>
+              </div>
+              <p class="subheading">Describe tu necesidad sin incluir información personal o clínica sensible.</p>
+              <form id="consult-form">
+                <div class="field">
+                  <label for="faculty">¿Eres estudiante de FISI?</label>
+                  <div class="input-icon-wrap">
+                    <svg class="icon" aria-hidden="true"><use href="#i-institution"/></svg>
+                    <select id="faculty" name="faculty"><option value="FISI">FISI</option><option value="OTRA">Otros</option></select>
+                    <svg class="icon select-arrow" aria-hidden="true"><use href="#i-down"/></svg>
+                  </div>
+                  <small id="faculty-hint">Fuera de FISI solo aparecerán servicios centrales con cobertura universal documentada, como transporte si está acreditado.</small>
+                </div>
+                <div class="field">
+                  <label for="message">Describe tu situación</label>
+                  <textarea id="message" maxlength="800" rows="6" required placeholder="Soy un estudiante y quiero conocer convocatorias, becas, investigación o servicios de apoyo…"></textarea>
+                  <div class="field-bottom"><span>Máximo 800 caracteres</span><output id="counter" for="message">0 / 800</output></div>
+                </div>
+                <div class="consult-actions">
+                  <button class="btn btn-primary" id="submit" type="submit"><span id="submit-label">Encontrar mi ruta</span><svg id="submit-icon" class="icon icon--sm" aria-hidden="true"><use href="#i-send"/></svg><span id="loading-spinner" class="loading-spinner hidden" aria-hidden="true"></span></button>
+                  <button class="btn btn-outline" id="new-query-button" type="button">Nueva consulta</button>
+                </div>
+                <div id="search-progress" class="hidden" role="status" aria-live="polite">Consultando fuentes y preparando tus opciones…</div>
+                <button class="btn btn-outline hidden" id="cancel-search-button" type="button">Cancelar búsqueda</button>
+              </form>
+              <div class="quick-examples">
+                <div class="hint-heading">Ejemplos de consultas</div>
+                <div class="suggested">
+                  <button type="button" class="chip" data-example="Necesito orientación para adaptarme a la universidad">Orientación y aclaración</button>
+                  <button type="button" class="chip" data-example="Busco información de bienestar y alimentación">Bienestar y alimentación</button>
+                  <button type="button" class="chip" data-example="Soy un estudiante y necesito transporte externo hacia el sur">Transporte sur</button>
+                </div>
+              </div>
+            </section>
+
+            <section class="paper-card results-panel" aria-labelledby="result-title">
+              <div class="results-head">
+                <h2 id="result-title">Tu ruta de orientación</h2>
+                <span id="state-badge" class="badge">Listo</span>
+              </div>
+              <div id="alerts" role="status" aria-live="polite"></div>
+              <div id="sr-status" class="sr-only" role="status" aria-live="polite"></div>
+              <div id="result" aria-live="polite" class="empty-state" aria-busy="false">
+                <div class="empty-art" aria-hidden="true"><svg class="icon"><use href="#i-compass"/></svg></div>
+                <h3>Tu camino empieza aquí</h3>
+                <p>Escribe una necesidad para visualizar servicios disponibles, sus fuentes y posibles restricciones.</p>
+              </div>
+              <div id="clarification" class="clarification hidden">
+                <h3 id="clarification-question"></h3>
+                <form id="clarification-form">
+                  <div class="field">
+                    <label for="clarification-answer">Tu respuesta</label>
+                    <input id="clarification-answer" maxlength="400" placeholder="Ej.: Prefiero modalidad virtual" required>
+                  </div>
+                  <button class="btn btn-primary" type="submit">Continuar mi ruta<svg class="icon icon--sm" aria-hidden="true"><use href="#i-right"/></svg></button>
+                </form>
+              </div>
+              <div id="refine" class="refine hidden">
+                <div class="field">
+                  <label for="refine-value">¿Cambió una restricción?</label>
+                  <div class="refine-controls">
+                    <input id="refine-value" maxlength="400" placeholder="Ej.: ahora solo puedo por la tarde">
+                    <button type="button" class="btn btn-primary" id="refine-button">Recalcular</button>
+                  </div>
+                </div>
+                <p class="small">Puede conservarse la misma ruta si los datos no justifican cambiarla.</p>
+              </div>
+              <div class="history-choice hidden" id="history-choice">
+                <div class="history-question"><strong>¿Deseas guardar esta ruta?</strong><span class="small">Puedes consultarla más adelante en tu historial privado.</span></div>
+                <button type="button" class="btn btn-sage" id="save-route-button"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-bookmark"/></svg>Guardar esta ruta</button>
+                <span id="save-route-status" role="status" aria-live="polite"></span>
+                <p class="small">Solo se guardan IDs de servicios, ámbito y fecha; nunca tu mensaje.</p>
+              </div>
+              <div class="meta" id="meta"></div>
+            </section>
+          </div>
         </div>
-        <div id="refine" class="refine hidden">
-          <label for="refine-value">¿Cambió una restricción?</label>
-          <div class="refine-controls"><input id="refine-value" maxlength="400" placeholder="Ej.: ahora solo puedo por la tarde"><button type="button" id="refine-button">Recalcular</button></div>
-          <p class="small">Puede conservarse la misma ruta si los datos no justifican cambiarla.</p>
-        </div>
-        <div class="history-choice hidden" id="history-choice">
-          <div class="history-question"><strong>¿Deseas guardar esta ruta?</strong><span class="small">Puedes consultarla más adelante en tu historial privado.</span></div>
-          <button type="button" class="secondary" id="save-route-button">Guardar esta ruta</button>
-          <span id="save-route-status" role="status" aria-live="polite"></span>
-          <p class="small">Solo se guardan IDs de servicios, ámbito y fecha; nunca tu mensaje.</p>
-        </div>
-        <div class="meta" id="meta"></div>
-      </section>
-    </div>
+      </div>
     </div><!-- app-main -->
   </main>
+
+  <!-- ACCESO (ventana modal) -->
   <div id="auth-overlay" class="auth-overlay hidden" role="presentation">
-    <section class="panel account-panel auth-dialog" id="account-panel" role="dialog" aria-modal="true" aria-labelledby="account-title" aria-describedby="account-description" tabindex="-1">
-      <button id="close-auth-button" type="button" class="auth-close" aria-label="Cerrar ventana de acceso">✕</button>
-      <div class="section-num">ACCESO OPCIONAL · CONECTA UNMSM</div>
+    <section class="paper-card account-panel auth-dialog" id="account-panel" role="dialog" aria-modal="true" aria-labelledby="account-title" aria-describedby="account-description" tabindex="-1">
+      <button id="close-auth-button" type="button" class="auth-close" aria-label="Cerrar ventana de acceso"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-close"/></svg></button>
+      <span class="eyebrow">ACCESO OPCIONAL · CONECTA UNMSM</span>
       <h2 id="account-title">Inicia sesión o crea tu cuenta</h2>
-      <p class="subtle" id="account-description">Usa un correo que termine en <strong>@unmsm.edu.pe</strong> y una contraseña exclusiva para Conecta. No necesitas iniciar sesión para consultar.</p>
+      <p class="subheading" id="account-description">Usa un correo que termine en <strong>@unmsm.edu.pe</strong> y una contraseña exclusiva para Conecta. No necesitas iniciar sesión para consultar.</p>
       <div id="account-status" role="status" aria-live="polite"></div>
-      <p id="history-unavailable" class="activation-notice">El historial está desactivado. Para usarlo, inicia el servidor con INICIAR_CONECTA_HISTORIAL_LAB.bat y revisa Supabase Auth/RLS. Mientras tanto puedes explorar como visitante.</p>
+      <p id="history-unavailable" class="notice">El historial no está disponible en esta sesión. Puedes continuar como visitante.</p>
       <div id="history-available" class="hidden">
         <form id="login-form">
-          <label for="login-email">Correo institucional UNMSM</label>
-          <input id="login-email" type="email" maxlength="254" autocomplete="username" required placeholder="usuario@unmsm.edu.pe" pattern="[^@\s]+@unmsm\.edu\.pe" title="Usa un correo que termine en @unmsm.edu.pe">
-          <label for="login-password">Contraseña de Conecta (mínimo 8 caracteres)</label>
-          <input id="login-password" type="password" minlength="8" maxlength="128" autocomplete="current-password" required placeholder="Contraseña exclusiva para Conecta">
-          <div class="account-login-buttons">
-            <button type="submit" class="secondary">Iniciar sesión</button>
-            <button type="button" id="register-button" class="primary">Crear cuenta</button>
+          <div class="field">
+            <label for="login-email">Correo institucional UNMSM</label>
+            <input id="login-email" type="email" maxlength="254" autocomplete="username" required placeholder="usuario@unmsm.edu.pe" pattern="[^@\s]+@unmsm\.edu\.pe" title="Usa un correo que termine en @unmsm.edu.pe">
           </div>
-          <p class="small">Usa una contraseña nueva: nunca la contraseña de tu correo UNMSM. En el laboratorio no se confirma la titularidad del email.</p>
+          <div class="field">
+            <label for="login-password">Contraseña de Conecta (mínimo 8 caracteres)</label>
+            <input id="login-password" type="password" minlength="8" maxlength="128" autocomplete="current-password" required placeholder="Contraseña exclusiva para Conecta">
+          </div>
+          <div class="account-login-buttons">
+            <button type="submit" class="btn btn-sage">Iniciar sesión</button>
+            <button type="button" id="register-button" class="btn btn-outline">Crear cuenta</button>
+          </div>
+          <p class="small">Usa una contraseña nueva: nunca la contraseña de tu correo UNMSM. Confirma tu correo institucional si se solicita.</p>
         </form>
         <div id="account-actions" class="account-actions hidden">
-          <button type="button" id="show-history" class="secondary">Actualizar mi historial</button>
-          <button type="button" id="logout" class="secondary">Cerrar sesión</button>
-          <button type="button" id="delete-history" class="secondary danger">Borrar todo mi historial</button>
+          <button type="button" id="show-history" class="btn btn-outline">Actualizar mi historial</button>
+          <button type="button" id="logout" class="btn btn-outline">Cerrar sesión</button>
+          <button type="button" id="delete-history" class="btn btn-danger">Borrar todo mi historial</button>
         </div>
         <div id="history-items" aria-live="polite"></div>
       </div>
     </section>
   </div>
-  <footer class="shell footer"><span>Conecta UNMSM · Orientación universitaria</span><span>Proyecto independiente · Los anuncios deben verificarse en su fuente · Sin trámites ni reservas</span></footer>
+
+  <div id="toast-region" class="toast-region" role="status" aria-live="polite" aria-atomic="true"></div>
+
+  <footer class="site-footer"><span>CONECTA UNMSM</span><span>Orientación independiente. Verifica los requisitos y plazos en cada fuente oficial.</span></footer>
 </body>
 </html>
