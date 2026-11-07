@@ -61,8 +61,9 @@ def test_signup_without_confirm_email_disabled_does_not_create_session(monkeypat
     monkeypatch.setattr(auth_history.httpx, 'Client',
                         lambda **kw: real_client(transport=httpx.MockTransport(handler), **kw))
     identity = SupabaseIdentity('https://example.supabase.co', 'sb_publishable_fake')
-    with pytest.raises(UpstreamFailure):
-        identity.sign_up('test@unmsm.edu.pe', 'Password-test-2026!')
+    result = identity.sign_up('test@unmsm.edu.pe', 'Password-test-2026!')
+    assert result == {'confirmation_required': True}
+    assert 'access_token' not in result
 
 
 def test_public_frontend_has_password_login_and_no_otp():
@@ -95,3 +96,37 @@ def test_http_validation_never_echoes_submitted_password():
             assert response.status_code == 422
             for secret in passwords:
                 assert secret not in response.text
+
+
+def test_pending_email_confirmation_has_no_authenticated_session():
+    from fastapi.testclient import TestClient
+    from backend.app.config import Settings
+    from backend.app.main import create_app
+
+    class PendingIdentity:
+        def sign_up(self, email, password):
+            assert email == 'test@unmsm.edu.pe'
+            return {'confirmation_required': True}
+
+        def user(self, token):
+            raise AssertionError('No verificar tokens si Supabase no emitió una sesión')
+
+    client = TestClient(create_app(settings=Settings(enable_history=True), identity=PendingIdentity()))
+    result = client.post('/api/auth/signup',
+                         json={'email': 'test@unmsm.edu.pe', 'password': 'Password-test-2026!'},
+                         headers={'Origin': 'http://testserver'})
+    assert result.status_code == 200
+    assert result.json() == {'authenticated': False, 'confirmation_required': True}
+    assert 'conecta_access' not in result.cookies
+    assert 'conecta_refresh' not in result.cookies
+    assert client.get('/api/auth/me').json() == {'authenticated': False}
+
+
+def test_bad_signup_response_is_not_accepted(monkeypatch):
+    real_client = httpx.Client
+    monkeypatch.setattr(auth_history.httpx, 'Client',
+                        lambda **kw: real_client(transport=httpx.MockTransport(
+                            lambda request: httpx.Response(200, json={'user': {}})), **kw))
+    with pytest.raises(UpstreamFailure):
+        SupabaseIdentity('https://example.supabase.co', 'sb_publishable_fake').sign_up(
+            'test@unmsm.edu.pe', 'Password-test-2026!')

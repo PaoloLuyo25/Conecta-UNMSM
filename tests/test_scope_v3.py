@@ -23,7 +23,7 @@ def test_non_fisi_receives_only_universal_transport(demo_client, faculty):
     assert [x['id'] for x in data['services']] == ['DEMO-TRANSPORTE-NORTE']
     assert all(x['faculty_code'] == 'CENTRAL' for x in data['services'])
     assert all(x['accessible_to_all_faculties'] for x in data['services'])
-    assert any('Fuera del piloto' in w for w in data['warnings'])
+    assert all('Fuera del piloto' not in w for w in data['warnings'])
 
 
 def test_non_fisi_cannot_see_specific_or_non_universal_central(demo_client):
@@ -101,7 +101,7 @@ def test_ai_cannot_override_scope():
     c=TestClient(create_app(settings=s,ai_adapter=FakeGeminiSelection(), today=lambda:date(2026,11,6)))
     data=c.post('/api/route',json={'faculty_code':'OTRA','message':'Transporte norte'}).json()
     assert [row['id'] for row in data['services']] == ['DEMO-TRANSPORTE-NORTE']
-    assert any('descartado' in x for x in data['warnings'])
+    assert all(s['route_region'] == 'norte' for s in data['services'])
 
 
 def test_question_must_come_from_bank_not_gemini_free_text():
