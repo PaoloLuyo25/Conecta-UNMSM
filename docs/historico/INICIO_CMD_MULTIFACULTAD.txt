@@ -1,0 +1,69 @@
+CONECTA UNMSM MULTIFACULTAD — COMANDOS PARA WINDOWS CMD
+====================================================
+1. Abre CMD y ejecuta (la carpeta ya existe y contiene el ZIP extraído):
+
+cd /d "C:\Users\josem\Downloads\conecta-unmsm-v4_4"
+py -3.12 -m venv .venv
+
+Si tu PC no tiene Python 3.12, usa: py -3 -m venv .venv
+Verifica tu Python: py --version
+
+2. Instala los requisitos del backend, Gemini y Supabase:
+
+.venv\Scripts\python.exe -m pip install --upgrade pip
+.venv\Scripts\python.exe -m pip install -r requirements-supabase.txt
+
+3. Crea el archivo de configuración (solo si no existe .env):
+
+copy .env.example .env
+notepad .env
+
+En .env escribe tus propias claves sin compartirlas:
+GEMINI_API_KEY=TU_CLAVE_PRIVADA
+GEMINI_MODEL=gemini-3.5-flash-lite
+SUPABASE_URL=https://TU_PROYECTO.supabase.co
+SUPABASE_PUBLISHABLE_KEY=TU_PUBLISHABLE_KEY
+
+Nunca compartas .env. La publishable key no es una service_role.
+
+4. Supabase SQL Editor: el 001_services.sql que ejecutaste ya existe.
+   NO repetir 001 ni 003 (historial) si ya están aplicados.
+   Ejecuta en orden:
+   - supabase\004_multifacultad_categories.sql
+   - supabase\005_seed_multifacultad_FICTICIO.sql
+   Comprueba que devuelve 20 filas y 7 registros por facultad.
+
+5. Pruebas locales (no verifican Gemini ni Supabase reales):
+
+.venv\Scripts\python.exe -m pytest -q -W error
+
+6. Inicia Gemini + Supabase (consulta pública, sin historial remoto):
+
+start-multifacultades.bat
+
+Abre en el navegador: http://127.0.0.1:8001/
+
+7. SOLO si YA verificaste Supabase Auth y RLS con DOS usuarios sintéticos:
+
+start-multifacultades-historial-LAB.bat
+
+No ejecutes los dos BAT al mismo tiempo: ambos usan el puerto 8001.
+
+8. Verificación HTTP desde otra ventana CMD:
+
+curl.exe "http://127.0.0.1:8001/api/services?faculty_code=MEDICINA"
+
+Consulta: selecciona facultad Medicina, elige Posgrado, escribe
+"Soy de posgrado y quiero viajar en intercambio".
+El resultado debe referirse a movilidad de POSGRADO de Medicina, con
+advertencia expresa de registro ficticio; no presentar convocatorias reales.
+
+Otros casos: Derecho + pregrado + "Busco becas"; Educación + docentes +
+"¿Hay convocatorias para docentes?".
+
+9. Si tienes error 429 o timeout de Gemini: comprobar modelo y cuota en
+Google AI Studio; el backend responde en modo degradado. No fingir IA.
+
+IMPORTANTE: la autenticación v4.4 (correo/contraseña) requiere Supabase
+Auth de laboratorio. El dominio @unmsm.edu.pe por sí solo no verifica identidad.
+Confirm Email OFF nunca se considera suficiente para producción.

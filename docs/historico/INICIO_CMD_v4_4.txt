@@ -1,0 +1,42 @@
+CONECTA UNMSM v4.4 — LABORATORIO SDD
+===================================
+
+1. DESCOMPRIME el ZIP en C:\, conservando la carpeta principal:
+   C:\conecta-unmsm-lab-v4_4-LAB\
+
+2. Abre CMD (Símbolo del sistema) y ejecuta:
+
+   cd /d C:\conecta-unmsm-lab-v4_4-LAB
+   py -m venv .venv
+   .venv\Scripts\python.exe -m pip install -r requirements-supabase.txt
+   .venv\Scripts\python.exe -m pytest -q -W error
+
+3. Coloca tu archivo .env PRIVADO en esa misma carpeta raíz.
+   No lo compartas ni lo subas a un repositorio.
+   Debe contener tu configuración funcional de Supabase y Gemini.
+
+4. Si ya ejecutaste 003_route_history.sql en Supabase, NO lo repitas.
+   Para el laboratorio, Email habilitado y Confirm Email desactivado.
+
+5. Ejecuta en CMD:
+
+   start-supabase-gemini-historial.bat
+
+6. En el navegador abre:
+
+   http://127.0.0.1:8001/
+
+7. Elige «Continuar como visitante» o «Iniciar sesión o crear cuenta».
+   Solo se admiten cuentas con correo terminado en @unmsm.edu.pe.
+   Necesitas una contraseña nueva, exclusivamente para Conecta.
+
+8. Para parar el servidor: Ctrl+C.
+
+Si el comando BAT falta, usa en CMD: dir *.bat
+Si indica que puerto 8001 esta ocupado, detén la ventana anterior.
+
+PRIVACIDAD:
+- El sufijo @unmsm.edu.pe NO verifica identidad, matrícula ni propiedad del correo.
+- No uses correos de otras personas, contraseñas institucionales ni datos reales.
+- Los servicios del catálogo de laboratorio son ficticios.
+- Probar login en pantalla NO demuestra que la RLS remota esté validada.

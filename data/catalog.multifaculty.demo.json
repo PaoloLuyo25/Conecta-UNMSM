@@ -1,0 +1,2876 @@
+{
+  "snapshot_at": "2026-11-06",
+  "services": [
+    {
+      "id": "DEMO-ORI-PRESENCIAL",
+      "name": "Orientación presencial (SERVICIO FICTICIO)",
+      "faculty_code": "FISI",
+      "category_code": "unayoe",
+      "description": "Ficha sintética para mostrar la selección de orientación presencial.",
+      "needs_tags": [
+        "orientacion"
+      ],
+      "modality": [
+        "presencial"
+      ],
+      "requirements": [],
+      "official_steps": [
+        "Paso de demostración: consultar un canal que deberá verificarse con una fuente oficial."
+      ],
+      "evidence_type": "prueba_ficticia",
+      "availability_status": "vigencia_por_confirmar",
+      "warnings": [
+        "Ejemplo de laboratorio; no atribuir a ninguna oficina real."
+      ],
+      "accessible_to_all_faculties": false
+    },
+    {
+      "id": "DEMO-ORI-VIRTUAL",
+      "name": "Orientación virtual (SERVICIO FICTICIO)",
+      "faculty_code": "FISI",
+      "category_code": "unayoe",
+      "description": "Ficha sintética para demostrar cómo una preferencia cambia la elección.",
+      "needs_tags": [
+        "orientacion"
+      ],
+      "modality": [
+        "virtual"
+      ],
+      "requirements": [],
+      "official_steps": [
+        "Paso de demostración: solicitar orientación usando un medio documentado, si existe."
+      ],
+      "evidence_type": "prueba_ficticia",
+      "availability_status": "vigencia_por_confirmar",
+      "accessible_to_all_faculties": false
+    },
+    {
+      "id": "DEMO-BIENESTAR",
+      "name": "Información de bienestar (SERVICIO FICTICIO)",
+      "faculty_code": "FISI",
+      "category_code": "bienestar",
+      "description": "Registro sintético para ensayar consultas sobre apoyos económicos y alimentación.",
+      "needs_tags": [
+        "bienestar"
+      ],
+      "evidence_type": "prueba_ficticia",
+      "availability_status": "vigencia_por_confirmar",
+      "accessible_to_all_faculties": false
+    },
+    {
+      "id": "DEMO-CLINICA",
+      "name": "Información de atención general (SERVICIO FICTICIO)",
+      "faculty_code": "CENTRAL",
+      "category_code": "clinica_general",
+      "description": "Registro sintético central de orientación administrativa sobre atención general.",
+      "needs_tags": [
+        "atencion_general"
+      ],
+      "evidence_type": "prueba_ficticia",
+      "availability_status": "vigencia_por_confirmar",
+      "accessible_to_all_faculties": false
+    },
+    {
+      "id": "DEMO-EMOCIONAL",
+      "name": "Información sobre apoyo emocional (SERVICIO FICTICIO)",
+      "faculty_code": "CENTRAL",
+      "category_code": "salud_mental",
+      "description": "Ficha ficticia de orientación informativa; no diagnostica ni ofrece atención real.",
+      "needs_tags": [
+        "orientacion_salud_mental"
+      ],
+      "evidence_type": "prueba_ficticia",
+      "availability_status": "datos_insuficientes",
+      "accessible_to_all_faculties": false
+    },
+    {
+      "id": "DEMO-TRANSPORTE-NORTE",
+      "name": "Información de transporte norte (SERVICIO FICTICIO)",
+      "faculty_code": "CENTRAL",
+      "category_code": "transporte_externo",
+      "description": "Ficha sintética sobre una zona de transporte, sin paradas, tarifas ni horarios.",
+      "needs_tags": [
+        "transporte"
+      ],
+      "route_region": "norte",
+      "evidence_type": "prueba_ficticia",
+      "availability_status": "datos_insuficientes",
+      "accessible_to_all_faculties": true
+    },
+    {
+      "id": "DEMO-OTRA-FACULTAD",
+      "name": "Registro excluido (SERVICIO FICTICIO)",
+      "faculty_code": "OTRA_FACULTAD",
+      "category_code": "bienestar",
+      "description": "Debe quedar fuera de todos los resultados del piloto FISI.",
+      "needs_tags": [
+        "bienestar"
+      ],
+      "evidence_type": "prueba_ficticia",
+      "availability_status": "vigencia_por_confirmar",
+      "accessible_to_all_faculties": false
+    },
+    {
+      "id": "DEMO-TRANSPORTE-SUR",
+      "name": "Información transporte sur (SERVICIO FICTICIO)",
+      "faculty_code": "CENTRAL",
+      "accessible_to_all_faculties": true,
+      "category_code": "transporte_externo",
+      "description": "Registro de ensayo para clasificación por zona sur; no afirma rutas, horarios ni paradas reales.",
+      "needs_tags": [
+        "transporte"
+      ],
+      "route_region": "sur",
+      "evidence_type": "prueba_ficticia",
+      "availability_status": "datos_insuficientes"
+    },
+    {
+      "id": "DEMO-TRANSPORTE-CENTRO",
+      "name": "Información transporte centro (SERVICIO FICTICIO)",
+      "faculty_code": "CENTRAL",
+      "accessible_to_all_faculties": true,
+      "category_code": "transporte_externo",
+      "description": "Registro de ensayo para clasificación por zona centro; no afirma rutas, horarios ni paradas reales.",
+      "needs_tags": [
+        "transporte"
+      ],
+      "route_region": "centro",
+      "evidence_type": "prueba_ficticia",
+      "availability_status": "datos_insuficientes"
+    },
+    {
+      "id": "DEMO-TRANSPORTE-ESTE",
+      "name": "Información transporte este (SERVICIO FICTICIO)",
+      "faculty_code": "CENTRAL",
+      "accessible_to_all_faculties": true,
+      "category_code": "transporte_externo",
+      "description": "Registro de ensayo para clasificación por zona este; no afirma rutas, horarios ni paradas reales.",
+      "needs_tags": [
+        "transporte"
+      ],
+      "route_region": "este",
+      "evidence_type": "prueba_ficticia",
+      "availability_status": "datos_insuficientes"
+    },
+    {
+      "id": "DEMO-MF-LETRAS-ORIENTACION",
+      "name": "Orientación universitaria de ejemplo — Letras y Ciencias Humanas [FICTICIO]",
+      "faculty_code": "LETRAS",
+      "accessible_to_all_faculties": false,
+      "category_code": "bienestar",
+      "description": "Escenario simulado para demostrar orientación por facultad y público; no existe convocatoria ni proceso acreditado.",
+      "needs_tags": [
+        "orientacion",
+        "bienestar",
+        "adaptacion"
+      ],
+      "audience": "todos",
+      "evidence_type": "prueba_ficticia",
+      "availability_status": "datos_insuficientes",
+      "warnings": [
+        "DEMO únicamente: no presentar como beca, viaje, convocatoria o servicio vigente."
+      ]
+    },
+    {
+      "id": "DEMO-MF-LETRAS-BECA_PRE",
+      "name": "Convocatoria de beca de pregrado de ejemplo — Letras y Ciencias Humanas [FICTICIO]",
+      "faculty_code": "LETRAS",
+      "accessible_to_all_faculties": false,
+      "category_code": "becas",
+      "description": "Escenario simulado para demostrar orientación por facultad y público; no existe convocatoria ni proceso acreditado.",
+      "needs_tags": [
+        "becas",
+        "pregrado",
+        "apoyo_economico"
+      ],
+      "audience": "pregrado",
+      "evidence_type": "prueba_ficticia",
+      "availability_status": "datos_insuficientes",
+      "warnings": [
+        "DEMO únicamente: no presentar como beca, viaje, convocatoria o servicio vigente."
+      ]
+    },
+    {
+      "id": "DEMO-MF-LETRAS-BECA_POS",
+      "name": "Convocatoria de beca de posgrado de ejemplo — Letras y Ciencias Humanas [FICTICIO]",
+      "faculty_code": "LETRAS",
+      "accessible_to_all_faculties": false,
+      "category_code": "becas",
+      "description": "Escenario simulado para demostrar orientación por facultad y público; no existe convocatoria ni proceso acreditado.",
+      "needs_tags": [
+        "becas",
+        "posgrado",
+        "investigacion"
+      ],
+      "audience": "posgrado",
+      "evidence_type": "prueba_ficticia",
+      "availability_status": "datos_insuficientes",
+      "warnings": [
+        "DEMO únicamente: no presentar como beca, viaje, convocatoria o servicio vigente."
+      ]
+    },
+    {
+      "id": "DEMO-MF-LETRAS-BECA_DOC",
+      "name": "Convocatoria de apoyo docente de ejemplo — Letras y Ciencias Humanas [FICTICIO]",
+      "faculty_code": "LETRAS",
+      "accessible_to_all_faculties": false,
+      "category_code": "becas",
+      "description": "Escenario simulado para demostrar orientación por facultad y público; no existe convocatoria ni proceso acreditado.",
+      "needs_tags": [
+        "becas",
+        "docentes",
+        "investigacion"
+      ],
+      "audience": "docentes",
+      "evidence_type": "prueba_ficticia",
+      "availability_status": "datos_insuficientes",
+      "warnings": [
+        "DEMO únicamente: no presentar como beca, viaje, convocatoria o servicio vigente."
+      ]
+    },
+    {
+      "id": "DEMO-MF-LETRAS-MOV_PRE",
+      "name": "Movilidad académica de pregrado de ejemplo — Letras y Ciencias Humanas [FICTICIO]",
+      "faculty_code": "LETRAS",
+      "accessible_to_all_faculties": false,
+      "category_code": "movilidad_academica",
+      "description": "Escenario simulado para demostrar orientación por facultad y público; no existe convocatoria ni proceso acreditado.",
+      "needs_tags": [
+        "movilidad_academica",
+        "viajar",
+        "intercambio",
+        "pregrado"
+      ],
+      "audience": "pregrado",
+      "evidence_type": "prueba_ficticia",
+      "availability_status": "datos_insuficientes",
+      "warnings": [
+        "DEMO únicamente: no presentar como beca, viaje, convocatoria o servicio vigente."
+      ]
+    },
+    {
+      "id": "DEMO-MF-LETRAS-MOV_POS",
+      "name": "Movilidad académica de posgrado de ejemplo — Letras y Ciencias Humanas [FICTICIO]",
+      "faculty_code": "LETRAS",
+      "accessible_to_all_faculties": false,
+      "category_code": "movilidad_academica",
+      "description": "Escenario simulado para demostrar orientación por facultad y público; no existe convocatoria ni proceso acreditado.",
+      "needs_tags": [
+        "movilidad_academica",
+        "viajar",
+        "intercambio",
+        "posgrado"
+      ],
+      "audience": "posgrado",
+      "evidence_type": "prueba_ficticia",
+      "availability_status": "datos_insuficientes",
+      "warnings": [
+        "DEMO únicamente: no presentar como beca, viaje, convocatoria o servicio vigente."
+      ]
+    },
+    {
+      "id": "DEMO-MF-LETRAS-MOV_DOC",
+      "name": "Estancia académica docente de ejemplo — Letras y Ciencias Humanas [FICTICIO]",
+      "faculty_code": "LETRAS",
+      "accessible_to_all_faculties": false,
+      "category_code": "movilidad_academica",
+      "description": "Escenario simulado para demostrar orientación por facultad y público; no existe convocatoria ni proceso acreditado.",
+      "needs_tags": [
+        "movilidad_academica",
+        "viajar",
+        "intercambio",
+        "docentes"
+      ],
+      "audience": "docentes",
+      "evidence_type": "prueba_ficticia",
+      "availability_status": "datos_insuficientes",
+      "warnings": [
+        "DEMO únicamente: no presentar como beca, viaje, convocatoria o servicio vigente."
+      ]
+    },
+    {
+      "id": "DEMO-MF-DERECHO-ORIENTACION",
+      "name": "Orientación universitaria de ejemplo — Derecho y Ciencia Política [FICTICIO]",
+      "faculty_code": "DERECHO",
+      "accessible_to_all_faculties": false,
+      "category_code": "bienestar",
+      "description": "Escenario simulado para demostrar orientación por facultad y público; no existe convocatoria ni proceso acreditado.",
+      "needs_tags": [
+        "orientacion",
+        "bienestar",
+        "adaptacion"
+      ],
+      "audience": "todos",
+      "evidence_type": "prueba_ficticia",
+      "availability_status": "datos_insuficientes",
+      "warnings": [
+        "DEMO únicamente: no presentar como beca, viaje, convocatoria o servicio vigente."
+      ]
+    },
+    {
+      "id": "DEMO-MF-DERECHO-BECA_PRE",
+      "name": "Convocatoria de beca de pregrado de ejemplo — Derecho y Ciencia Política [FICTICIO]",
+      "faculty_code": "DERECHO",
+      "accessible_to_all_faculties": false,
+      "category_code": "becas",
+      "description": "Escenario simulado para demostrar orientación por facultad y público; no existe convocatoria ni proceso acreditado.",
+      "needs_tags": [
+        "becas",
+        "pregrado",
+        "apoyo_economico"
+      ],
+      "audience": "pregrado",
+      "evidence_type": "prueba_ficticia",
+      "availability_status": "datos_insuficientes",
+      "warnings": [
+        "DEMO únicamente: no presentar como beca, viaje, convocatoria o servicio vigente."
+      ]
+    },
+    {
+      "id": "DEMO-MF-DERECHO-BECA_POS",
+      "name": "Convocatoria de beca de posgrado de ejemplo — Derecho y Ciencia Política [FICTICIO]",
+      "faculty_code": "DERECHO",
+      "accessible_to_all_faculties": false,
+      "category_code": "becas",
+      "description": "Escenario simulado para demostrar orientación por facultad y público; no existe convocatoria ni proceso acreditado.",
+      "needs_tags": [
+        "becas",
+        "posgrado",
+        "investigacion"
+      ],
+      "audience": "posgrado",
+      "evidence_type": "prueba_ficticia",
+      "availability_status": "datos_insuficientes",
+      "warnings": [
+        "DEMO únicamente: no presentar como beca, viaje, convocatoria o servicio vigente."
+      ]
+    },
+    {
+      "id": "DEMO-MF-DERECHO-BECA_DOC",
+      "name": "Convocatoria de apoyo docente de ejemplo — Derecho y Ciencia Política [FICTICIO]",
+      "faculty_code": "DERECHO",
+      "accessible_to_all_faculties": false,
+      "category_code": "becas",
+      "description": "Escenario simulado para demostrar orientación por facultad y público; no existe convocatoria ni proceso acreditado.",
+      "needs_tags": [
+        "becas",
+        "docentes",
+        "investigacion"
+      ],
+      "audience": "docentes",
+      "evidence_type": "prueba_ficticia",
+      "availability_status": "datos_insuficientes",
+      "warnings": [
+        "DEMO únicamente: no presentar como beca, viaje, convocatoria o servicio vigente."
+      ]
+    },
+    {
+      "id": "DEMO-MF-DERECHO-MOV_PRE",
+      "name": "Movilidad académica de pregrado de ejemplo — Derecho y Ciencia Política [FICTICIO]",
+      "faculty_code": "DERECHO",
+      "accessible_to_all_faculties": false,
+      "category_code": "movilidad_academica",
+      "description": "Escenario simulado para demostrar orientación por facultad y público; no existe convocatoria ni proceso acreditado.",
+      "needs_tags": [
+        "movilidad_academica",
+        "viajar",
+        "intercambio",
+        "pregrado"
+      ],
+      "audience": "pregrado",
+      "evidence_type": "prueba_ficticia",
+      "availability_status": "datos_insuficientes",
+      "warnings": [
+        "DEMO únicamente: no presentar como beca, viaje, convocatoria o servicio vigente."
+      ]
+    },
+    {
+      "id": "DEMO-MF-DERECHO-MOV_POS",
+      "name": "Movilidad académica de posgrado de ejemplo — Derecho y Ciencia Política [FICTICIO]",
+      "faculty_code": "DERECHO",
+      "accessible_to_all_faculties": false,
+      "category_code": "movilidad_academica",
+      "description": "Escenario simulado para demostrar orientación por facultad y público; no existe convocatoria ni proceso acreditado.",
+      "needs_tags": [
+        "movilidad_academica",
+        "viajar",
+        "intercambio",
+        "posgrado"
+      ],
+      "audience": "posgrado",
+      "evidence_type": "prueba_ficticia",
+      "availability_status": "datos_insuficientes",
+      "warnings": [
+        "DEMO únicamente: no presentar como beca, viaje, convocatoria o servicio vigente."
+      ]
+    },
+    {
+      "id": "DEMO-MF-DERECHO-MOV_DOC",
+      "name": "Estancia académica docente de ejemplo — Derecho y Ciencia Política [FICTICIO]",
+      "faculty_code": "DERECHO",
+      "accessible_to_all_faculties": false,
+      "category_code": "movilidad_academica",
+      "description": "Escenario simulado para demostrar orientación por facultad y público; no existe convocatoria ni proceso acreditado.",
+      "needs_tags": [
+        "movilidad_academica",
+        "viajar",
+        "intercambio",
+        "docentes"
+      ],
+      "audience": "docentes",
+      "evidence_type": "prueba_ficticia",
+      "availability_status": "datos_insuficientes",
+      "warnings": [
+        "DEMO únicamente: no presentar como beca, viaje, convocatoria o servicio vigente."
+      ]
+    },
+    {
+      "id": "DEMO-MF-MEDICINA-ORIENTACION",
+      "name": "Orientación universitaria de ejemplo — Medicina [FICTICIO]",
+      "faculty_code": "MEDICINA",
+      "accessible_to_all_faculties": false,
+      "category_code": "bienestar",
+      "description": "Escenario simulado para demostrar orientación por facultad y público; no existe convocatoria ni proceso acreditado.",
+      "needs_tags": [
+        "orientacion",
+        "bienestar",
+        "adaptacion"
+      ],
+      "audience": "todos",
+      "evidence_type": "prueba_ficticia",
+      "availability_status": "datos_insuficientes",
+      "warnings": [
+        "DEMO únicamente: no presentar como beca, viaje, convocatoria o servicio vigente."
+      ]
+    },
+    {
+      "id": "DEMO-MF-MEDICINA-BECA_PRE",
+      "name": "Convocatoria de beca de pregrado de ejemplo — Medicina [FICTICIO]",
+      "faculty_code": "MEDICINA",
+      "accessible_to_all_faculties": false,
+      "category_code": "becas",
+      "description": "Escenario simulado para demostrar orientación por facultad y público; no existe convocatoria ni proceso acreditado.",
+      "needs_tags": [
+        "becas",
+        "pregrado",
+        "apoyo_economico"
+      ],
+      "audience": "pregrado",
+      "evidence_type": "prueba_ficticia",
+      "availability_status": "datos_insuficientes",
+      "warnings": [
+        "DEMO únicamente: no presentar como beca, viaje, convocatoria o servicio vigente."
+      ]
+    },
+    {
+      "id": "DEMO-MF-MEDICINA-BECA_POS",
+      "name": "Convocatoria de beca de posgrado de ejemplo — Medicina [FICTICIO]",
+      "faculty_code": "MEDICINA",
+      "accessible_to_all_faculties": false,
+      "category_code": "becas",
+      "description": "Escenario simulado para demostrar orientación por facultad y público; no existe convocatoria ni proceso acreditado.",
+      "needs_tags": [
+        "becas",
+        "posgrado",
+        "investigacion"
+      ],
+      "audience": "posgrado",
+      "evidence_type": "prueba_ficticia",
+      "availability_status": "datos_insuficientes",
+      "warnings": [
+        "DEMO únicamente: no presentar como beca, viaje, convocatoria o servicio vigente."
+      ]
+    },
+    {
+      "id": "DEMO-MF-MEDICINA-BECA_DOC",
+      "name": "Convocatoria de apoyo docente de ejemplo — Medicina [FICTICIO]",
+      "faculty_code": "MEDICINA",
+      "accessible_to_all_faculties": false,
+      "category_code": "becas",
+      "description": "Escenario simulado para demostrar orientación por facultad y público; no existe convocatoria ni proceso acreditado.",
+      "needs_tags": [
+        "becas",
+        "docentes",
+        "investigacion"
+      ],
+      "audience": "docentes",
+      "evidence_type": "prueba_ficticia",
+      "availability_status": "datos_insuficientes",
+      "warnings": [
+        "DEMO únicamente: no presentar como beca, viaje, convocatoria o servicio vigente."
+      ]
+    },
+    {
+      "id": "DEMO-MF-MEDICINA-MOV_PRE",
+      "name": "Movilidad académica de pregrado de ejemplo — Medicina [FICTICIO]",
+      "faculty_code": "MEDICINA",
+      "accessible_to_all_faculties": false,
+      "category_code": "movilidad_academica",
+      "description": "Escenario simulado para demostrar orientación por facultad y público; no existe convocatoria ni proceso acreditado.",
+      "needs_tags": [
+        "movilidad_academica",
+        "viajar",
+        "intercambio",
+        "pregrado"
+      ],
+      "audience": "pregrado",
+      "evidence_type": "prueba_ficticia",
+      "availability_status": "datos_insuficientes",
+      "warnings": [
+        "DEMO únicamente: no presentar como beca, viaje, convocatoria o servicio vigente."
+      ]
+    },
+    {
+      "id": "DEMO-MF-MEDICINA-MOV_POS",
+      "name": "Movilidad académica de posgrado de ejemplo — Medicina [FICTICIO]",
+      "faculty_code": "MEDICINA",
+      "accessible_to_all_faculties": false,
+      "category_code": "movilidad_academica",
+      "description": "Escenario simulado para demostrar orientación por facultad y público; no existe convocatoria ni proceso acreditado.",
+      "needs_tags": [
+        "movilidad_academica",
+        "viajar",
+        "intercambio",
+        "posgrado"
+      ],
+      "audience": "posgrado",
+      "evidence_type": "prueba_ficticia",
+      "availability_status": "datos_insuficientes",
+      "warnings": [
+        "DEMO únicamente: no presentar como beca, viaje, convocatoria o servicio vigente."
+      ]
+    },
+    {
+      "id": "DEMO-MF-MEDICINA-MOV_DOC",
+      "name": "Estancia académica docente de ejemplo — Medicina [FICTICIO]",
+      "faculty_code": "MEDICINA",
+      "accessible_to_all_faculties": false,
+      "category_code": "movilidad_academica",
+      "description": "Escenario simulado para demostrar orientación por facultad y público; no existe convocatoria ni proceso acreditado.",
+      "needs_tags": [
+        "movilidad_academica",
+        "viajar",
+        "intercambio",
+        "docentes"
+      ],
+      "audience": "docentes",
+      "evidence_type": "prueba_ficticia",
+      "availability_status": "datos_insuficientes",
+      "warnings": [
+        "DEMO únicamente: no presentar como beca, viaje, convocatoria o servicio vigente."
+      ]
+    },
+    {
+      "id": "DEMO-MF-MATEMATICAS-ORIENTACION",
+      "name": "Orientación universitaria de ejemplo — Ciencias Matemáticas [FICTICIO]",
+      "faculty_code": "MATEMATICAS",
+      "accessible_to_all_faculties": false,
+      "category_code": "bienestar",
+      "description": "Escenario simulado para demostrar orientación por facultad y público; no existe convocatoria ni proceso acreditado.",
+      "needs_tags": [
+        "orientacion",
+        "bienestar",
+        "adaptacion"
+      ],
+      "audience": "todos",
+      "evidence_type": "prueba_ficticia",
+      "availability_status": "datos_insuficientes",
+      "warnings": [
+        "DEMO únicamente: no presentar como beca, viaje, convocatoria o servicio vigente."
+      ]
+    },
+    {
+      "id": "DEMO-MF-MATEMATICAS-BECA_PRE",
+      "name": "Convocatoria de beca de pregrado de ejemplo — Ciencias Matemáticas [FICTICIO]",
+      "faculty_code": "MATEMATICAS",
+      "accessible_to_all_faculties": false,
+      "category_code": "becas",
+      "description": "Escenario simulado para demostrar orientación por facultad y público; no existe convocatoria ni proceso acreditado.",
+      "needs_tags": [
+        "becas",
+        "pregrado",
+        "apoyo_economico"
+      ],
+      "audience": "pregrado",
+      "evidence_type": "prueba_ficticia",
+      "availability_status": "datos_insuficientes",
+      "warnings": [
+        "DEMO únicamente: no presentar como beca, viaje, convocatoria o servicio vigente."
+      ]
+    },
+    {
+      "id": "DEMO-MF-MATEMATICAS-BECA_POS",
+      "name": "Convocatoria de beca de posgrado de ejemplo — Ciencias Matemáticas [FICTICIO]",
+      "faculty_code": "MATEMATICAS",
+      "accessible_to_all_faculties": false,
+      "category_code": "becas",
+      "description": "Escenario simulado para demostrar orientación por facultad y público; no existe convocatoria ni proceso acreditado.",
+      "needs_tags": [
+        "becas",
+        "posgrado",
+        "investigacion"
+      ],
+      "audience": "posgrado",
+      "evidence_type": "prueba_ficticia",
+      "availability_status": "datos_insuficientes",
+      "warnings": [
+        "DEMO únicamente: no presentar como beca, viaje, convocatoria o servicio vigente."
+      ]
+    },
+    {
+      "id": "DEMO-MF-MATEMATICAS-BECA_DOC",
+      "name": "Convocatoria de apoyo docente de ejemplo — Ciencias Matemáticas [FICTICIO]",
+      "faculty_code": "MATEMATICAS",
+      "accessible_to_all_faculties": false,
+      "category_code": "becas",
+      "description": "Escenario simulado para demostrar orientación por facultad y público; no existe convocatoria ni proceso acreditado.",
+      "needs_tags": [
+        "becas",
+        "docentes",
+        "investigacion"
+      ],
+      "audience": "docentes",
+      "evidence_type": "prueba_ficticia",
+      "availability_status": "datos_insuficientes",
+      "warnings": [
+        "DEMO únicamente: no presentar como beca, viaje, convocatoria o servicio vigente."
+      ]
+    },
+    {
+      "id": "DEMO-MF-MATEMATICAS-MOV_PRE",
+      "name": "Movilidad académica de pregrado de ejemplo — Ciencias Matemáticas [FICTICIO]",
+      "faculty_code": "MATEMATICAS",
+      "accessible_to_all_faculties": false,
+      "category_code": "movilidad_academica",
+      "description": "Escenario simulado para demostrar orientación por facultad y público; no existe convocatoria ni proceso acreditado.",
+      "needs_tags": [
+        "movilidad_academica",
+        "viajar",
+        "intercambio",
+        "pregrado"
+      ],
+      "audience": "pregrado",
+      "evidence_type": "prueba_ficticia",
+      "availability_status": "datos_insuficientes",
+      "warnings": [
+        "DEMO únicamente: no presentar como beca, viaje, convocatoria o servicio vigente."
+      ]
+    },
+    {
+      "id": "DEMO-MF-MATEMATICAS-MOV_POS",
+      "name": "Movilidad académica de posgrado de ejemplo — Ciencias Matemáticas [FICTICIO]",
+      "faculty_code": "MATEMATICAS",
+      "accessible_to_all_faculties": false,
+      "category_code": "movilidad_academica",
+      "description": "Escenario simulado para demostrar orientación por facultad y público; no existe convocatoria ni proceso acreditado.",
+      "needs_tags": [
+        "movilidad_academica",
+        "viajar",
+        "intercambio",
+        "posgrado"
+      ],
+      "audience": "posgrado",
+      "evidence_type": "prueba_ficticia",
+      "availability_status": "datos_insuficientes",
+      "warnings": [
+        "DEMO únicamente: no presentar como beca, viaje, convocatoria o servicio vigente."
+      ]
+    },
+    {
+      "id": "DEMO-MF-MATEMATICAS-MOV_DOC",
+      "name": "Estancia académica docente de ejemplo — Ciencias Matemáticas [FICTICIO]",
+      "faculty_code": "MATEMATICAS",
+      "accessible_to_all_faculties": false,
+      "category_code": "movilidad_academica",
+      "description": "Escenario simulado para demostrar orientación por facultad y público; no existe convocatoria ni proceso acreditado.",
+      "needs_tags": [
+        "movilidad_academica",
+        "viajar",
+        "intercambio",
+        "docentes"
+      ],
+      "audience": "docentes",
+      "evidence_type": "prueba_ficticia",
+      "availability_status": "datos_insuficientes",
+      "warnings": [
+        "DEMO únicamente: no presentar como beca, viaje, convocatoria o servicio vigente."
+      ]
+    },
+    {
+      "id": "DEMO-MF-BIOLOGICAS-ORIENTACION",
+      "name": "Orientación universitaria de ejemplo — Ciencias Biológicas [FICTICIO]",
+      "faculty_code": "BIOLOGICAS",
+      "accessible_to_all_faculties": false,
+      "category_code": "bienestar",
+      "description": "Escenario simulado para demostrar orientación por facultad y público; no existe convocatoria ni proceso acreditado.",
+      "needs_tags": [
+        "orientacion",
+        "bienestar",
+        "adaptacion"
+      ],
+      "audience": "todos",
+      "evidence_type": "prueba_ficticia",
+      "availability_status": "datos_insuficientes",
+      "warnings": [
+        "DEMO únicamente: no presentar como beca, viaje, convocatoria o servicio vigente."
+      ]
+    },
+    {
+      "id": "DEMO-MF-BIOLOGICAS-BECA_PRE",
+      "name": "Convocatoria de beca de pregrado de ejemplo — Ciencias Biológicas [FICTICIO]",
+      "faculty_code": "BIOLOGICAS",
+      "accessible_to_all_faculties": false,
+      "category_code": "becas",
+      "description": "Escenario simulado para demostrar orientación por facultad y público; no existe convocatoria ni proceso acreditado.",
+      "needs_tags": [
+        "becas",
+        "pregrado",
+        "apoyo_economico"
+      ],
+      "audience": "pregrado",
+      "evidence_type": "prueba_ficticia",
+      "availability_status": "datos_insuficientes",
+      "warnings": [
+        "DEMO únicamente: no presentar como beca, viaje, convocatoria o servicio vigente."
+      ]
+    },
+    {
+      "id": "DEMO-MF-BIOLOGICAS-BECA_POS",
+      "name": "Convocatoria de beca de posgrado de ejemplo — Ciencias Biológicas [FICTICIO]",
+      "faculty_code": "BIOLOGICAS",
+      "accessible_to_all_faculties": false,
+      "category_code": "becas",
+      "description": "Escenario simulado para demostrar orientación por facultad y público; no existe convocatoria ni proceso acreditado.",
+      "needs_tags": [
+        "becas",
+        "posgrado",
+        "investigacion"
+      ],
+      "audience": "posgrado",
+      "evidence_type": "prueba_ficticia",
+      "availability_status": "datos_insuficientes",
+      "warnings": [
+        "DEMO únicamente: no presentar como beca, viaje, convocatoria o servicio vigente."
+      ]
+    },
+    {
+      "id": "DEMO-MF-BIOLOGICAS-BECA_DOC",
+      "name": "Convocatoria de apoyo docente de ejemplo — Ciencias Biológicas [FICTICIO]",
+      "faculty_code": "BIOLOGICAS",
+      "accessible_to_all_faculties": false,
+      "category_code": "becas",
+      "description": "Escenario simulado para demostrar orientación por facultad y público; no existe convocatoria ni proceso acreditado.",
+      "needs_tags": [
+        "becas",
+        "docentes",
+        "investigacion"
+      ],
+      "audience": "docentes",
+      "evidence_type": "prueba_ficticia",
+      "availability_status": "datos_insuficientes",
+      "warnings": [
+        "DEMO únicamente: no presentar como beca, viaje, convocatoria o servicio vigente."
+      ]
+    },
+    {
+      "id": "DEMO-MF-BIOLOGICAS-MOV_PRE",
+      "name": "Movilidad académica de pregrado de ejemplo — Ciencias Biológicas [FICTICIO]",
+      "faculty_code": "BIOLOGICAS",
+      "accessible_to_all_faculties": false,
+      "category_code": "movilidad_academica",
+      "description": "Escenario simulado para demostrar orientación por facultad y público; no existe convocatoria ni proceso acreditado.",
+      "needs_tags": [
+        "movilidad_academica",
+        "viajar",
+        "intercambio",
+        "pregrado"
+      ],
+      "audience": "pregrado",
+      "evidence_type": "prueba_ficticia",
+      "availability_status": "datos_insuficientes",
+      "warnings": [
+        "DEMO únicamente: no presentar como beca, viaje, convocatoria o servicio vigente."
+      ]
+    },
+    {
+      "id": "DEMO-MF-BIOLOGICAS-MOV_POS",
+      "name": "Movilidad académica de posgrado de ejemplo — Ciencias Biológicas [FICTICIO]",
+      "faculty_code": "BIOLOGICAS",
+      "accessible_to_all_faculties": false,
+      "category_code": "movilidad_academica",
+      "description": "Escenario simulado para demostrar orientación por facultad y público; no existe convocatoria ni proceso acreditado.",
+      "needs_tags": [
+        "movilidad_academica",
+        "viajar",
+        "intercambio",
+        "posgrado"
+      ],
+      "audience": "posgrado",
+      "evidence_type": "prueba_ficticia",
+      "availability_status": "datos_insuficientes",
+      "warnings": [
+        "DEMO únicamente: no presentar como beca, viaje, convocatoria o servicio vigente."
+      ]
+    },
+    {
+      "id": "DEMO-MF-BIOLOGICAS-MOV_DOC",
+      "name": "Estancia académica docente de ejemplo — Ciencias Biológicas [FICTICIO]",
+      "faculty_code": "BIOLOGICAS",
+      "accessible_to_all_faculties": false,
+      "category_code": "movilidad_academica",
+      "description": "Escenario simulado para demostrar orientación por facultad y público; no existe convocatoria ni proceso acreditado.",
+      "needs_tags": [
+        "movilidad_academica",
+        "viajar",
+        "intercambio",
+        "docentes"
+      ],
+      "audience": "docentes",
+      "evidence_type": "prueba_ficticia",
+      "availability_status": "datos_insuficientes",
+      "warnings": [
+        "DEMO únicamente: no presentar como beca, viaje, convocatoria o servicio vigente."
+      ]
+    },
+    {
+      "id": "DEMO-MF-ECONOMICAS-ORIENTACION",
+      "name": "Orientación universitaria de ejemplo — Ciencias Económicas [FICTICIO]",
+      "faculty_code": "ECONOMICAS",
+      "accessible_to_all_faculties": false,
+      "category_code": "bienestar",
+      "description": "Escenario simulado para demostrar orientación por facultad y público; no existe convocatoria ni proceso acreditado.",
+      "needs_tags": [
+        "orientacion",
+        "bienestar",
+        "adaptacion"
+      ],
+      "audience": "todos",
+      "evidence_type": "prueba_ficticia",
+      "availability_status": "datos_insuficientes",
+      "warnings": [
+        "DEMO únicamente: no presentar como beca, viaje, convocatoria o servicio vigente."
+      ]
+    },
+    {
+      "id": "DEMO-MF-ECONOMICAS-BECA_PRE",
+      "name": "Convocatoria de beca de pregrado de ejemplo — Ciencias Económicas [FICTICIO]",
+      "faculty_code": "ECONOMICAS",
+      "accessible_to_all_faculties": false,
+      "category_code": "becas",
+      "description": "Escenario simulado para demostrar orientación por facultad y público; no existe convocatoria ni proceso acreditado.",
+      "needs_tags": [
+        "becas",
+        "pregrado",
+        "apoyo_economico"
+      ],
+      "audience": "pregrado",
+      "evidence_type": "prueba_ficticia",
+      "availability_status": "datos_insuficientes",
+      "warnings": [
+        "DEMO únicamente: no presentar como beca, viaje, convocatoria o servicio vigente."
+      ]
+    },
+    {
+      "id": "DEMO-MF-ECONOMICAS-BECA_POS",
+      "name": "Convocatoria de beca de posgrado de ejemplo — Ciencias Económicas [FICTICIO]",
+      "faculty_code": "ECONOMICAS",
+      "accessible_to_all_faculties": false,
+      "category_code": "becas",
+      "description": "Escenario simulado para demostrar orientación por facultad y público; no existe convocatoria ni proceso acreditado.",
+      "needs_tags": [
+        "becas",
+        "posgrado",
+        "investigacion"
+      ],
+      "audience": "posgrado",
+      "evidence_type": "prueba_ficticia",
+      "availability_status": "datos_insuficientes",
+      "warnings": [
+        "DEMO únicamente: no presentar como beca, viaje, convocatoria o servicio vigente."
+      ]
+    },
+    {
+      "id": "DEMO-MF-ECONOMICAS-BECA_DOC",
+      "name": "Convocatoria de apoyo docente de ejemplo — Ciencias Económicas [FICTICIO]",
+      "faculty_code": "ECONOMICAS",
+      "accessible_to_all_faculties": false,
+      "category_code": "becas",
+      "description": "Escenario simulado para demostrar orientación por facultad y público; no existe convocatoria ni proceso acreditado.",
+      "needs_tags": [
+        "becas",
+        "docentes",
+        "investigacion"
+      ],
+      "audience": "docentes",
+      "evidence_type": "prueba_ficticia",
+      "availability_status": "datos_insuficientes",
+      "warnings": [
+        "DEMO únicamente: no presentar como beca, viaje, convocatoria o servicio vigente."
+      ]
+    },
+    {
+      "id": "DEMO-MF-ECONOMICAS-MOV_PRE",
+      "name": "Movilidad académica de pregrado de ejemplo — Ciencias Económicas [FICTICIO]",
+      "faculty_code": "ECONOMICAS",
+      "accessible_to_all_faculties": false,
+      "category_code": "movilidad_academica",
+      "description": "Escenario simulado para demostrar orientación por facultad y público; no existe convocatoria ni proceso acreditado.",
+      "needs_tags": [
+        "movilidad_academica",
+        "viajar",
+        "intercambio",
+        "pregrado"
+      ],
+      "audience": "pregrado",
+      "evidence_type": "prueba_ficticia",
+      "availability_status": "datos_insuficientes",
+      "warnings": [
+        "DEMO únicamente: no presentar como beca, viaje, convocatoria o servicio vigente."
+      ]
+    },
+    {
+      "id": "DEMO-MF-ECONOMICAS-MOV_POS",
+      "name": "Movilidad académica de posgrado de ejemplo — Ciencias Económicas [FICTICIO]",
+      "faculty_code": "ECONOMICAS",
+      "accessible_to_all_faculties": false,
+      "category_code": "movilidad_academica",
+      "description": "Escenario simulado para demostrar orientación por facultad y público; no existe convocatoria ni proceso acreditado.",
+      "needs_tags": [
+        "movilidad_academica",
+        "viajar",
+        "intercambio",
+        "posgrado"
+      ],
+      "audience": "posgrado",
+      "evidence_type": "prueba_ficticia",
+      "availability_status": "datos_insuficientes",
+      "warnings": [
+        "DEMO únicamente: no presentar como beca, viaje, convocatoria o servicio vigente."
+      ]
+    },
+    {
+      "id": "DEMO-MF-ECONOMICAS-MOV_DOC",
+      "name": "Estancia académica docente de ejemplo — Ciencias Económicas [FICTICIO]",
+      "faculty_code": "ECONOMICAS",
+      "accessible_to_all_faculties": false,
+      "category_code": "movilidad_academica",
+      "description": "Escenario simulado para demostrar orientación por facultad y público; no existe convocatoria ni proceso acreditado.",
+      "needs_tags": [
+        "movilidad_academica",
+        "viajar",
+        "intercambio",
+        "docentes"
+      ],
+      "audience": "docentes",
+      "evidence_type": "prueba_ficticia",
+      "availability_status": "datos_insuficientes",
+      "warnings": [
+        "DEMO únicamente: no presentar como beca, viaje, convocatoria o servicio vigente."
+      ]
+    },
+    {
+      "id": "DEMO-MF-FARMACIA-ORIENTACION",
+      "name": "Orientación universitaria de ejemplo — Farmacia y Bioquímica [FICTICIO]",
+      "faculty_code": "FARMACIA",
+      "accessible_to_all_faculties": false,
+      "category_code": "bienestar",
+      "description": "Escenario simulado para demostrar orientación por facultad y público; no existe convocatoria ni proceso acreditado.",
+      "needs_tags": [
+        "orientacion",
+        "bienestar",
+        "adaptacion"
+      ],
+      "audience": "todos",
+      "evidence_type": "prueba_ficticia",
+      "availability_status": "datos_insuficientes",
+      "warnings": [
+        "DEMO únicamente: no presentar como beca, viaje, convocatoria o servicio vigente."
+      ]
+    },
+    {
+      "id": "DEMO-MF-FARMACIA-BECA_PRE",
+      "name": "Convocatoria de beca de pregrado de ejemplo — Farmacia y Bioquímica [FICTICIO]",
+      "faculty_code": "FARMACIA",
+      "accessible_to_all_faculties": false,
+      "category_code": "becas",
+      "description": "Escenario simulado para demostrar orientación por facultad y público; no existe convocatoria ni proceso acreditado.",
+      "needs_tags": [
+        "becas",
+        "pregrado",
+        "apoyo_economico"
+      ],
+      "audience": "pregrado",
+      "evidence_type": "prueba_ficticia",
+      "availability_status": "datos_insuficientes",
+      "warnings": [
+        "DEMO únicamente: no presentar como beca, viaje, convocatoria o servicio vigente."
+      ]
+    },
+    {
+      "id": "DEMO-MF-FARMACIA-BECA_POS",
+      "name": "Convocatoria de beca de posgrado de ejemplo — Farmacia y Bioquímica [FICTICIO]",
+      "faculty_code": "FARMACIA",
+      "accessible_to_all_faculties": false,
+      "category_code": "becas",
+      "description": "Escenario simulado para demostrar orientación por facultad y público; no existe convocatoria ni proceso acreditado.",
+      "needs_tags": [
+        "becas",
+        "posgrado",
+        "investigacion"
+      ],
+      "audience": "posgrado",
+      "evidence_type": "prueba_ficticia",
+      "availability_status": "datos_insuficientes",
+      "warnings": [
+        "DEMO únicamente: no presentar como beca, viaje, convocatoria o servicio vigente."
+      ]
+    },
+    {
+      "id": "DEMO-MF-FARMACIA-BECA_DOC",
+      "name": "Convocatoria de apoyo docente de ejemplo — Farmacia y Bioquímica [FICTICIO]",
+      "faculty_code": "FARMACIA",
+      "accessible_to_all_faculties": false,
+      "category_code": "becas",
+      "description": "Escenario simulado para demostrar orientación por facultad y público; no existe convocatoria ni proceso acreditado.",
+      "needs_tags": [
+        "becas",
+        "docentes",
+        "investigacion"
+      ],
+      "audience": "docentes",
+      "evidence_type": "prueba_ficticia",
+      "availability_status": "datos_insuficientes",
+      "warnings": [
+        "DEMO únicamente: no presentar como beca, viaje, convocatoria o servicio vigente."
+      ]
+    },
+    {
+      "id": "DEMO-MF-FARMACIA-MOV_PRE",
+      "name": "Movilidad académica de pregrado de ejemplo — Farmacia y Bioquímica [FICTICIO]",
+      "faculty_code": "FARMACIA",
+      "accessible_to_all_faculties": false,
+      "category_code": "movilidad_academica",
+      "description": "Escenario simulado para demostrar orientación por facultad y público; no existe convocatoria ni proceso acreditado.",
+      "needs_tags": [
+        "movilidad_academica",
+        "viajar",
+        "intercambio",
+        "pregrado"
+      ],
+      "audience": "pregrado",
+      "evidence_type": "prueba_ficticia",
+      "availability_status": "datos_insuficientes",
+      "warnings": [
+        "DEMO únicamente: no presentar como beca, viaje, convocatoria o servicio vigente."
+      ]
+    },
+    {
+      "id": "DEMO-MF-FARMACIA-MOV_POS",
+      "name": "Movilidad académica de posgrado de ejemplo — Farmacia y Bioquímica [FICTICIO]",
+      "faculty_code": "FARMACIA",
+      "accessible_to_all_faculties": false,
+      "category_code": "movilidad_academica",
+      "description": "Escenario simulado para demostrar orientación por facultad y público; no existe convocatoria ni proceso acreditado.",
+      "needs_tags": [
+        "movilidad_academica",
+        "viajar",
+        "intercambio",
+        "posgrado"
+      ],
+      "audience": "posgrado",
+      "evidence_type": "prueba_ficticia",
+      "availability_status": "datos_insuficientes",
+      "warnings": [
+        "DEMO únicamente: no presentar como beca, viaje, convocatoria o servicio vigente."
+      ]
+    },
+    {
+      "id": "DEMO-MF-FARMACIA-MOV_DOC",
+      "name": "Estancia académica docente de ejemplo — Farmacia y Bioquímica [FICTICIO]",
+      "faculty_code": "FARMACIA",
+      "accessible_to_all_faculties": false,
+      "category_code": "movilidad_academica",
+      "description": "Escenario simulado para demostrar orientación por facultad y público; no existe convocatoria ni proceso acreditado.",
+      "needs_tags": [
+        "movilidad_academica",
+        "viajar",
+        "intercambio",
+        "docentes"
+      ],
+      "audience": "docentes",
+      "evidence_type": "prueba_ficticia",
+      "availability_status": "datos_insuficientes",
+      "warnings": [
+        "DEMO únicamente: no presentar como beca, viaje, convocatoria o servicio vigente."
+      ]
+    },
+    {
+      "id": "DEMO-MF-ODONTOLOGIA-ORIENTACION",
+      "name": "Orientación universitaria de ejemplo — Odontología [FICTICIO]",
+      "faculty_code": "ODONTOLOGIA",
+      "accessible_to_all_faculties": false,
+      "category_code": "bienestar",
+      "description": "Escenario simulado para demostrar orientación por facultad y público; no existe convocatoria ni proceso acreditado.",
+      "needs_tags": [
+        "orientacion",
+        "bienestar",
+        "adaptacion"
+      ],
+      "audience": "todos",
+      "evidence_type": "prueba_ficticia",
+      "availability_status": "datos_insuficientes",
+      "warnings": [
+        "DEMO únicamente: no presentar como beca, viaje, convocatoria o servicio vigente."
+      ]
+    },
+    {
+      "id": "DEMO-MF-ODONTOLOGIA-BECA_PRE",
+      "name": "Convocatoria de beca de pregrado de ejemplo — Odontología [FICTICIO]",
+      "faculty_code": "ODONTOLOGIA",
+      "accessible_to_all_faculties": false,
+      "category_code": "becas",
+      "description": "Escenario simulado para demostrar orientación por facultad y público; no existe convocatoria ni proceso acreditado.",
+      "needs_tags": [
+        "becas",
+        "pregrado",
+        "apoyo_economico"
+      ],
+      "audience": "pregrado",
+      "evidence_type": "prueba_ficticia",
+      "availability_status": "datos_insuficientes",
+      "warnings": [
+        "DEMO únicamente: no presentar como beca, viaje, convocatoria o servicio vigente."
+      ]
+    },
+    {
+      "id": "DEMO-MF-ODONTOLOGIA-BECA_POS",
+      "name": "Convocatoria de beca de posgrado de ejemplo — Odontología [FICTICIO]",
+      "faculty_code": "ODONTOLOGIA",
+      "accessible_to_all_faculties": false,
+      "category_code": "becas",
+      "description": "Escenario simulado para demostrar orientación por facultad y público; no existe convocatoria ni proceso acreditado.",
+      "needs_tags": [
+        "becas",
+        "posgrado",
+        "investigacion"
+      ],
+      "audience": "posgrado",
+      "evidence_type": "prueba_ficticia",
+      "availability_status": "datos_insuficientes",
+      "warnings": [
+        "DEMO únicamente: no presentar como beca, viaje, convocatoria o servicio vigente."
+      ]
+    },
+    {
+      "id": "DEMO-MF-ODONTOLOGIA-BECA_DOC",
+      "name": "Convocatoria de apoyo docente de ejemplo — Odontología [FICTICIO]",
+      "faculty_code": "ODONTOLOGIA",
+      "accessible_to_all_faculties": false,
+      "category_code": "becas",
+      "description": "Escenario simulado para demostrar orientación por facultad y público; no existe convocatoria ni proceso acreditado.",
+      "needs_tags": [
+        "becas",
+        "docentes",
+        "investigacion"
+      ],
+      "audience": "docentes",
+      "evidence_type": "prueba_ficticia",
+      "availability_status": "datos_insuficientes",
+      "warnings": [
+        "DEMO únicamente: no presentar como beca, viaje, convocatoria o servicio vigente."
+      ]
+    },
+    {
+      "id": "DEMO-MF-ODONTOLOGIA-MOV_PRE",
+      "name": "Movilidad académica de pregrado de ejemplo — Odontología [FICTICIO]",
+      "faculty_code": "ODONTOLOGIA",
+      "accessible_to_all_faculties": false,
+      "category_code": "movilidad_academica",
+      "description": "Escenario simulado para demostrar orientación por facultad y público; no existe convocatoria ni proceso acreditado.",
+      "needs_tags": [
+        "movilidad_academica",
+        "viajar",
+        "intercambio",
+        "pregrado"
+      ],
+      "audience": "pregrado",
+      "evidence_type": "prueba_ficticia",
+      "availability_status": "datos_insuficientes",
+      "warnings": [
+        "DEMO únicamente: no presentar como beca, viaje, convocatoria o servicio vigente."
+      ]
+    },
+    {
+      "id": "DEMO-MF-ODONTOLOGIA-MOV_POS",
+      "name": "Movilidad académica de posgrado de ejemplo — Odontología [FICTICIO]",
+      "faculty_code": "ODONTOLOGIA",
+      "accessible_to_all_faculties": false,
+      "category_code": "movilidad_academica",
+      "description": "Escenario simulado para demostrar orientación por facultad y público; no existe convocatoria ni proceso acreditado.",
+      "needs_tags": [
+        "movilidad_academica",
+        "viajar",
+        "intercambio",
+        "posgrado"
+      ],
+      "audience": "posgrado",
+      "evidence_type": "prueba_ficticia",
+      "availability_status": "datos_insuficientes",
+      "warnings": [
+        "DEMO únicamente: no presentar como beca, viaje, convocatoria o servicio vigente."
+      ]
+    },
+    {
+      "id": "DEMO-MF-ODONTOLOGIA-MOV_DOC",
+      "name": "Estancia académica docente de ejemplo — Odontología [FICTICIO]",
+      "faculty_code": "ODONTOLOGIA",
+      "accessible_to_all_faculties": false,
+      "category_code": "movilidad_academica",
+      "description": "Escenario simulado para demostrar orientación por facultad y público; no existe convocatoria ni proceso acreditado.",
+      "needs_tags": [
+        "movilidad_academica",
+        "viajar",
+        "intercambio",
+        "docentes"
+      ],
+      "audience": "docentes",
+      "evidence_type": "prueba_ficticia",
+      "availability_status": "datos_insuficientes",
+      "warnings": [
+        "DEMO únicamente: no presentar como beca, viaje, convocatoria o servicio vigente."
+      ]
+    },
+    {
+      "id": "DEMO-MF-EDUCACION-ORIENTACION",
+      "name": "Orientación universitaria de ejemplo — Educación [FICTICIO]",
+      "faculty_code": "EDUCACION",
+      "accessible_to_all_faculties": false,
+      "category_code": "bienestar",
+      "description": "Escenario simulado para demostrar orientación por facultad y público; no existe convocatoria ni proceso acreditado.",
+      "needs_tags": [
+        "orientacion",
+        "bienestar",
+        "adaptacion"
+      ],
+      "audience": "todos",
+      "evidence_type": "prueba_ficticia",
+      "availability_status": "datos_insuficientes",
+      "warnings": [
+        "DEMO únicamente: no presentar como beca, viaje, convocatoria o servicio vigente."
+      ]
+    },
+    {
+      "id": "DEMO-MF-EDUCACION-BECA_PRE",
+      "name": "Convocatoria de beca de pregrado de ejemplo — Educación [FICTICIO]",
+      "faculty_code": "EDUCACION",
+      "accessible_to_all_faculties": false,
+      "category_code": "becas",
+      "description": "Escenario simulado para demostrar orientación por facultad y público; no existe convocatoria ni proceso acreditado.",
+      "needs_tags": [
+        "becas",
+        "pregrado",
+        "apoyo_economico"
+      ],
+      "audience": "pregrado",
+      "evidence_type": "prueba_ficticia",
+      "availability_status": "datos_insuficientes",
+      "warnings": [
+        "DEMO únicamente: no presentar como beca, viaje, convocatoria o servicio vigente."
+      ]
+    },
+    {
+      "id": "DEMO-MF-EDUCACION-BECA_POS",
+      "name": "Convocatoria de beca de posgrado de ejemplo — Educación [FICTICIO]",
+      "faculty_code": "EDUCACION",
+      "accessible_to_all_faculties": false,
+      "category_code": "becas",
+      "description": "Escenario simulado para demostrar orientación por facultad y público; no existe convocatoria ni proceso acreditado.",
+      "needs_tags": [
+        "becas",
+        "posgrado",
+        "investigacion"
+      ],
+      "audience": "posgrado",
+      "evidence_type": "prueba_ficticia",
+      "availability_status": "datos_insuficientes",
+      "warnings": [
+        "DEMO únicamente: no presentar como beca, viaje, convocatoria o servicio vigente."
+      ]
+    },
+    {
+      "id": "DEMO-MF-EDUCACION-BECA_DOC",
+      "name": "Convocatoria de apoyo docente de ejemplo — Educación [FICTICIO]",
+      "faculty_code": "EDUCACION",
+      "accessible_to_all_faculties": false,
+      "category_code": "becas",
+      "description": "Escenario simulado para demostrar orientación por facultad y público; no existe convocatoria ni proceso acreditado.",
+      "needs_tags": [
+        "becas",
+        "docentes",
+        "investigacion"
+      ],
+      "audience": "docentes",
+      "evidence_type": "prueba_ficticia",
+      "availability_status": "datos_insuficientes",
+      "warnings": [
+        "DEMO únicamente: no presentar como beca, viaje, convocatoria o servicio vigente."
+      ]
+    },
+    {
+      "id": "DEMO-MF-EDUCACION-MOV_PRE",
+      "name": "Movilidad académica de pregrado de ejemplo — Educación [FICTICIO]",
+      "faculty_code": "EDUCACION",
+      "accessible_to_all_faculties": false,
+      "category_code": "movilidad_academica",
+      "description": "Escenario simulado para demostrar orientación por facultad y público; no existe convocatoria ni proceso acreditado.",
+      "needs_tags": [
+        "movilidad_academica",
+        "viajar",
+        "intercambio",
+        "pregrado"
+      ],
+      "audience": "pregrado",
+      "evidence_type": "prueba_ficticia",
+      "availability_status": "datos_insuficientes",
+      "warnings": [
+        "DEMO únicamente: no presentar como beca, viaje, convocatoria o servicio vigente."
+      ]
+    },
+    {
+      "id": "DEMO-MF-EDUCACION-MOV_POS",
+      "name": "Movilidad académica de posgrado de ejemplo — Educación [FICTICIO]",
+      "faculty_code": "EDUCACION",
+      "accessible_to_all_faculties": false,
+      "category_code": "movilidad_academica",
+      "description": "Escenario simulado para demostrar orientación por facultad y público; no existe convocatoria ni proceso acreditado.",
+      "needs_tags": [
+        "movilidad_academica",
+        "viajar",
+        "intercambio",
+        "posgrado"
+      ],
+      "audience": "posgrado",
+      "evidence_type": "prueba_ficticia",
+      "availability_status": "datos_insuficientes",
+      "warnings": [
+        "DEMO únicamente: no presentar como beca, viaje, convocatoria o servicio vigente."
+      ]
+    },
+    {
+      "id": "DEMO-MF-EDUCACION-MOV_DOC",
+      "name": "Estancia académica docente de ejemplo — Educación [FICTICIO]",
+      "faculty_code": "EDUCACION",
+      "accessible_to_all_faculties": false,
+      "category_code": "movilidad_academica",
+      "description": "Escenario simulado para demostrar orientación por facultad y público; no existe convocatoria ni proceso acreditado.",
+      "needs_tags": [
+        "movilidad_academica",
+        "viajar",
+        "intercambio",
+        "docentes"
+      ],
+      "audience": "docentes",
+      "evidence_type": "prueba_ficticia",
+      "availability_status": "datos_insuficientes",
+      "warnings": [
+        "DEMO únicamente: no presentar como beca, viaje, convocatoria o servicio vigente."
+      ]
+    },
+    {
+      "id": "DEMO-MF-VETERINARIA-ORIENTACION",
+      "name": "Orientación universitaria de ejemplo — Medicina Veterinaria [FICTICIO]",
+      "faculty_code": "VETERINARIA",
+      "accessible_to_all_faculties": false,
+      "category_code": "bienestar",
+      "description": "Escenario simulado para demostrar orientación por facultad y público; no existe convocatoria ni proceso acreditado.",
+      "needs_tags": [
+        "orientacion",
+        "bienestar",
+        "adaptacion"
+      ],
+      "audience": "todos",
+      "evidence_type": "prueba_ficticia",
+      "availability_status": "datos_insuficientes",
+      "warnings": [
+        "DEMO únicamente: no presentar como beca, viaje, convocatoria o servicio vigente."
+      ]
+    },
+    {
+      "id": "DEMO-MF-VETERINARIA-BECA_PRE",
+      "name": "Convocatoria de beca de pregrado de ejemplo — Medicina Veterinaria [FICTICIO]",
+      "faculty_code": "VETERINARIA",
+      "accessible_to_all_faculties": false,
+      "category_code": "becas",
+      "description": "Escenario simulado para demostrar orientación por facultad y público; no existe convocatoria ni proceso acreditado.",
+      "needs_tags": [
+        "becas",
+        "pregrado",
+        "apoyo_economico"
+      ],
+      "audience": "pregrado",
+      "evidence_type": "prueba_ficticia",
+      "availability_status": "datos_insuficientes",
+      "warnings": [
+        "DEMO únicamente: no presentar como beca, viaje, convocatoria o servicio vigente."
+      ]
+    },
+    {
+      "id": "DEMO-MF-VETERINARIA-BECA_POS",
+      "name": "Convocatoria de beca de posgrado de ejemplo — Medicina Veterinaria [FICTICIO]",
+      "faculty_code": "VETERINARIA",
+      "accessible_to_all_faculties": false,
+      "category_code": "becas",
+      "description": "Escenario simulado para demostrar orientación por facultad y público; no existe convocatoria ni proceso acreditado.",
+      "needs_tags": [
+        "becas",
+        "posgrado",
+        "investigacion"
+      ],
+      "audience": "posgrado",
+      "evidence_type": "prueba_ficticia",
+      "availability_status": "datos_insuficientes",
+      "warnings": [
+        "DEMO únicamente: no presentar como beca, viaje, convocatoria o servicio vigente."
+      ]
+    },
+    {
+      "id": "DEMO-MF-VETERINARIA-BECA_DOC",
+      "name": "Convocatoria de apoyo docente de ejemplo — Medicina Veterinaria [FICTICIO]",
+      "faculty_code": "VETERINARIA",
+      "accessible_to_all_faculties": false,
+      "category_code": "becas",
+      "description": "Escenario simulado para demostrar orientación por facultad y público; no existe convocatoria ni proceso acreditado.",
+      "needs_tags": [
+        "becas",
+        "docentes",
+        "investigacion"
+      ],
+      "audience": "docentes",
+      "evidence_type": "prueba_ficticia",
+      "availability_status": "datos_insuficientes",
+      "warnings": [
+        "DEMO únicamente: no presentar como beca, viaje, convocatoria o servicio vigente."
+      ]
+    },
+    {
+      "id": "DEMO-MF-VETERINARIA-MOV_PRE",
+      "name": "Movilidad académica de pregrado de ejemplo — Medicina Veterinaria [FICTICIO]",
+      "faculty_code": "VETERINARIA",
+      "accessible_to_all_faculties": false,
+      "category_code": "movilidad_academica",
+      "description": "Escenario simulado para demostrar orientación por facultad y público; no existe convocatoria ni proceso acreditado.",
+      "needs_tags": [
+        "movilidad_academica",
+        "viajar",
+        "intercambio",
+        "pregrado"
+      ],
+      "audience": "pregrado",
+      "evidence_type": "prueba_ficticia",
+      "availability_status": "datos_insuficientes",
+      "warnings": [
+        "DEMO únicamente: no presentar como beca, viaje, convocatoria o servicio vigente."
+      ]
+    },
+    {
+      "id": "DEMO-MF-VETERINARIA-MOV_POS",
+      "name": "Movilidad académica de posgrado de ejemplo — Medicina Veterinaria [FICTICIO]",
+      "faculty_code": "VETERINARIA",
+      "accessible_to_all_faculties": false,
+      "category_code": "movilidad_academica",
+      "description": "Escenario simulado para demostrar orientación por facultad y público; no existe convocatoria ni proceso acreditado.",
+      "needs_tags": [
+        "movilidad_academica",
+        "viajar",
+        "intercambio",
+        "posgrado"
+      ],
+      "audience": "posgrado",
+      "evidence_type": "prueba_ficticia",
+      "availability_status": "datos_insuficientes",
+      "warnings": [
+        "DEMO únicamente: no presentar como beca, viaje, convocatoria o servicio vigente."
+      ]
+    },
+    {
+      "id": "DEMO-MF-VETERINARIA-MOV_DOC",
+      "name": "Estancia académica docente de ejemplo — Medicina Veterinaria [FICTICIO]",
+      "faculty_code": "VETERINARIA",
+      "accessible_to_all_faculties": false,
+      "category_code": "movilidad_academica",
+      "description": "Escenario simulado para demostrar orientación por facultad y público; no existe convocatoria ni proceso acreditado.",
+      "needs_tags": [
+        "movilidad_academica",
+        "viajar",
+        "intercambio",
+        "docentes"
+      ],
+      "audience": "docentes",
+      "evidence_type": "prueba_ficticia",
+      "availability_status": "datos_insuficientes",
+      "warnings": [
+        "DEMO únicamente: no presentar como beca, viaje, convocatoria o servicio vigente."
+      ]
+    },
+    {
+      "id": "DEMO-MF-QUIMICA-ORIENTACION",
+      "name": "Orientación universitaria de ejemplo — Química e Ingeniería Química [FICTICIO]",
+      "faculty_code": "QUIMICA",
+      "accessible_to_all_faculties": false,
+      "category_code": "bienestar",
+      "description": "Escenario simulado para demostrar orientación por facultad y público; no existe convocatoria ni proceso acreditado.",
+      "needs_tags": [
+        "orientacion",
+        "bienestar",
+        "adaptacion"
+      ],
+      "audience": "todos",
+      "evidence_type": "prueba_ficticia",
+      "availability_status": "datos_insuficientes",
+      "warnings": [
+        "DEMO únicamente: no presentar como beca, viaje, convocatoria o servicio vigente."
+      ]
+    },
+    {
+      "id": "DEMO-MF-QUIMICA-BECA_PRE",
+      "name": "Convocatoria de beca de pregrado de ejemplo — Química e Ingeniería Química [FICTICIO]",
+      "faculty_code": "QUIMICA",
+      "accessible_to_all_faculties": false,
+      "category_code": "becas",
+      "description": "Escenario simulado para demostrar orientación por facultad y público; no existe convocatoria ni proceso acreditado.",
+      "needs_tags": [
+        "becas",
+        "pregrado",
+        "apoyo_economico"
+      ],
+      "audience": "pregrado",
+      "evidence_type": "prueba_ficticia",
+      "availability_status": "datos_insuficientes",
+      "warnings": [
+        "DEMO únicamente: no presentar como beca, viaje, convocatoria o servicio vigente."
+      ]
+    },
+    {
+      "id": "DEMO-MF-QUIMICA-BECA_POS",
+      "name": "Convocatoria de beca de posgrado de ejemplo — Química e Ingeniería Química [FICTICIO]",
+      "faculty_code": "QUIMICA",
+      "accessible_to_all_faculties": false,
+      "category_code": "becas",
+      "description": "Escenario simulado para demostrar orientación por facultad y público; no existe convocatoria ni proceso acreditado.",
+      "needs_tags": [
+        "becas",
+        "posgrado",
+        "investigacion"
+      ],
+      "audience": "posgrado",
+      "evidence_type": "prueba_ficticia",
+      "availability_status": "datos_insuficientes",
+      "warnings": [
+        "DEMO únicamente: no presentar como beca, viaje, convocatoria o servicio vigente."
+      ]
+    },
+    {
+      "id": "DEMO-MF-QUIMICA-BECA_DOC",
+      "name": "Convocatoria de apoyo docente de ejemplo — Química e Ingeniería Química [FICTICIO]",
+      "faculty_code": "QUIMICA",
+      "accessible_to_all_faculties": false,
+      "category_code": "becas",
+      "description": "Escenario simulado para demostrar orientación por facultad y público; no existe convocatoria ni proceso acreditado.",
+      "needs_tags": [
+        "becas",
+        "docentes",
+        "investigacion"
+      ],
+      "audience": "docentes",
+      "evidence_type": "prueba_ficticia",
+      "availability_status": "datos_insuficientes",
+      "warnings": [
+        "DEMO únicamente: no presentar como beca, viaje, convocatoria o servicio vigente."
+      ]
+    },
+    {
+      "id": "DEMO-MF-QUIMICA-MOV_PRE",
+      "name": "Movilidad académica de pregrado de ejemplo — Química e Ingeniería Química [FICTICIO]",
+      "faculty_code": "QUIMICA",
+      "accessible_to_all_faculties": false,
+      "category_code": "movilidad_academica",
+      "description": "Escenario simulado para demostrar orientación por facultad y público; no existe convocatoria ni proceso acreditado.",
+      "needs_tags": [
+        "movilidad_academica",
+        "viajar",
+        "intercambio",
+        "pregrado"
+      ],
+      "audience": "pregrado",
+      "evidence_type": "prueba_ficticia",
+      "availability_status": "datos_insuficientes",
+      "warnings": [
+        "DEMO únicamente: no presentar como beca, viaje, convocatoria o servicio vigente."
+      ]
+    },
+    {
+      "id": "DEMO-MF-QUIMICA-MOV_POS",
+      "name": "Movilidad académica de posgrado de ejemplo — Química e Ingeniería Química [FICTICIO]",
+      "faculty_code": "QUIMICA",
+      "accessible_to_all_faculties": false,
+      "category_code": "movilidad_academica",
+      "description": "Escenario simulado para demostrar orientación por facultad y público; no existe convocatoria ni proceso acreditado.",
+      "needs_tags": [
+        "movilidad_academica",
+        "viajar",
+        "intercambio",
+        "posgrado"
+      ],
+      "audience": "posgrado",
+      "evidence_type": "prueba_ficticia",
+      "availability_status": "datos_insuficientes",
+      "warnings": [
+        "DEMO únicamente: no presentar como beca, viaje, convocatoria o servicio vigente."
+      ]
+    },
+    {
+      "id": "DEMO-MF-QUIMICA-MOV_DOC",
+      "name": "Estancia académica docente de ejemplo — Química e Ingeniería Química [FICTICIO]",
+      "faculty_code": "QUIMICA",
+      "accessible_to_all_faculties": false,
+      "category_code": "movilidad_academica",
+      "description": "Escenario simulado para demostrar orientación por facultad y público; no existe convocatoria ni proceso acreditado.",
+      "needs_tags": [
+        "movilidad_academica",
+        "viajar",
+        "intercambio",
+        "docentes"
+      ],
+      "audience": "docentes",
+      "evidence_type": "prueba_ficticia",
+      "availability_status": "datos_insuficientes",
+      "warnings": [
+        "DEMO únicamente: no presentar como beca, viaje, convocatoria o servicio vigente."
+      ]
+    },
+    {
+      "id": "DEMO-MF-ADMINISTRATIVAS-ORIENTACION",
+      "name": "Orientación universitaria de ejemplo — Ciencias Administrativas [FICTICIO]",
+      "faculty_code": "ADMINISTRATIVAS",
+      "accessible_to_all_faculties": false,
+      "category_code": "bienestar",
+      "description": "Escenario simulado para demostrar orientación por facultad y público; no existe convocatoria ni proceso acreditado.",
+      "needs_tags": [
+        "orientacion",
+        "bienestar",
+        "adaptacion"
+      ],
+      "audience": "todos",
+      "evidence_type": "prueba_ficticia",
+      "availability_status": "datos_insuficientes",
+      "warnings": [
+        "DEMO únicamente: no presentar como beca, viaje, convocatoria o servicio vigente."
+      ]
+    },
+    {
+      "id": "DEMO-MF-ADMINISTRATIVAS-BECA_PRE",
+      "name": "Convocatoria de beca de pregrado de ejemplo — Ciencias Administrativas [FICTICIO]",
+      "faculty_code": "ADMINISTRATIVAS",
+      "accessible_to_all_faculties": false,
+      "category_code": "becas",
+      "description": "Escenario simulado para demostrar orientación por facultad y público; no existe convocatoria ni proceso acreditado.",
+      "needs_tags": [
+        "becas",
+        "pregrado",
+        "apoyo_economico"
+      ],
+      "audience": "pregrado",
+      "evidence_type": "prueba_ficticia",
+      "availability_status": "datos_insuficientes",
+      "warnings": [
+        "DEMO únicamente: no presentar como beca, viaje, convocatoria o servicio vigente."
+      ]
+    },
+    {
+      "id": "DEMO-MF-ADMINISTRATIVAS-BECA_POS",
+      "name": "Convocatoria de beca de posgrado de ejemplo — Ciencias Administrativas [FICTICIO]",
+      "faculty_code": "ADMINISTRATIVAS",
+      "accessible_to_all_faculties": false,
+      "category_code": "becas",
+      "description": "Escenario simulado para demostrar orientación por facultad y público; no existe convocatoria ni proceso acreditado.",
+      "needs_tags": [
+        "becas",
+        "posgrado",
+        "investigacion"
+      ],
+      "audience": "posgrado",
+      "evidence_type": "prueba_ficticia",
+      "availability_status": "datos_insuficientes",
+      "warnings": [
+        "DEMO únicamente: no presentar como beca, viaje, convocatoria o servicio vigente."
+      ]
+    },
+    {
+      "id": "DEMO-MF-ADMINISTRATIVAS-BECA_DOC",
+      "name": "Convocatoria de apoyo docente de ejemplo — Ciencias Administrativas [FICTICIO]",
+      "faculty_code": "ADMINISTRATIVAS",
+      "accessible_to_all_faculties": false,
+      "category_code": "becas",
+      "description": "Escenario simulado para demostrar orientación por facultad y público; no existe convocatoria ni proceso acreditado.",
+      "needs_tags": [
+        "becas",
+        "docentes",
+        "investigacion"
+      ],
+      "audience": "docentes",
+      "evidence_type": "prueba_ficticia",
+      "availability_status": "datos_insuficientes",
+      "warnings": [
+        "DEMO únicamente: no presentar como beca, viaje, convocatoria o servicio vigente."
+      ]
+    },
+    {
+      "id": "DEMO-MF-ADMINISTRATIVAS-MOV_PRE",
+      "name": "Movilidad académica de pregrado de ejemplo — Ciencias Administrativas [FICTICIO]",
+      "faculty_code": "ADMINISTRATIVAS",
+      "accessible_to_all_faculties": false,
+      "category_code": "movilidad_academica",
+      "description": "Escenario simulado para demostrar orientación por facultad y público; no existe convocatoria ni proceso acreditado.",
+      "needs_tags": [
+        "movilidad_academica",
+        "viajar",
+        "intercambio",
+        "pregrado"
+      ],
+      "audience": "pregrado",
+      "evidence_type": "prueba_ficticia",
+      "availability_status": "datos_insuficientes",
+      "warnings": [
+        "DEMO únicamente: no presentar como beca, viaje, convocatoria o servicio vigente."
+      ]
+    },
+    {
+      "id": "DEMO-MF-ADMINISTRATIVAS-MOV_POS",
+      "name": "Movilidad académica de posgrado de ejemplo — Ciencias Administrativas [FICTICIO]",
+      "faculty_code": "ADMINISTRATIVAS",
+      "accessible_to_all_faculties": false,
+      "category_code": "movilidad_academica",
+      "description": "Escenario simulado para demostrar orientación por facultad y público; no existe convocatoria ni proceso acreditado.",
+      "needs_tags": [
+        "movilidad_academica",
+        "viajar",
+        "intercambio",
+        "posgrado"
+      ],
+      "audience": "posgrado",
+      "evidence_type": "prueba_ficticia",
+      "availability_status": "datos_insuficientes",
+      "warnings": [
+        "DEMO únicamente: no presentar como beca, viaje, convocatoria o servicio vigente."
+      ]
+    },
+    {
+      "id": "DEMO-MF-ADMINISTRATIVAS-MOV_DOC",
+      "name": "Estancia académica docente de ejemplo — Ciencias Administrativas [FICTICIO]",
+      "faculty_code": "ADMINISTRATIVAS",
+      "accessible_to_all_faculties": false,
+      "category_code": "movilidad_academica",
+      "description": "Escenario simulado para demostrar orientación por facultad y público; no existe convocatoria ni proceso acreditado.",
+      "needs_tags": [
+        "movilidad_academica",
+        "viajar",
+        "intercambio",
+        "docentes"
+      ],
+      "audience": "docentes",
+      "evidence_type": "prueba_ficticia",
+      "availability_status": "datos_insuficientes",
+      "warnings": [
+        "DEMO únicamente: no presentar como beca, viaje, convocatoria o servicio vigente."
+      ]
+    },
+    {
+      "id": "DEMO-MF-CONTABLES-ORIENTACION",
+      "name": "Orientación universitaria de ejemplo — Ciencias Contables [FICTICIO]",
+      "faculty_code": "CONTABLES",
+      "accessible_to_all_faculties": false,
+      "category_code": "bienestar",
+      "description": "Escenario simulado para demostrar orientación por facultad y público; no existe convocatoria ni proceso acreditado.",
+      "needs_tags": [
+        "orientacion",
+        "bienestar",
+        "adaptacion"
+      ],
+      "audience": "todos",
+      "evidence_type": "prueba_ficticia",
+      "availability_status": "datos_insuficientes",
+      "warnings": [
+        "DEMO únicamente: no presentar como beca, viaje, convocatoria o servicio vigente."
+      ]
+    },
+    {
+      "id": "DEMO-MF-CONTABLES-BECA_PRE",
+      "name": "Convocatoria de beca de pregrado de ejemplo — Ciencias Contables [FICTICIO]",
+      "faculty_code": "CONTABLES",
+      "accessible_to_all_faculties": false,
+      "category_code": "becas",
+      "description": "Escenario simulado para demostrar orientación por facultad y público; no existe convocatoria ni proceso acreditado.",
+      "needs_tags": [
+        "becas",
+        "pregrado",
+        "apoyo_economico"
+      ],
+      "audience": "pregrado",
+      "evidence_type": "prueba_ficticia",
+      "availability_status": "datos_insuficientes",
+      "warnings": [
+        "DEMO únicamente: no presentar como beca, viaje, convocatoria o servicio vigente."
+      ]
+    },
+    {
+      "id": "DEMO-MF-CONTABLES-BECA_POS",
+      "name": "Convocatoria de beca de posgrado de ejemplo — Ciencias Contables [FICTICIO]",
+      "faculty_code": "CONTABLES",
+      "accessible_to_all_faculties": false,
+      "category_code": "becas",
+      "description": "Escenario simulado para demostrar orientación por facultad y público; no existe convocatoria ni proceso acreditado.",
+      "needs_tags": [
+        "becas",
+        "posgrado",
+        "investigacion"
+      ],
+      "audience": "posgrado",
+      "evidence_type": "prueba_ficticia",
+      "availability_status": "datos_insuficientes",
+      "warnings": [
+        "DEMO únicamente: no presentar como beca, viaje, convocatoria o servicio vigente."
+      ]
+    },
+    {
+      "id": "DEMO-MF-CONTABLES-BECA_DOC",
+      "name": "Convocatoria de apoyo docente de ejemplo — Ciencias Contables [FICTICIO]",
+      "faculty_code": "CONTABLES",
+      "accessible_to_all_faculties": false,
+      "category_code": "becas",
+      "description": "Escenario simulado para demostrar orientación por facultad y público; no existe convocatoria ni proceso acreditado.",
+      "needs_tags": [
+        "becas",
+        "docentes",
+        "investigacion"
+      ],
+      "audience": "docentes",
+      "evidence_type": "prueba_ficticia",
+      "availability_status": "datos_insuficientes",
+      "warnings": [
+        "DEMO únicamente: no presentar como beca, viaje, convocatoria o servicio vigente."
+      ]
+    },
+    {
+      "id": "DEMO-MF-CONTABLES-MOV_PRE",
+      "name": "Movilidad académica de pregrado de ejemplo — Ciencias Contables [FICTICIO]",
+      "faculty_code": "CONTABLES",
+      "accessible_to_all_faculties": false,
+      "category_code": "movilidad_academica",
+      "description": "Escenario simulado para demostrar orientación por facultad y público; no existe convocatoria ni proceso acreditado.",
+      "needs_tags": [
+        "movilidad_academica",
+        "viajar",
+        "intercambio",
+        "pregrado"
+      ],
+      "audience": "pregrado",
+      "evidence_type": "prueba_ficticia",
+      "availability_status": "datos_insuficientes",
+      "warnings": [
+        "DEMO únicamente: no presentar como beca, viaje, convocatoria o servicio vigente."
+      ]
+    },
+    {
+      "id": "DEMO-MF-CONTABLES-MOV_POS",
+      "name": "Movilidad académica de posgrado de ejemplo — Ciencias Contables [FICTICIO]",
+      "faculty_code": "CONTABLES",
+      "accessible_to_all_faculties": false,
+      "category_code": "movilidad_academica",
+      "description": "Escenario simulado para demostrar orientación por facultad y público; no existe convocatoria ni proceso acreditado.",
+      "needs_tags": [
+        "movilidad_academica",
+        "viajar",
+        "intercambio",
+        "posgrado"
+      ],
+      "audience": "posgrado",
+      "evidence_type": "prueba_ficticia",
+      "availability_status": "datos_insuficientes",
+      "warnings": [
+        "DEMO únicamente: no presentar como beca, viaje, convocatoria o servicio vigente."
+      ]
+    },
+    {
+      "id": "DEMO-MF-CONTABLES-MOV_DOC",
+      "name": "Estancia académica docente de ejemplo — Ciencias Contables [FICTICIO]",
+      "faculty_code": "CONTABLES",
+      "accessible_to_all_faculties": false,
+      "category_code": "movilidad_academica",
+      "description": "Escenario simulado para demostrar orientación por facultad y público; no existe convocatoria ni proceso acreditado.",
+      "needs_tags": [
+        "movilidad_academica",
+        "viajar",
+        "intercambio",
+        "docentes"
+      ],
+      "audience": "docentes",
+      "evidence_type": "prueba_ficticia",
+      "availability_status": "datos_insuficientes",
+      "warnings": [
+        "DEMO únicamente: no presentar como beca, viaje, convocatoria o servicio vigente."
+      ]
+    },
+    {
+      "id": "DEMO-MF-FISICAS-ORIENTACION",
+      "name": "Orientación universitaria de ejemplo — Ciencias Físicas [FICTICIO]",
+      "faculty_code": "FISICAS",
+      "accessible_to_all_faculties": false,
+      "category_code": "bienestar",
+      "description": "Escenario simulado para demostrar orientación por facultad y público; no existe convocatoria ni proceso acreditado.",
+      "needs_tags": [
+        "orientacion",
+        "bienestar",
+        "adaptacion"
+      ],
+      "audience": "todos",
+      "evidence_type": "prueba_ficticia",
+      "availability_status": "datos_insuficientes",
+      "warnings": [
+        "DEMO únicamente: no presentar como beca, viaje, convocatoria o servicio vigente."
+      ]
+    },
+    {
+      "id": "DEMO-MF-FISICAS-BECA_PRE",
+      "name": "Convocatoria de beca de pregrado de ejemplo — Ciencias Físicas [FICTICIO]",
+      "faculty_code": "FISICAS",
+      "accessible_to_all_faculties": false,
+      "category_code": "becas",
+      "description": "Escenario simulado para demostrar orientación por facultad y público; no existe convocatoria ni proceso acreditado.",
+      "needs_tags": [
+        "becas",
+        "pregrado",
+        "apoyo_economico"
+      ],
+      "audience": "pregrado",
+      "evidence_type": "prueba_ficticia",
+      "availability_status": "datos_insuficientes",
+      "warnings": [
+        "DEMO únicamente: no presentar como beca, viaje, convocatoria o servicio vigente."
+      ]
+    },
+    {
+      "id": "DEMO-MF-FISICAS-BECA_POS",
+      "name": "Convocatoria de beca de posgrado de ejemplo — Ciencias Físicas [FICTICIO]",
+      "faculty_code": "FISICAS",
+      "accessible_to_all_faculties": false,
+      "category_code": "becas",
+      "description": "Escenario simulado para demostrar orientación por facultad y público; no existe convocatoria ni proceso acreditado.",
+      "needs_tags": [
+        "becas",
+        "posgrado",
+        "investigacion"
+      ],
+      "audience": "posgrado",
+      "evidence_type": "prueba_ficticia",
+      "availability_status": "datos_insuficientes",
+      "warnings": [
+        "DEMO únicamente: no presentar como beca, viaje, convocatoria o servicio vigente."
+      ]
+    },
+    {
+      "id": "DEMO-MF-FISICAS-BECA_DOC",
+      "name": "Convocatoria de apoyo docente de ejemplo — Ciencias Físicas [FICTICIO]",
+      "faculty_code": "FISICAS",
+      "accessible_to_all_faculties": false,
+      "category_code": "becas",
+      "description": "Escenario simulado para demostrar orientación por facultad y público; no existe convocatoria ni proceso acreditado.",
+      "needs_tags": [
+        "becas",
+        "docentes",
+        "investigacion"
+      ],
+      "audience": "docentes",
+      "evidence_type": "prueba_ficticia",
+      "availability_status": "datos_insuficientes",
+      "warnings": [
+        "DEMO únicamente: no presentar como beca, viaje, convocatoria o servicio vigente."
+      ]
+    },
+    {
+      "id": "DEMO-MF-FISICAS-MOV_PRE",
+      "name": "Movilidad académica de pregrado de ejemplo — Ciencias Físicas [FICTICIO]",
+      "faculty_code": "FISICAS",
+      "accessible_to_all_faculties": false,
+      "category_code": "movilidad_academica",
+      "description": "Escenario simulado para demostrar orientación por facultad y público; no existe convocatoria ni proceso acreditado.",
+      "needs_tags": [
+        "movilidad_academica",
+        "viajar",
+        "intercambio",
+        "pregrado"
+      ],
+      "audience": "pregrado",
+      "evidence_type": "prueba_ficticia",
+      "availability_status": "datos_insuficientes",
+      "warnings": [
+        "DEMO únicamente: no presentar como beca, viaje, convocatoria o servicio vigente."
+      ]
+    },
+    {
+      "id": "DEMO-MF-FISICAS-MOV_POS",
+      "name": "Movilidad académica de posgrado de ejemplo — Ciencias Físicas [FICTICIO]",
+      "faculty_code": "FISICAS",
+      "accessible_to_all_faculties": false,
+      "category_code": "movilidad_academica",
+      "description": "Escenario simulado para demostrar orientación por facultad y público; no existe convocatoria ni proceso acreditado.",
+      "needs_tags": [
+        "movilidad_academica",
+        "viajar",
+        "intercambio",
+        "posgrado"
+      ],
+      "audience": "posgrado",
+      "evidence_type": "prueba_ficticia",
+      "availability_status": "datos_insuficientes",
+      "warnings": [
+        "DEMO únicamente: no presentar como beca, viaje, convocatoria o servicio vigente."
+      ]
+    },
+    {
+      "id": "DEMO-MF-FISICAS-MOV_DOC",
+      "name": "Estancia académica docente de ejemplo — Ciencias Físicas [FICTICIO]",
+      "faculty_code": "FISICAS",
+      "accessible_to_all_faculties": false,
+      "category_code": "movilidad_academica",
+      "description": "Escenario simulado para demostrar orientación por facultad y público; no existe convocatoria ni proceso acreditado.",
+      "needs_tags": [
+        "movilidad_academica",
+        "viajar",
+        "intercambio",
+        "docentes"
+      ],
+      "audience": "docentes",
+      "evidence_type": "prueba_ficticia",
+      "availability_status": "datos_insuficientes",
+      "warnings": [
+        "DEMO únicamente: no presentar como beca, viaje, convocatoria o servicio vigente."
+      ]
+    },
+    {
+      "id": "DEMO-MF-SOCIALES-ORIENTACION",
+      "name": "Orientación universitaria de ejemplo — Ciencias Sociales [FICTICIO]",
+      "faculty_code": "SOCIALES",
+      "accessible_to_all_faculties": false,
+      "category_code": "bienestar",
+      "description": "Escenario simulado para demostrar orientación por facultad y público; no existe convocatoria ni proceso acreditado.",
+      "needs_tags": [
+        "orientacion",
+        "bienestar",
+        "adaptacion"
+      ],
+      "audience": "todos",
+      "evidence_type": "prueba_ficticia",
+      "availability_status": "datos_insuficientes",
+      "warnings": [
+        "DEMO únicamente: no presentar como beca, viaje, convocatoria o servicio vigente."
+      ]
+    },
+    {
+      "id": "DEMO-MF-SOCIALES-BECA_PRE",
+      "name": "Convocatoria de beca de pregrado de ejemplo — Ciencias Sociales [FICTICIO]",
+      "faculty_code": "SOCIALES",
+      "accessible_to_all_faculties": false,
+      "category_code": "becas",
+      "description": "Escenario simulado para demostrar orientación por facultad y público; no existe convocatoria ni proceso acreditado.",
+      "needs_tags": [
+        "becas",
+        "pregrado",
+        "apoyo_economico"
+      ],
+      "audience": "pregrado",
+      "evidence_type": "prueba_ficticia",
+      "availability_status": "datos_insuficientes",
+      "warnings": [
+        "DEMO únicamente: no presentar como beca, viaje, convocatoria o servicio vigente."
+      ]
+    },
+    {
+      "id": "DEMO-MF-SOCIALES-BECA_POS",
+      "name": "Convocatoria de beca de posgrado de ejemplo — Ciencias Sociales [FICTICIO]",
+      "faculty_code": "SOCIALES",
+      "accessible_to_all_faculties": false,
+      "category_code": "becas",
+      "description": "Escenario simulado para demostrar orientación por facultad y público; no existe convocatoria ni proceso acreditado.",
+      "needs_tags": [
+        "becas",
+        "posgrado",
+        "investigacion"
+      ],
+      "audience": "posgrado",
+      "evidence_type": "prueba_ficticia",
+      "availability_status": "datos_insuficientes",
+      "warnings": [
+        "DEMO únicamente: no presentar como beca, viaje, convocatoria o servicio vigente."
+      ]
+    },
+    {
+      "id": "DEMO-MF-SOCIALES-BECA_DOC",
+      "name": "Convocatoria de apoyo docente de ejemplo — Ciencias Sociales [FICTICIO]",
+      "faculty_code": "SOCIALES",
+      "accessible_to_all_faculties": false,
+      "category_code": "becas",
+      "description": "Escenario simulado para demostrar orientación por facultad y público; no existe convocatoria ni proceso acreditado.",
+      "needs_tags": [
+        "becas",
+        "docentes",
+        "investigacion"
+      ],
+      "audience": "docentes",
+      "evidence_type": "prueba_ficticia",
+      "availability_status": "datos_insuficientes",
+      "warnings": [
+        "DEMO únicamente: no presentar como beca, viaje, convocatoria o servicio vigente."
+      ]
+    },
+    {
+      "id": "DEMO-MF-SOCIALES-MOV_PRE",
+      "name": "Movilidad académica de pregrado de ejemplo — Ciencias Sociales [FICTICIO]",
+      "faculty_code": "SOCIALES",
+      "accessible_to_all_faculties": false,
+      "category_code": "movilidad_academica",
+      "description": "Escenario simulado para demostrar orientación por facultad y público; no existe convocatoria ni proceso acreditado.",
+      "needs_tags": [
+        "movilidad_academica",
+        "viajar",
+        "intercambio",
+        "pregrado"
+      ],
+      "audience": "pregrado",
+      "evidence_type": "prueba_ficticia",
+      "availability_status": "datos_insuficientes",
+      "warnings": [
+        "DEMO únicamente: no presentar como beca, viaje, convocatoria o servicio vigente."
+      ]
+    },
+    {
+      "id": "DEMO-MF-SOCIALES-MOV_POS",
+      "name": "Movilidad académica de posgrado de ejemplo — Ciencias Sociales [FICTICIO]",
+      "faculty_code": "SOCIALES",
+      "accessible_to_all_faculties": false,
+      "category_code": "movilidad_academica",
+      "description": "Escenario simulado para demostrar orientación por facultad y público; no existe convocatoria ni proceso acreditado.",
+      "needs_tags": [
+        "movilidad_academica",
+        "viajar",
+        "intercambio",
+        "posgrado"
+      ],
+      "audience": "posgrado",
+      "evidence_type": "prueba_ficticia",
+      "availability_status": "datos_insuficientes",
+      "warnings": [
+        "DEMO únicamente: no presentar como beca, viaje, convocatoria o servicio vigente."
+      ]
+    },
+    {
+      "id": "DEMO-MF-SOCIALES-MOV_DOC",
+      "name": "Estancia académica docente de ejemplo — Ciencias Sociales [FICTICIO]",
+      "faculty_code": "SOCIALES",
+      "accessible_to_all_faculties": false,
+      "category_code": "movilidad_academica",
+      "description": "Escenario simulado para demostrar orientación por facultad y público; no existe convocatoria ni proceso acreditado.",
+      "needs_tags": [
+        "movilidad_academica",
+        "viajar",
+        "intercambio",
+        "docentes"
+      ],
+      "audience": "docentes",
+      "evidence_type": "prueba_ficticia",
+      "availability_status": "datos_insuficientes",
+      "warnings": [
+        "DEMO únicamente: no presentar como beca, viaje, convocatoria o servicio vigente."
+      ]
+    },
+    {
+      "id": "DEMO-MF-ING_GEOLOGICA-ORIENTACION",
+      "name": "Orientación universitaria de ejemplo — Ingeniería Geológica, Minera, Metalúrgica y Geográfica [FICTICIO]",
+      "faculty_code": "ING_GEOLOGICA",
+      "accessible_to_all_faculties": false,
+      "category_code": "bienestar",
+      "description": "Escenario simulado para demostrar orientación por facultad y público; no existe convocatoria ni proceso acreditado.",
+      "needs_tags": [
+        "orientacion",
+        "bienestar",
+        "adaptacion"
+      ],
+      "audience": "todos",
+      "evidence_type": "prueba_ficticia",
+      "availability_status": "datos_insuficientes",
+      "warnings": [
+        "DEMO únicamente: no presentar como beca, viaje, convocatoria o servicio vigente."
+      ]
+    },
+    {
+      "id": "DEMO-MF-ING_GEOLOGICA-BECA_PRE",
+      "name": "Convocatoria de beca de pregrado de ejemplo — Ingeniería Geológica, Minera, Metalúrgica y Geográfica [FICTICIO]",
+      "faculty_code": "ING_GEOLOGICA",
+      "accessible_to_all_faculties": false,
+      "category_code": "becas",
+      "description": "Escenario simulado para demostrar orientación por facultad y público; no existe convocatoria ni proceso acreditado.",
+      "needs_tags": [
+        "becas",
+        "pregrado",
+        "apoyo_economico"
+      ],
+      "audience": "pregrado",
+      "evidence_type": "prueba_ficticia",
+      "availability_status": "datos_insuficientes",
+      "warnings": [
+        "DEMO únicamente: no presentar como beca, viaje, convocatoria o servicio vigente."
+      ]
+    },
+    {
+      "id": "DEMO-MF-ING_GEOLOGICA-BECA_POS",
+      "name": "Convocatoria de beca de posgrado de ejemplo — Ingeniería Geológica, Minera, Metalúrgica y Geográfica [FICTICIO]",
+      "faculty_code": "ING_GEOLOGICA",
+      "accessible_to_all_faculties": false,
+      "category_code": "becas",
+      "description": "Escenario simulado para demostrar orientación por facultad y público; no existe convocatoria ni proceso acreditado.",
+      "needs_tags": [
+        "becas",
+        "posgrado",
+        "investigacion"
+      ],
+      "audience": "posgrado",
+      "evidence_type": "prueba_ficticia",
+      "availability_status": "datos_insuficientes",
+      "warnings": [
+        "DEMO únicamente: no presentar como beca, viaje, convocatoria o servicio vigente."
+      ]
+    },
+    {
+      "id": "DEMO-MF-ING_GEOLOGICA-BECA_DOC",
+      "name": "Convocatoria de apoyo docente de ejemplo — Ingeniería Geológica, Minera, Metalúrgica y Geográfica [FICTICIO]",
+      "faculty_code": "ING_GEOLOGICA",
+      "accessible_to_all_faculties": false,
+      "category_code": "becas",
+      "description": "Escenario simulado para demostrar orientación por facultad y público; no existe convocatoria ni proceso acreditado.",
+      "needs_tags": [
+        "becas",
+        "docentes",
+        "investigacion"
+      ],
+      "audience": "docentes",
+      "evidence_type": "prueba_ficticia",
+      "availability_status": "datos_insuficientes",
+      "warnings": [
+        "DEMO únicamente: no presentar como beca, viaje, convocatoria o servicio vigente."
+      ]
+    },
+    {
+      "id": "DEMO-MF-ING_GEOLOGICA-MOV_PRE",
+      "name": "Movilidad académica de pregrado de ejemplo — Ingeniería Geológica, Minera, Metalúrgica y Geográfica [FICTICIO]",
+      "faculty_code": "ING_GEOLOGICA",
+      "accessible_to_all_faculties": false,
+      "category_code": "movilidad_academica",
+      "description": "Escenario simulado para demostrar orientación por facultad y público; no existe convocatoria ni proceso acreditado.",
+      "needs_tags": [
+        "movilidad_academica",
+        "viajar",
+        "intercambio",
+        "pregrado"
+      ],
+      "audience": "pregrado",
+      "evidence_type": "prueba_ficticia",
+      "availability_status": "datos_insuficientes",
+      "warnings": [
+        "DEMO únicamente: no presentar como beca, viaje, convocatoria o servicio vigente."
+      ]
+    },
+    {
+      "id": "DEMO-MF-ING_GEOLOGICA-MOV_POS",
+      "name": "Movilidad académica de posgrado de ejemplo — Ingeniería Geológica, Minera, Metalúrgica y Geográfica [FICTICIO]",
+      "faculty_code": "ING_GEOLOGICA",
+      "accessible_to_all_faculties": false,
+      "category_code": "movilidad_academica",
+      "description": "Escenario simulado para demostrar orientación por facultad y público; no existe convocatoria ni proceso acreditado.",
+      "needs_tags": [
+        "movilidad_academica",
+        "viajar",
+        "intercambio",
+        "posgrado"
+      ],
+      "audience": "posgrado",
+      "evidence_type": "prueba_ficticia",
+      "availability_status": "datos_insuficientes",
+      "warnings": [
+        "DEMO únicamente: no presentar como beca, viaje, convocatoria o servicio vigente."
+      ]
+    },
+    {
+      "id": "DEMO-MF-ING_GEOLOGICA-MOV_DOC",
+      "name": "Estancia académica docente de ejemplo — Ingeniería Geológica, Minera, Metalúrgica y Geográfica [FICTICIO]",
+      "faculty_code": "ING_GEOLOGICA",
+      "accessible_to_all_faculties": false,
+      "category_code": "movilidad_academica",
+      "description": "Escenario simulado para demostrar orientación por facultad y público; no existe convocatoria ni proceso acreditado.",
+      "needs_tags": [
+        "movilidad_academica",
+        "viajar",
+        "intercambio",
+        "docentes"
+      ],
+      "audience": "docentes",
+      "evidence_type": "prueba_ficticia",
+      "availability_status": "datos_insuficientes",
+      "warnings": [
+        "DEMO únicamente: no presentar como beca, viaje, convocatoria o servicio vigente."
+      ]
+    },
+    {
+      "id": "DEMO-MF-INDUSTRIAL-ORIENTACION",
+      "name": "Orientación universitaria de ejemplo — Ingeniería Industrial [FICTICIO]",
+      "faculty_code": "INDUSTRIAL",
+      "accessible_to_all_faculties": false,
+      "category_code": "bienestar",
+      "description": "Escenario simulado para demostrar orientación por facultad y público; no existe convocatoria ni proceso acreditado.",
+      "needs_tags": [
+        "orientacion",
+        "bienestar",
+        "adaptacion"
+      ],
+      "audience": "todos",
+      "evidence_type": "prueba_ficticia",
+      "availability_status": "datos_insuficientes",
+      "warnings": [
+        "DEMO únicamente: no presentar como beca, viaje, convocatoria o servicio vigente."
+      ]
+    },
+    {
+      "id": "DEMO-MF-INDUSTRIAL-BECA_PRE",
+      "name": "Convocatoria de beca de pregrado de ejemplo — Ingeniería Industrial [FICTICIO]",
+      "faculty_code": "INDUSTRIAL",
+      "accessible_to_all_faculties": false,
+      "category_code": "becas",
+      "description": "Escenario simulado para demostrar orientación por facultad y público; no existe convocatoria ni proceso acreditado.",
+      "needs_tags": [
+        "becas",
+        "pregrado",
+        "apoyo_economico"
+      ],
+      "audience": "pregrado",
+      "evidence_type": "prueba_ficticia",
+      "availability_status": "datos_insuficientes",
+      "warnings": [
+        "DEMO únicamente: no presentar como beca, viaje, convocatoria o servicio vigente."
+      ]
+    },
+    {
+      "id": "DEMO-MF-INDUSTRIAL-BECA_POS",
+      "name": "Convocatoria de beca de posgrado de ejemplo — Ingeniería Industrial [FICTICIO]",
+      "faculty_code": "INDUSTRIAL",
+      "accessible_to_all_faculties": false,
+      "category_code": "becas",
+      "description": "Escenario simulado para demostrar orientación por facultad y público; no existe convocatoria ni proceso acreditado.",
+      "needs_tags": [
+        "becas",
+        "posgrado",
+        "investigacion"
+      ],
+      "audience": "posgrado",
+      "evidence_type": "prueba_ficticia",
+      "availability_status": "datos_insuficientes",
+      "warnings": [
+        "DEMO únicamente: no presentar como beca, viaje, convocatoria o servicio vigente."
+      ]
+    },
+    {
+      "id": "DEMO-MF-INDUSTRIAL-BECA_DOC",
+      "name": "Convocatoria de apoyo docente de ejemplo — Ingeniería Industrial [FICTICIO]",
+      "faculty_code": "INDUSTRIAL",
+      "accessible_to_all_faculties": false,
+      "category_code": "becas",
+      "description": "Escenario simulado para demostrar orientación por facultad y público; no existe convocatoria ni proceso acreditado.",
+      "needs_tags": [
+        "becas",
+        "docentes",
+        "investigacion"
+      ],
+      "audience": "docentes",
+      "evidence_type": "prueba_ficticia",
+      "availability_status": "datos_insuficientes",
+      "warnings": [
+        "DEMO únicamente: no presentar como beca, viaje, convocatoria o servicio vigente."
+      ]
+    },
+    {
+      "id": "DEMO-MF-INDUSTRIAL-MOV_PRE",
+      "name": "Movilidad académica de pregrado de ejemplo — Ingeniería Industrial [FICTICIO]",
+      "faculty_code": "INDUSTRIAL",
+      "accessible_to_all_faculties": false,
+      "category_code": "movilidad_academica",
+      "description": "Escenario simulado para demostrar orientación por facultad y público; no existe convocatoria ni proceso acreditado.",
+      "needs_tags": [
+        "movilidad_academica",
+        "viajar",
+        "intercambio",
+        "pregrado"
+      ],
+      "audience": "pregrado",
+      "evidence_type": "prueba_ficticia",
+      "availability_status": "datos_insuficientes",
+      "warnings": [
+        "DEMO únicamente: no presentar como beca, viaje, convocatoria o servicio vigente."
+      ]
+    },
+    {
+      "id": "DEMO-MF-INDUSTRIAL-MOV_POS",
+      "name": "Movilidad académica de posgrado de ejemplo — Ingeniería Industrial [FICTICIO]",
+      "faculty_code": "INDUSTRIAL",
+      "accessible_to_all_faculties": false,
+      "category_code": "movilidad_academica",
+      "description": "Escenario simulado para demostrar orientación por facultad y público; no existe convocatoria ni proceso acreditado.",
+      "needs_tags": [
+        "movilidad_academica",
+        "viajar",
+        "intercambio",
+        "posgrado"
+      ],
+      "audience": "posgrado",
+      "evidence_type": "prueba_ficticia",
+      "availability_status": "datos_insuficientes",
+      "warnings": [
+        "DEMO únicamente: no presentar como beca, viaje, convocatoria o servicio vigente."
+      ]
+    },
+    {
+      "id": "DEMO-MF-INDUSTRIAL-MOV_DOC",
+      "name": "Estancia académica docente de ejemplo — Ingeniería Industrial [FICTICIO]",
+      "faculty_code": "INDUSTRIAL",
+      "accessible_to_all_faculties": false,
+      "category_code": "movilidad_academica",
+      "description": "Escenario simulado para demostrar orientación por facultad y público; no existe convocatoria ni proceso acreditado.",
+      "needs_tags": [
+        "movilidad_academica",
+        "viajar",
+        "intercambio",
+        "docentes"
+      ],
+      "audience": "docentes",
+      "evidence_type": "prueba_ficticia",
+      "availability_status": "datos_insuficientes",
+      "warnings": [
+        "DEMO únicamente: no presentar como beca, viaje, convocatoria o servicio vigente."
+      ]
+    },
+    {
+      "id": "DEMO-MF-ELECTRONICA-ORIENTACION",
+      "name": "Orientación universitaria de ejemplo — Ingeniería Electrónica y Eléctrica [FICTICIO]",
+      "faculty_code": "ELECTRONICA",
+      "accessible_to_all_faculties": false,
+      "category_code": "bienestar",
+      "description": "Escenario simulado para demostrar orientación por facultad y público; no existe convocatoria ni proceso acreditado.",
+      "needs_tags": [
+        "orientacion",
+        "bienestar",
+        "adaptacion"
+      ],
+      "audience": "todos",
+      "evidence_type": "prueba_ficticia",
+      "availability_status": "datos_insuficientes",
+      "warnings": [
+        "DEMO únicamente: no presentar como beca, viaje, convocatoria o servicio vigente."
+      ]
+    },
+    {
+      "id": "DEMO-MF-ELECTRONICA-BECA_PRE",
+      "name": "Convocatoria de beca de pregrado de ejemplo — Ingeniería Electrónica y Eléctrica [FICTICIO]",
+      "faculty_code": "ELECTRONICA",
+      "accessible_to_all_faculties": false,
+      "category_code": "becas",
+      "description": "Escenario simulado para demostrar orientación por facultad y público; no existe convocatoria ni proceso acreditado.",
+      "needs_tags": [
+        "becas",
+        "pregrado",
+        "apoyo_economico"
+      ],
+      "audience": "pregrado",
+      "evidence_type": "prueba_ficticia",
+      "availability_status": "datos_insuficientes",
+      "warnings": [
+        "DEMO únicamente: no presentar como beca, viaje, convocatoria o servicio vigente."
+      ]
+    },
+    {
+      "id": "DEMO-MF-ELECTRONICA-BECA_POS",
+      "name": "Convocatoria de beca de posgrado de ejemplo — Ingeniería Electrónica y Eléctrica [FICTICIO]",
+      "faculty_code": "ELECTRONICA",
+      "accessible_to_all_faculties": false,
+      "category_code": "becas",
+      "description": "Escenario simulado para demostrar orientación por facultad y público; no existe convocatoria ni proceso acreditado.",
+      "needs_tags": [
+        "becas",
+        "posgrado",
+        "investigacion"
+      ],
+      "audience": "posgrado",
+      "evidence_type": "prueba_ficticia",
+      "availability_status": "datos_insuficientes",
+      "warnings": [
+        "DEMO únicamente: no presentar como beca, viaje, convocatoria o servicio vigente."
+      ]
+    },
+    {
+      "id": "DEMO-MF-ELECTRONICA-BECA_DOC",
+      "name": "Convocatoria de apoyo docente de ejemplo — Ingeniería Electrónica y Eléctrica [FICTICIO]",
+      "faculty_code": "ELECTRONICA",
+      "accessible_to_all_faculties": false,
+      "category_code": "becas",
+      "description": "Escenario simulado para demostrar orientación por facultad y público; no existe convocatoria ni proceso acreditado.",
+      "needs_tags": [
+        "becas",
+        "docentes",
+        "investigacion"
+      ],
+      "audience": "docentes",
+      "evidence_type": "prueba_ficticia",
+      "availability_status": "datos_insuficientes",
+      "warnings": [
+        "DEMO únicamente: no presentar como beca, viaje, convocatoria o servicio vigente."
+      ]
+    },
+    {
+      "id": "DEMO-MF-ELECTRONICA-MOV_PRE",
+      "name": "Movilidad académica de pregrado de ejemplo — Ingeniería Electrónica y Eléctrica [FICTICIO]",
+      "faculty_code": "ELECTRONICA",
+      "accessible_to_all_faculties": false,
+      "category_code": "movilidad_academica",
+      "description": "Escenario simulado para demostrar orientación por facultad y público; no existe convocatoria ni proceso acreditado.",
+      "needs_tags": [
+        "movilidad_academica",
+        "viajar",
+        "intercambio",
+        "pregrado"
+      ],
+      "audience": "pregrado",
+      "evidence_type": "prueba_ficticia",
+      "availability_status": "datos_insuficientes",
+      "warnings": [
+        "DEMO únicamente: no presentar como beca, viaje, convocatoria o servicio vigente."
+      ]
+    },
+    {
+      "id": "DEMO-MF-ELECTRONICA-MOV_POS",
+      "name": "Movilidad académica de posgrado de ejemplo — Ingeniería Electrónica y Eléctrica [FICTICIO]",
+      "faculty_code": "ELECTRONICA",
+      "accessible_to_all_faculties": false,
+      "category_code": "movilidad_academica",
+      "description": "Escenario simulado para demostrar orientación por facultad y público; no existe convocatoria ni proceso acreditado.",
+      "needs_tags": [
+        "movilidad_academica",
+        "viajar",
+        "intercambio",
+        "posgrado"
+      ],
+      "audience": "posgrado",
+      "evidence_type": "prueba_ficticia",
+      "availability_status": "datos_insuficientes",
+      "warnings": [
+        "DEMO únicamente: no presentar como beca, viaje, convocatoria o servicio vigente."
+      ]
+    },
+    {
+      "id": "DEMO-MF-ELECTRONICA-MOV_DOC",
+      "name": "Estancia académica docente de ejemplo — Ingeniería Electrónica y Eléctrica [FICTICIO]",
+      "faculty_code": "ELECTRONICA",
+      "accessible_to_all_faculties": false,
+      "category_code": "movilidad_academica",
+      "description": "Escenario simulado para demostrar orientación por facultad y público; no existe convocatoria ni proceso acreditado.",
+      "needs_tags": [
+        "movilidad_academica",
+        "viajar",
+        "intercambio",
+        "docentes"
+      ],
+      "audience": "docentes",
+      "evidence_type": "prueba_ficticia",
+      "availability_status": "datos_insuficientes",
+      "warnings": [
+        "DEMO únicamente: no presentar como beca, viaje, convocatoria o servicio vigente."
+      ]
+    },
+    {
+      "id": "DEMO-MF-PSICOLOGIA-ORIENTACION",
+      "name": "Orientación universitaria de ejemplo — Psicología [FICTICIO]",
+      "faculty_code": "PSICOLOGIA",
+      "accessible_to_all_faculties": false,
+      "category_code": "bienestar",
+      "description": "Escenario simulado para demostrar orientación por facultad y público; no existe convocatoria ni proceso acreditado.",
+      "needs_tags": [
+        "orientacion",
+        "bienestar",
+        "adaptacion"
+      ],
+      "audience": "todos",
+      "evidence_type": "prueba_ficticia",
+      "availability_status": "datos_insuficientes",
+      "warnings": [
+        "DEMO únicamente: no presentar como beca, viaje, convocatoria o servicio vigente."
+      ]
+    },
+    {
+      "id": "DEMO-MF-PSICOLOGIA-BECA_PRE",
+      "name": "Convocatoria de beca de pregrado de ejemplo — Psicología [FICTICIO]",
+      "faculty_code": "PSICOLOGIA",
+      "accessible_to_all_faculties": false,
+      "category_code": "becas",
+      "description": "Escenario simulado para demostrar orientación por facultad y público; no existe convocatoria ni proceso acreditado.",
+      "needs_tags": [
+        "becas",
+        "pregrado",
+        "apoyo_economico"
+      ],
+      "audience": "pregrado",
+      "evidence_type": "prueba_ficticia",
+      "availability_status": "datos_insuficientes",
+      "warnings": [
+        "DEMO únicamente: no presentar como beca, viaje, convocatoria o servicio vigente."
+      ]
+    },
+    {
+      "id": "DEMO-MF-PSICOLOGIA-BECA_POS",
+      "name": "Convocatoria de beca de posgrado de ejemplo — Psicología [FICTICIO]",
+      "faculty_code": "PSICOLOGIA",
+      "accessible_to_all_faculties": false,
+      "category_code": "becas",
+      "description": "Escenario simulado para demostrar orientación por facultad y público; no existe convocatoria ni proceso acreditado.",
+      "needs_tags": [
+        "becas",
+        "posgrado",
+        "investigacion"
+      ],
+      "audience": "posgrado",
+      "evidence_type": "prueba_ficticia",
+      "availability_status": "datos_insuficientes",
+      "warnings": [
+        "DEMO únicamente: no presentar como beca, viaje, convocatoria o servicio vigente."
+      ]
+    },
+    {
+      "id": "DEMO-MF-PSICOLOGIA-BECA_DOC",
+      "name": "Convocatoria de apoyo docente de ejemplo — Psicología [FICTICIO]",
+      "faculty_code": "PSICOLOGIA",
+      "accessible_to_all_faculties": false,
+      "category_code": "becas",
+      "description": "Escenario simulado para demostrar orientación por facultad y público; no existe convocatoria ni proceso acreditado.",
+      "needs_tags": [
+        "becas",
+        "docentes",
+        "investigacion"
+      ],
+      "audience": "docentes",
+      "evidence_type": "prueba_ficticia",
+      "availability_status": "datos_insuficientes",
+      "warnings": [
+        "DEMO únicamente: no presentar como beca, viaje, convocatoria o servicio vigente."
+      ]
+    },
+    {
+      "id": "DEMO-MF-PSICOLOGIA-MOV_PRE",
+      "name": "Movilidad académica de pregrado de ejemplo — Psicología [FICTICIO]",
+      "faculty_code": "PSICOLOGIA",
+      "accessible_to_all_faculties": false,
+      "category_code": "movilidad_academica",
+      "description": "Escenario simulado para demostrar orientación por facultad y público; no existe convocatoria ni proceso acreditado.",
+      "needs_tags": [
+        "movilidad_academica",
+        "viajar",
+        "intercambio",
+        "pregrado"
+      ],
+      "audience": "pregrado",
+      "evidence_type": "prueba_ficticia",
+      "availability_status": "datos_insuficientes",
+      "warnings": [
+        "DEMO únicamente: no presentar como beca, viaje, convocatoria o servicio vigente."
+      ]
+    },
+    {
+      "id": "DEMO-MF-PSICOLOGIA-MOV_POS",
+      "name": "Movilidad académica de posgrado de ejemplo — Psicología [FICTICIO]",
+      "faculty_code": "PSICOLOGIA",
+      "accessible_to_all_faculties": false,
+      "category_code": "movilidad_academica",
+      "description": "Escenario simulado para demostrar orientación por facultad y público; no existe convocatoria ni proceso acreditado.",
+      "needs_tags": [
+        "movilidad_academica",
+        "viajar",
+        "intercambio",
+        "posgrado"
+      ],
+      "audience": "posgrado",
+      "evidence_type": "prueba_ficticia",
+      "availability_status": "datos_insuficientes",
+      "warnings": [
+        "DEMO únicamente: no presentar como beca, viaje, convocatoria o servicio vigente."
+      ]
+    },
+    {
+      "id": "DEMO-MF-PSICOLOGIA-MOV_DOC",
+      "name": "Estancia académica docente de ejemplo — Psicología [FICTICIO]",
+      "faculty_code": "PSICOLOGIA",
+      "accessible_to_all_faculties": false,
+      "category_code": "movilidad_academica",
+      "description": "Escenario simulado para demostrar orientación por facultad y público; no existe convocatoria ni proceso acreditado.",
+      "needs_tags": [
+        "movilidad_academica",
+        "viajar",
+        "intercambio",
+        "docentes"
+      ],
+      "audience": "docentes",
+      "evidence_type": "prueba_ficticia",
+      "availability_status": "datos_insuficientes",
+      "warnings": [
+        "DEMO únicamente: no presentar como beca, viaje, convocatoria o servicio vigente."
+      ]
+    },
+    {
+      "id": "DEMO-MF-FISI-ORIENTACION",
+      "name": "Orientación universitaria de ejemplo — Ingeniería de Sistemas e Informática [FICTICIO]",
+      "faculty_code": "FISI",
+      "accessible_to_all_faculties": false,
+      "category_code": "bienestar",
+      "description": "Escenario simulado para demostrar orientación por facultad y público; no existe convocatoria ni proceso acreditado.",
+      "needs_tags": [
+        "orientacion",
+        "bienestar",
+        "adaptacion"
+      ],
+      "audience": "todos",
+      "evidence_type": "prueba_ficticia",
+      "availability_status": "datos_insuficientes",
+      "warnings": [
+        "DEMO únicamente: no presentar como beca, viaje, convocatoria o servicio vigente."
+      ]
+    },
+    {
+      "id": "DEMO-MF-FISI-BECA_PRE",
+      "name": "Convocatoria de beca de pregrado de ejemplo — Ingeniería de Sistemas e Informática [FICTICIO]",
+      "faculty_code": "FISI",
+      "accessible_to_all_faculties": false,
+      "category_code": "becas",
+      "description": "Escenario simulado para demostrar orientación por facultad y público; no existe convocatoria ni proceso acreditado.",
+      "needs_tags": [
+        "becas",
+        "pregrado",
+        "apoyo_economico"
+      ],
+      "audience": "pregrado",
+      "evidence_type": "prueba_ficticia",
+      "availability_status": "datos_insuficientes",
+      "warnings": [
+        "DEMO únicamente: no presentar como beca, viaje, convocatoria o servicio vigente."
+      ]
+    },
+    {
+      "id": "DEMO-MF-FISI-BECA_POS",
+      "name": "Convocatoria de beca de posgrado de ejemplo — Ingeniería de Sistemas e Informática [FICTICIO]",
+      "faculty_code": "FISI",
+      "accessible_to_all_faculties": false,
+      "category_code": "becas",
+      "description": "Escenario simulado para demostrar orientación por facultad y público; no existe convocatoria ni proceso acreditado.",
+      "needs_tags": [
+        "becas",
+        "posgrado",
+        "investigacion"
+      ],
+      "audience": "posgrado",
+      "evidence_type": "prueba_ficticia",
+      "availability_status": "datos_insuficientes",
+      "warnings": [
+        "DEMO únicamente: no presentar como beca, viaje, convocatoria o servicio vigente."
+      ]
+    },
+    {
+      "id": "DEMO-MF-FISI-BECA_DOC",
+      "name": "Convocatoria de apoyo docente de ejemplo — Ingeniería de Sistemas e Informática [FICTICIO]",
+      "faculty_code": "FISI",
+      "accessible_to_all_faculties": false,
+      "category_code": "becas",
+      "description": "Escenario simulado para demostrar orientación por facultad y público; no existe convocatoria ni proceso acreditado.",
+      "needs_tags": [
+        "becas",
+        "docentes",
+        "investigacion"
+      ],
+      "audience": "docentes",
+      "evidence_type": "prueba_ficticia",
+      "availability_status": "datos_insuficientes",
+      "warnings": [
+        "DEMO únicamente: no presentar como beca, viaje, convocatoria o servicio vigente."
+      ]
+    },
+    {
+      "id": "DEMO-MF-FISI-MOV_PRE",
+      "name": "Movilidad académica de pregrado de ejemplo — Ingeniería de Sistemas e Informática [FICTICIO]",
+      "faculty_code": "FISI",
+      "accessible_to_all_faculties": false,
+      "category_code": "movilidad_academica",
+      "description": "Escenario simulado para demostrar orientación por facultad y público; no existe convocatoria ni proceso acreditado.",
+      "needs_tags": [
+        "movilidad_academica",
+        "viajar",
+        "intercambio",
+        "pregrado"
+      ],
+      "audience": "pregrado",
+      "evidence_type": "prueba_ficticia",
+      "availability_status": "datos_insuficientes",
+      "warnings": [
+        "DEMO únicamente: no presentar como beca, viaje, convocatoria o servicio vigente."
+      ]
+    },
+    {
+      "id": "DEMO-MF-FISI-MOV_POS",
+      "name": "Movilidad académica de posgrado de ejemplo — Ingeniería de Sistemas e Informática [FICTICIO]",
+      "faculty_code": "FISI",
+      "accessible_to_all_faculties": false,
+      "category_code": "movilidad_academica",
+      "description": "Escenario simulado para demostrar orientación por facultad y público; no existe convocatoria ni proceso acreditado.",
+      "needs_tags": [
+        "movilidad_academica",
+        "viajar",
+        "intercambio",
+        "posgrado"
+      ],
+      "audience": "posgrado",
+      "evidence_type": "prueba_ficticia",
+      "availability_status": "datos_insuficientes",
+      "warnings": [
+        "DEMO únicamente: no presentar como beca, viaje, convocatoria o servicio vigente."
+      ]
+    },
+    {
+      "id": "DEMO-MF-FISI-MOV_DOC",
+      "name": "Estancia académica docente de ejemplo — Ingeniería de Sistemas e Informática [FICTICIO]",
+      "faculty_code": "FISI",
+      "accessible_to_all_faculties": false,
+      "category_code": "movilidad_academica",
+      "description": "Escenario simulado para demostrar orientación por facultad y público; no existe convocatoria ni proceso acreditado.",
+      "needs_tags": [
+        "movilidad_academica",
+        "viajar",
+        "intercambio",
+        "docentes"
+      ],
+      "audience": "docentes",
+      "evidence_type": "prueba_ficticia",
+      "availability_status": "datos_insuficientes",
+      "warnings": [
+        "DEMO únicamente: no presentar como beca, viaje, convocatoria o servicio vigente."
+      ]
+    }
+  ]
+}

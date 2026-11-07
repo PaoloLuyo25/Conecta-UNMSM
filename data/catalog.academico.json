@@ -1,0 +1,581 @@
+{
+  "snapshot_at": "2026-11-07",
+  "purpose": "Información contrastada en fuentes públicas y documentos facilitados; no certifica apertura de convocatorias.",
+  "services": [
+    {
+      "id": "CENTRAL-OGCRI-MOVILIDAD-SALIENTE",
+      "name": "Movilidad académica saliente — OGCRI",
+      "faculty_code": "CENTRAL",
+      "accessible_to_all_faculties": true,
+      "category_code": "movilidad_academica",
+      "description": "Programa de orientación y postulación para realizar intercambios académicos desde la UNMSM en instituciones asociadas. No implica una convocatoria abierta ni financiación automática.",
+      "needs_tags": [
+        "movilidad_academica",
+        "intercambio",
+        "viajar",
+        "convenios"
+      ],
+      "audience": "pregrado,posgrado",
+      "modality": [],
+      "requirements": [],
+      "official_steps": [
+        "Consultar el Programa de Movilidad Saliente en la fuente institucional.",
+        "Revisar la convocatoria y los requisitos específicos de la universidad de destino.",
+        "Confirmar los procedimientos vigentes con la OGCRI."
+      ],
+      "contact": {
+        "email": "movilidad.ogcri@unmsm.edu.pe"
+      },
+      "location": null,
+      "hours": null,
+      "route_region": null,
+      "stops": [],
+      "source_url": "https://www.unmsm.edu.pe/movilidad-y-cooperacion/movilidad-academica",
+      "evidence_type": "web_oficial",
+      "source_published_at": null,
+      "verified_at": "2026-11-07",
+      "valid_from": null,
+      "valid_until": null,
+      "availability_status": "vigencia_por_confirmar",
+      "warnings": [
+        "Un convenio no implica beca ni cobertura de pasajes, alojamiento o manutención.",
+        "Las fechas y requisitos publicados en páginas generales pueden ser históricos; verificar la convocatoria concreta."
+      ]
+    },
+    {
+      "id": "CENTRAL-OGCRI-CONVENIOS",
+      "name": "Convenios y cooperación institucional — OGCRI",
+      "faculty_code": "CENTRAL",
+      "accessible_to_all_faculties": true,
+      "category_code": "oportunidades_academicas",
+      "description": "Consulta institucional de convenios de cooperación de la UNMSM. Un convenio es una referencia para explorar opciones; no equivale a una plaza ni a una beca vigente.",
+      "needs_tags": [
+        "convenios",
+        "convocatorias",
+        "oportunidades_academicas",
+        "intercambio"
+      ],
+      "audience": "pregrado,posgrado,docentes",
+      "modality": [],
+      "requirements": [],
+      "official_steps": [
+        "Abrir el anuncio de la OGCRI sobre convenios.",
+        "Verificar en cada institución si existe convocatoria y condiciones vigentes."
+      ],
+      "contact": null,
+      "location": null,
+      "hours": null,
+      "route_region": null,
+      "stops": [],
+      "source_url": "https://cooperacion-unmsm.blogspot.com/2026/11/conoce-los-convenios-nacionales-e.html",
+      "evidence_type": "web_oficial",
+      "source_published_at": null,
+      "verified_at": "2026-11-07",
+      "valid_from": null,
+      "valid_until": null,
+      "availability_status": "vigencia_por_confirmar",
+      "warnings": [
+        "Publicación de carácter informativo: no garantiza admisión, financiamiento ni convocatoria abierta."
+      ]
+    },
+    {
+      "id": "CENTRAL-VRIP-AUIP-MAGALLANES",
+      "name": "Programa Magallanes de movilidad AUIP 2027 — VRIP",
+      "faculty_code": "CENTRAL",
+      "accessible_to_all_faculties": true,
+      "category_code": "becas",
+      "description": "Convocatoria AUIP 2027 para movilidad académica vinculada al posgrado. El VRIP publica dos plazos y requisitos de pertenencia a instituciones asociadas.",
+      "needs_tags": [
+        "becas",
+        "movilidad_academica",
+        "convocatorias",
+        "investigacion",
+        "viajar",
+        "posgrado"
+      ],
+      "audience": "posgrado,docentes",
+      "modality": [],
+      "requirements": [
+        "Vínculo con estudios o actividades de posgrado.",
+        "Instituciones participantes miembros activos de AUIP."
+      ],
+      "official_steps": [
+        "Consultar la convocatoria y sus bases oficiales.",
+        "Verificar la pertenencia y vigencia de la membresía AUIP en las instituciones de origen y destino.",
+        "Comprobar el plazo aplicable a la fecha de la estancia antes de postular."
+      ],
+      "contact": null,
+      "location": null,
+      "hours": null,
+      "route_region": null,
+      "stops": [],
+      "source_url": "https://vrip.unmsm.edu.pe/becas-magallanes-2027/",
+      "evidence_type": "web_oficial",
+      "source_published_at": null,
+      "verified_at": "2026-11-07",
+      "valid_from": null,
+      "valid_until": null,
+      "availability_status": "vigencia_por_confirmar",
+      "warnings": [
+        "El VRIP publica primer plazo hasta 9/11/2026 y segundo plazo hasta 19/04/2027; confirmar la etapa aplicable.",
+        "No afirmar que una postulación o financiación esté garantizada."
+      ]
+    },
+    {
+      "id": "CENTRAL-VRIP-CONVOCATORIAS",
+      "name": "Convocatorias de investigación y posgrado — VRIP",
+      "faculty_code": "CENTRAL",
+      "accessible_to_all_faculties": true,
+      "category_code": "oportunidades_academicas",
+      "description": "Portal institucional que reúne convocatorias de investigación, proyectos, formación y posgrado. Cada línea tiene bases y público diferentes.",
+      "needs_tags": [
+        "convocatorias",
+        "investigacion",
+        "proyectos",
+        "oportunidades_academicas",
+        "posgrado"
+      ],
+      "audience": "pregrado,posgrado,docentes",
+      "modality": [],
+      "requirements": [],
+      "official_steps": [
+        "Revisar la lista institucional de convocatorias.",
+        "Abrir el cronograma y la directiva del programa específico.",
+        "Verificar si el perfil y la facultad cumplen los requisitos publicados."
+      ],
+      "contact": null,
+      "location": null,
+      "hours": null,
+      "route_region": null,
+      "stops": [],
+      "source_url": "https://vrip.unmsm.edu.pe/convocatoria-2027/",
+      "evidence_type": "web_oficial",
+      "source_published_at": null,
+      "verified_at": "2026-11-07",
+      "valid_from": null,
+      "valid_until": null,
+      "availability_status": "vigencia_por_confirmar",
+      "warnings": [
+        "La aparición en el portal no confirma que todas las líneas tengan inscripción abierta."
+      ]
+    },
+    {
+      "id": "CENTRAL-VRAP-PREGRADO",
+      "name": "Noticias y orientación académica de pregrado — VRAP",
+      "faculty_code": "CENTRAL",
+      "accessible_to_all_faculties": true,
+      "category_code": "oportunidades_academicas",
+      "description": "Portal del Vicerrectorado Académico de Pregrado con avisos, actividades y documentos para estudiantes de pregrado.",
+      "needs_tags": [
+        "orientacion_academica",
+        "oportunidades_academicas",
+        "convocatorias",
+        "actividades",
+        "pregrado"
+      ],
+      "audience": "pregrado",
+      "modality": [],
+      "requirements": [],
+      "official_steps": [
+        "Consultar avisos recientes del VRAP.",
+        "Abrir el anuncio específico para comprobar los plazos y destinatarios."
+      ],
+      "contact": null,
+      "location": null,
+      "hours": null,
+      "route_region": null,
+      "stops": [],
+      "source_url": "https://viceacademico.unmsm.edu.pe/",
+      "evidence_type": "web_oficial",
+      "source_published_at": null,
+      "verified_at": "2026-11-07",
+      "valid_from": null,
+      "valid_until": null,
+      "availability_status": "vigencia_por_confirmar",
+      "warnings": [
+        "No es una convocatoria única; la disponibilidad depende de cada publicación."
+      ]
+    },
+    {
+      "id": "CENTRAL-OGCRI-FRANCIA",
+      "name": "Intercambio a Francia 2027-I — anuncio OGCRI",
+      "faculty_code": "CENTRAL",
+      "accessible_to_all_faculties": true,
+      "category_code": "movilidad_academica",
+      "description": "Anuncio de intercambio 2027-I para pregrado y posgrado con universidades francesas. Publica plazos distintos por institución.",
+      "needs_tags": [
+        "movilidad_academica",
+        "intercambio",
+        "francia",
+        "viajar"
+      ],
+      "audience": "pregrado,posgrado",
+      "modality": [],
+      "requirements": [],
+      "official_steps": [
+        "Abrir el anuncio OGCRI.",
+        "Consultar la fecha y requisitos de la universidad de destino.",
+        "Contactar a Movilidad OGCRI antes de considerar abierta una postulación."
+      ],
+      "contact": {
+        "email": "movilidad.ogcri@unmsm.edu.pe"
+      },
+      "location": null,
+      "hours": null,
+      "route_region": null,
+      "stops": [],
+      "source_url": "https://cooperacion-unmsm.blogspot.com/2026/09/intercambio-francia-2027-i.html",
+      "evidence_type": "web_oficial",
+      "source_published_at": "2026-09-09",
+      "verified_at": "2026-11-07",
+      "valid_from": null,
+      "valid_until": null,
+      "availability_status": "vigencia_por_confirmar",
+      "warnings": [
+        "El plazo publicado para Université de Bordeaux fue 1/10/2026 y ya venció.",
+        "Otras universidades aparecen como «próximamente» en la publicación; verificar si hubo actualizaciones.",
+        "Exoneración académica no equivale a una beca de viaje."
+      ]
+    },
+    {
+      "id": "CENTRAL-OGCRI-COREA",
+      "name": "Intercambio Corea del Sur 2027-I — anuncio OGCRI",
+      "faculty_code": "CENTRAL",
+      "accessible_to_all_faculties": true,
+      "category_code": "movilidad_academica",
+      "description": "Publicación OGCRI para estudiantes de pregrado sobre opciones de intercambio en Corea del Sur en 2027-I.",
+      "needs_tags": [
+        "movilidad_academica",
+        "intercambio",
+        "corea",
+        "viajar"
+      ],
+      "audience": "pregrado",
+      "modality": [],
+      "requirements": [],
+      "official_steps": [
+        "Revisar el anuncio OGCRI y el destino de interés.",
+        "Verificar plazos y condiciones vigentes con Movilidad OGCRI."
+      ],
+      "contact": {
+        "email": "movilidad.ogcri@unmsm.edu.pe"
+      },
+      "location": null,
+      "hours": null,
+      "route_region": null,
+      "stops": [],
+      "source_url": "https://cooperacion-unmsm.blogspot.com/2026/09/intercambio-corea-del-sur-2027-i.html",
+      "evidence_type": "web_oficial",
+      "source_published_at": "2026-09-16",
+      "verified_at": "2026-11-07",
+      "valid_from": null,
+      "valid_until": null,
+      "availability_status": "vigencia_por_confirmar",
+      "warnings": [
+        "La fecha publicada para Keimyung fue 9/10/2026 y ya venció.",
+        "SKKU y Changwon figuraban «próximamente»; no se ha confirmado apertura posterior.",
+        "Los costos de viaje y manutención no están cubiertos por el convenio."
+      ]
+    },
+    {
+      "id": "MEDICINA-ROCHESTER",
+      "name": "Programa de intercambio UNMSM–Rochester 2026 — Medicina",
+      "faculty_code": "MEDICINA",
+      "accessible_to_all_faculties": false,
+      "category_code": "movilidad_academica",
+      "description": "Programa de intercambio de la Escuela Profesional de Medicina Humana con la Universidad de Rochester; estancias anunciadas entre diciembre de 2026 y marzo de 2027.",
+      "needs_tags": [
+        "movilidad_academica",
+        "intercambio",
+        "medicina",
+        "rochester"
+      ],
+      "audience": "pregrado",
+      "modality": [],
+      "requirements": [],
+      "official_steps": [
+        "Revisar convocatoria y bases oficiales publicadas por Medicina.",
+        "Confirmar con la facultad si el plazo de postulación sigue vigente."
+      ],
+      "contact": null,
+      "location": null,
+      "hours": null,
+      "route_region": null,
+      "stops": [],
+      "source_url": "https://medicina.unmsm.edu.pe/programas-de-intercambio-estudiantil/universidad-de-rochester/",
+      "evidence_type": "web_oficial",
+      "source_published_at": null,
+      "verified_at": "2026-11-07",
+      "valid_from": null,
+      "valid_until": null,
+      "availability_status": "vigencia_por_confirmar",
+      "warnings": [
+        "Convocatoria específica para Medicina Humana; no extrapolar a otras facultades.",
+        "La fecha de estancia no confirma que la inscripción permanezca abierta."
+      ]
+    },
+    {
+      "id": "MEDICINA-WEILL-CORNELL",
+      "name": "Intercambio Weill Cornell Medicine 2026 — Medicina",
+      "faculty_code": "MEDICINA",
+      "accessible_to_all_faculties": false,
+      "category_code": "movilidad_academica",
+      "description": "Programa de intercambio académico de la Facultad de Medicina con Weill Cornell Medicine para estancias anunciadas entre diciembre de 2026 y marzo de 2027.",
+      "needs_tags": [
+        "movilidad_academica",
+        "intercambio",
+        "medicina",
+        "cornell"
+      ],
+      "audience": "pregrado",
+      "modality": [],
+      "requirements": [],
+      "official_steps": [
+        "Consultar las bases publicadas de la convocatoria de Medicina.",
+        "Confirmar fecha límite y elegibilidad con la facultad."
+      ],
+      "contact": null,
+      "location": null,
+      "hours": null,
+      "route_region": null,
+      "stops": [],
+      "source_url": "https://medicina.unmsm.edu.pe/programas-de-intercambio-estudiantil/weill-cornell-medicine/",
+      "evidence_type": "web_oficial",
+      "source_published_at": null,
+      "verified_at": "2026-11-07",
+      "valid_from": null,
+      "valid_until": null,
+      "availability_status": "vigencia_por_confirmar",
+      "warnings": [
+        "Es una convocatoria particular de Medicina Humana.",
+        "No se verificó disponibilidad actual de vacantes."
+      ]
+    },
+    {
+      "id": "FISI-BIENESTAR",
+      "name": "Unidad de Bienestar de la FISI — orientación",
+      "faculty_code": "FISI",
+      "accessible_to_all_faculties": false,
+      "category_code": "bienestar",
+      "description": "Unidad de Bienestar de la Facultad de Ingeniería de Sistemas e Informática; brinda orientación y evaluación socioeconómica según la información recabada por el equipo.",
+      "needs_tags": [
+        "bienestar",
+        "orientacion",
+        "apoyo economico",
+        "evaluacion socioeconomica"
+      ],
+      "audience": null,
+      "modality": [],
+      "requirements": [],
+      "official_steps": [
+        "Acercarse a Bienestar FISI para explicar la necesidad y confirmar el procedimiento."
+      ],
+      "contact": {
+        "email": "bienestar.fisi@unmsm.edu.pe"
+      },
+      "location": "Tercer piso del pabellón antiguo FISI, ubicación exacta por confirmar",
+      "hours": "08:00–13:00 y 14:00–16:30, según entrevista; reconfirmar",
+      "route_region": null,
+      "stops": [],
+      "source_url": "https://sistemas.unmsm.edu.pe/site/bienestar",
+      "evidence_type": "informacion_directa",
+      "source_published_at": null,
+      "verified_at": null,
+      "valid_from": null,
+      "valid_until": null,
+      "availability_status": "vigencia_por_confirmar",
+      "warnings": [
+        "Datos provenientes de entrevista del equipo; comprobar horario y canales antes de acudir.",
+        "No afirmar que existe una beca o subvención vigente."
+      ]
+    },
+    {
+      "id": "CENTRAL-CLINICA-UNMSM",
+      "name": "Clínica Universitaria — información publicada en noviembre",
+      "faculty_code": "CENTRAL",
+      "accessible_to_all_faculties": false,
+      "category_code": "clinica_general",
+      "description": "La programación de la Clínica Universitaria publicada para noviembre de 2026 incluye medicina general y otras especialidades; no indica cupos ni citas disponibles.",
+      "needs_tags": [
+        "clinica_general",
+        "salud",
+        "medicina",
+        "odontologia",
+        "psicologia"
+      ],
+      "audience": null,
+      "modality": [],
+      "requirements": [],
+      "official_steps": [
+        "Consultar el horario específico de la especialidad en la programación publicada.",
+        "Llamar a la Clínica Universitaria para confirmar requisitos, atención y cita."
+      ],
+      "contact": {
+        "phone": "992 455 977"
+      },
+      "location": null,
+      "hours": null,
+      "route_region": null,
+      "stops": [],
+      "source_url": null,
+      "evidence_type": "informacion_directa",
+      "source_published_at": null,
+      "verified_at": null,
+      "valid_from": null,
+      "valid_until": "2026-11-30",
+      "availability_status": "vigencia_por_confirmar",
+      "warnings": [
+        "La programación corresponde exclusivamente a noviembre de 2026.",
+        "No se han verificado precios ni disponibilidad actual de citas."
+      ]
+    },
+    {
+      "id": "CENTRAL-TRANSPORTE-NORTE",
+      "name": "Transporte externo — zona norte",
+      "faculty_code": "CENTRAL",
+      "accessible_to_all_faculties": false,
+      "category_code": "transporte_externo",
+      "description": "Referencia de transporte externo aportada por el equipo para la zona norte. No incluye paradas, frecuencias o disponibilidad en vivo verificadas.",
+      "needs_tags": [
+        "transporte_externo",
+        "transporte",
+        "bus",
+        "rutas"
+      ],
+      "audience": null,
+      "modality": [],
+      "requirements": [],
+      "official_steps": [
+        "Abrir el enlace proporcionado para la zona.",
+        "Confirmar ruta, paradas y horario directamente con la fuente antes de viajar."
+      ],
+      "contact": null,
+      "location": null,
+      "hours": null,
+      "route_region": "norte",
+      "stops": [],
+      "source_url": "https://goo.su/JlL2u",
+      "evidence_type": "informacion_directa",
+      "source_published_at": null,
+      "verified_at": null,
+      "valid_from": null,
+      "valid_until": null,
+      "availability_status": "datos_insuficientes",
+      "warnings": [
+        "Enlace abreviado aportado por el equipo, destino no verificado independientemente.",
+        "Cobertura para todas las facultades sin confirmar; no ofrecer como servicio universal."
+      ]
+    },
+    {
+      "id": "CENTRAL-TRANSPORTE-SUR",
+      "name": "Transporte externo — zona sur",
+      "faculty_code": "CENTRAL",
+      "accessible_to_all_faculties": false,
+      "category_code": "transporte_externo",
+      "description": "Referencia de transporte externo aportada por el equipo para la zona sur. No incluye paradas, frecuencias o disponibilidad en vivo verificadas.",
+      "needs_tags": [
+        "transporte_externo",
+        "transporte",
+        "bus",
+        "rutas"
+      ],
+      "audience": null,
+      "modality": [],
+      "requirements": [],
+      "official_steps": [
+        "Abrir el enlace proporcionado para la zona.",
+        "Confirmar ruta, paradas y horario directamente con la fuente antes de viajar."
+      ],
+      "contact": null,
+      "location": null,
+      "hours": null,
+      "route_region": "sur",
+      "stops": [],
+      "source_url": "https://goo.su/PyU1Kbz",
+      "evidence_type": "informacion_directa",
+      "source_published_at": null,
+      "verified_at": null,
+      "valid_from": null,
+      "valid_until": null,
+      "availability_status": "datos_insuficientes",
+      "warnings": [
+        "Enlace abreviado aportado por el equipo, destino no verificado independientemente.",
+        "Cobertura para todas las facultades sin confirmar; no ofrecer como servicio universal."
+      ]
+    },
+    {
+      "id": "CENTRAL-TRANSPORTE-CENTRO",
+      "name": "Transporte externo — zona centro",
+      "faculty_code": "CENTRAL",
+      "accessible_to_all_faculties": false,
+      "category_code": "transporte_externo",
+      "description": "Referencia de transporte externo aportada por el equipo para la zona centro. No incluye paradas, frecuencias o disponibilidad en vivo verificadas.",
+      "needs_tags": [
+        "transporte_externo",
+        "transporte",
+        "bus",
+        "rutas"
+      ],
+      "audience": null,
+      "modality": [],
+      "requirements": [],
+      "official_steps": [
+        "Abrir el enlace proporcionado para la zona.",
+        "Confirmar ruta, paradas y horario directamente con la fuente antes de viajar."
+      ],
+      "contact": null,
+      "location": null,
+      "hours": null,
+      "route_region": "centro",
+      "stops": [],
+      "source_url": "https://goo.su/El0bx",
+      "evidence_type": "informacion_directa",
+      "source_published_at": null,
+      "verified_at": null,
+      "valid_from": null,
+      "valid_until": null,
+      "availability_status": "datos_insuficientes",
+      "warnings": [
+        "Enlace abreviado aportado por el equipo, destino no verificado independientemente.",
+        "Cobertura para todas las facultades sin confirmar; no ofrecer como servicio universal."
+      ]
+    },
+    {
+      "id": "CENTRAL-TRANSPORTE-ESTE",
+      "name": "Transporte externo — zona este",
+      "faculty_code": "CENTRAL",
+      "accessible_to_all_faculties": false,
+      "category_code": "transporte_externo",
+      "description": "Referencia de transporte externo aportada por el equipo para la zona este. No incluye paradas, frecuencias o disponibilidad en vivo verificadas.",
+      "needs_tags": [
+        "transporte_externo",
+        "transporte",
+        "bus",
+        "rutas"
+      ],
+      "audience": null,
+      "modality": [],
+      "requirements": [],
+      "official_steps": [
+        "Abrir el enlace proporcionado para la zona.",
+        "Confirmar ruta, paradas y horario directamente con la fuente antes de viajar."
+      ],
+      "contact": null,
+      "location": null,
+      "hours": null,
+      "route_region": "este",
+      "stops": [],
+      "source_url": "https://goo.su/51JGr",
+      "evidence_type": "informacion_directa",
+      "source_published_at": null,
+      "verified_at": null,
+      "valid_from": null,
+      "valid_until": null,
+      "availability_status": "datos_insuficientes",
+      "warnings": [
+        "Enlace abreviado aportado por el equipo, destino no verificado independientemente.",
+        "Cobertura para todas las facultades sin confirmar; no ofrecer como servicio universal."
+      ]
+    }
+  ]
+}

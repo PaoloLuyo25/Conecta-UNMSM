@@ -1,0 +1,85 @@
+{
+  "source": "https://www.unmsm.edu.pe/formacion-academica/facultades",
+  "faculties": [
+    {
+      "code": "LETRAS",
+      "name": "Letras y Ciencias Humanas"
+    },
+    {
+      "code": "DERECHO",
+      "name": "Derecho y Ciencia Política"
+    },
+    {
+      "code": "MEDICINA",
+      "name": "Medicina"
+    },
+    {
+      "code": "MATEMATICAS",
+      "name": "Ciencias Matemáticas"
+    },
+    {
+      "code": "BIOLOGICAS",
+      "name": "Ciencias Biológicas"
+    },
+    {
+      "code": "ECONOMICAS",
+      "name": "Ciencias Económicas"
+    },
+    {
+      "code": "FARMACIA",
+      "name": "Farmacia y Bioquímica"
+    },
+    {
+      "code": "ODONTOLOGIA",
+      "name": "Odontología"
+    },
+    {
+      "code": "EDUCACION",
+      "name": "Educación"
+    },
+    {
+      "code": "VETERINARIA",
+      "name": "Medicina Veterinaria"
+    },
+    {
+      "code": "QUIMICA",
+      "name": "Química e Ingeniería Química"
+    },
+    {
+      "code": "ADMINISTRATIVAS",
+      "name": "Ciencias Administrativas"
+    },
+    {
+      "code": "CONTABLES",
+      "name": "Ciencias Contables"
+    },
+    {
+      "code": "FISICAS",
+      "name": "Ciencias Físicas"
+    },
+    {
+      "code": "SOCIALES",
+      "name": "Ciencias Sociales"
+    },
+    {
+      "code": "ING_GEOLOGICA",
+      "name": "Ingeniería Geológica, Minera, Metalúrgica y Geográfica"
+    },
+    {
+      "code": "INDUSTRIAL",
+      "name": "Ingeniería Industrial"
+    },
+    {
+      "code": "ELECTRONICA",
+      "name": "Ingeniería Electrónica y Eléctrica"
+    },
+    {
+      "code": "PSICOLOGIA",
+      "name": "Psicología"
+    },
+    {
+      "code": "FISI",
+      "name": "Ingeniería de Sistemas e Informática"
+    }
+  ]
+}

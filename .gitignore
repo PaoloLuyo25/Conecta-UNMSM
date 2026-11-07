@@ -1,0 +1,18 @@
+# Credenciales y entornos
+.env
+.env.*
+!.env.example
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+htmlcov/
+*.log
+.DS_Store
+.vscode/
+.idea/
+
+# Candidatos web todavía no revisados
+data/discovered.pending.json
