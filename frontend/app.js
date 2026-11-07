@@ -427,7 +427,7 @@ async function passwordAccess(mode) {
   $('login-email').value = email;
   const passwordInput = $('login-password');
   if (!/^[^@\s]+@unmsm\.edu\.pe$/.test(email)) {
-    accountMessage('Puedes consultar tus rutas guardadas y administrar tu historial.');
+    accountMessage('Consulta tus rutas guardadas y administrar tu historial.');
     return;
   }
   if (!$('login-form').reportValidity()) return;
