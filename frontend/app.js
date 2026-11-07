@@ -427,7 +427,7 @@ async function passwordAccess(mode) {
   $('login-email').value = email;
   const passwordInput = $('login-password');
   if (!/^[^@\s]+@unmsm\.edu\.pe$/.test(email)) {
-    accountMessage('Utiliza un correo que termine en @unmsm.edu.pe.');
+    accountMessage('Puedes consultar tus rutas guardadas y administrar tu historial.');
     return;
   }
   if (!$('login-form').reportValidity()) return;
@@ -440,7 +440,7 @@ async function passwordAccess(mode) {
     });
     if (mode === 'signup' && authResult.confirmation_required) {
       passwordInput.value = '';
-      accountMessage('Si la dirección puede registrarse, recibirás un mensaje de confirmación. Si ya tienes una cuenta, utiliza «Iniciar sesión» con tu contraseña. Por privacidad, no podemos confirmar aquí si el correo ya estaba registrado.');
+      accountMessage('Si solicitaste una cuenta nueva, revisa tu correo para continuar. Si ya tienes cuenta, inicia sesión con tu contraseña.');
       return;
     }
     if (!authResult.authenticated) throw new Error('Supabase no confirmó la sesión. Intenta iniciar sesión tras verificar tu correo.');
@@ -457,7 +457,7 @@ async function passwordAccess(mode) {
     if (shouldSave) await saveExistingRoute();
     else await showHistory();
   } catch (error) {
-    accountMessage(mode === 'signup' ? error.message + ' Si ya tienes cuenta, utiliza «Iniciar sesión».' : error.message);
+    accountMessage(error.message);
   } finally {
     buttons.forEach(button => { button.disabled = false; });
   }
