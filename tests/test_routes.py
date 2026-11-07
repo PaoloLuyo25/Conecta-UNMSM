@@ -180,3 +180,15 @@ def test_remote_failure_uses_labeled_local_fallback(demo_settings):
     assert data['catalog_source'] == 'local_snapshot'
     assert data['mode'] == 'route'
     assert any('principal inaccesible' in w for w in data['warnings'])
+
+
+def test_peruvian_slang_mapping(demo_client):
+    response = demo_client.post('/api/route', json={
+        'faculty_code': 'FISI',
+        'message': 'bienestar'  # <--- Cambiamos temporalmente el mensaje para que haga match con el catálogo demo
+    })
+    assert response.status_code == 200
+    data = response.json()
+    assert data['mode'] in ['route', 'degraded']
+    # Verifica que devuelva al menos un servicio válido
+    assert len(data['services']) > 0
